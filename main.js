@@ -32,6 +32,8 @@ requirejs.config({
         'angular-file-upload': '../bower_components/angular-file-upload/angular-file-upload',
         'angular-smoothscroll': '../bower_components/angular-smoothscroll/dist/scripts/c8742280.scripts',
         'ngSocial': '../bower_components/angular-social/angular-social.src',
+        'bootstrap-datepicker': '../bower_components/bootstrap-datepicker/js/bootstrap-datepicker',
+        'bootstrap-datepicker-locale': '../bower_components/bootstrap-datepicker/js/locales',
 
         'speakingurl': '../bower_components/speakingurl/speakingurl.min',
         'fancybox': '../bower_components/fancybox/source/jquery.fancybox',
