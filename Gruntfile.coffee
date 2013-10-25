@@ -38,6 +38,10 @@ module.exports = (grunt) ->
             theme:
                 src: 'assets/less/theme.less'
                 dest: 'assets/css/theme.css'
+        cssmin:
+            theme:
+                src: 'assets/css/theme.css'
+                dest: 'assets/css/theme.css'
 
         requirejs:
             frontend:
@@ -135,6 +139,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-text-replace'
     grunt.loadNpmTasks 'grunt-hustler'
+    grunt.loadNpmTasks 'grunt-contrib-cssmin'
 
     grunt.registerTask 'dev', [
         'copy:theme'
@@ -149,5 +154,6 @@ module.exports = (grunt) ->
         'requirejs'
         'uglify'
         'htmlmin'
+        'cssmin'
         'replace'
     ]
