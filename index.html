@@ -18,13 +18,13 @@
 <div id="wrap" class="ng-cloak page-layout">
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Site default</a>
+                <a class="navbar-brand" href="/">{{$site.options['site.title']}}</a>
             </div>
             <div class="pull-right main-menu">
-                <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 4 }"></div>
+                <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': $site.options['menu.main'] }"></div>
             </div>
         </div>
     </nav>
@@ -38,7 +38,6 @@
 
 <div id="footer" class="ng-cloak">
     <div class="container">
-        <p class="text-muted credit"><a href="http://bazalt-cms.com/">Bazalt CMS</a></p>
     </div>
 </div>
 

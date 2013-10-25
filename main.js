@@ -2,14 +2,14 @@ requirejs.config({
     baseUrl: '/app',
     packages: [{
         name: 'bazalt',
-        location: '../bazalt/src/',
+        location: '../bazalt/',
         main: 'main'
     }, {
         name: 'modules',
-        location: '../bazalt/src/modules'
+        location: '../bazalt/modules'
     }, {
         name: 'components',
-        location: '../bazalt/src/components'
+        location: '../bazalt/components'
     }],
     paths: {
         'requirejs': '../bower_components/requirejs/require',
@@ -19,7 +19,7 @@ requirejs.config({
         'jquery-ui': '../bower_components/jquery-ui/ui',
 
         //jquery-galleria
-        'jquery-galleria': '../bazalt/bower_components/jquery-galleria/src/galleria',
+        'jquery-galleria': '../bower_components/jquery-galleria/src/galleria',
 
         'bootstrap': '../bower_components/bootstrap/js',
 

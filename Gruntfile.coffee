@@ -88,9 +88,9 @@ module.exports = (grunt) ->
             development:
                 options:
                     port: 8000
-                    base: 'src'
+                    base: '.'
                     middleware: (connect, options) -> [
-                        urlRewrite 'src'
+                        urlRewrite '.'
                         connect.static options.base
                         connect.directory options.base
                     ]
@@ -109,7 +109,7 @@ module.exports = (grunt) ->
         ngTemplateCache:
             views:
                 files:
-                    './build/views.js': ['./views/**/*.html', './bazalt/src/**/*.html']
+                    './build/views.js': ['./views/**/*.html', './bazalt/modules/**/*.html', './bazalt/components/**/*.html']
                 options:
                     trim: '.'
                     module: 'app'
