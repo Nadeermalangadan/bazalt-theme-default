@@ -41,7 +41,9 @@ module.exports = (grunt) ->
         cssmin:
             theme:
                 src: 'assets/css/theme.css'
-                dest: 'assets/css/theme.css'
+                dest: 'build/assets/css/theme.css'
+            options:
+                keepSpecialComments: 0
 
         requirejs:
             frontend:
