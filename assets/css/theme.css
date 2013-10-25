@@ -8600,6 +8600,14 @@ a .icon-flip-vertical:before {
   background-image: url('../img/classic-map.png');
   background-repeat: no-repeat;
 }
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
 @font-face {
   font-family: 'bebas_neue_cyrillicregular';
   src: url('../font/bebas_neue_cyrillic_2-webfont.eot');
