@@ -8650,16 +8650,13 @@ body {
 
 }
 body a {
-  color: #0088CC;
   cursor: pointer;
 }
 body a:hover,
 body a:focus {
-  color: #005580;
   text-decoration: underline;
 }
 body a.navbar-brand {
-  color: #333;
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: normal;
@@ -8668,13 +8665,6 @@ body a.navbar-brand {
 }
 body .navbar {
   min-height: 40px;
-}
-body .navbar .navbar-brand {
-  color: #333;
-}
-body .navbar .navbar-brand:focus,
-body .navbar .navbar-brand:hover {
-  color: #000;
 }
 body .navbar .nav {
   margin: 7.5px -15px;
@@ -8723,7 +8713,7 @@ body .navbar .nav li a {
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
   font-size: 17px;
   padding: 10px 15px;
-  color: #333;
+  color: #ddd;
 }
 body .navbar .nav li a.dropdown-toggle .caret {
   border-bottom-color: #333;
