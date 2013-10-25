@@ -130,6 +130,9 @@ module.exports = (grunt) ->
                 }, {
                     from: '<script src="/main.js"></script>'
                     to: '<script src="/js/main.min.js"></script>'
+                }, {
+                    from: '<script src="/bazalt.js"></script>'
+                    to: ''
                 }]
 
     grunt.loadNpmTasks 'grunt-contrib-htmlmin'
