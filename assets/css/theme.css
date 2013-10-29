@@ -8670,7 +8670,7 @@ body a.navbar-brand {
   font-weight: normal;
   text-transform: uppercase;
   padding: 10px 15px;
-  color: white;
+  color: white !important;
 }
 body a.navbar-brand span {
   font-size: 20px;
