@@ -8628,7 +8628,7 @@ body {
   background: rgba(255, 255, 255, 0.9);
 }
 .back {
-  background: url("../img/logo.jpg") no-repeat scroll center 0.11666666666666667px auto rgba(0, 0, 0, 0);
+  background: url("../img/logo.jpg") no-repeat scroll center 70px auto 100% rgba(0, 0, 0, 0);
 }
 #footer {
   background: none repeat scroll 0 0 #F2F2F2;
