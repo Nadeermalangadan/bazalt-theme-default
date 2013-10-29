@@ -8671,6 +8671,9 @@ body a.navbar-brand {
   text-transform: uppercase;
   padding: 10px 15px;
 }
+body a.navbar-brand span {
+  font-size: 16px;
+}
 body .navbar {
   min-height: 40px;
 }
