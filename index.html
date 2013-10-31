@@ -3,41 +3,115 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Bazalt CMS (http://bazalt-cms.com/"/>
-    <meta name="author" content="Equalteam (http://equalteam.net/)">
     <base href="/"/>
 
     <link href="/assets/css/theme.css" rel="stylesheet" media="all">
 </head>
-<body>
+<body locale-bundle="theme">
 <!-- Loader -->
 <div class="bz-loading-spinner" role="spinner" ng-if="polling">
     <div class="spinner-icon"></div>
 </div>
 
-<div id="wrap" class="ng-cloak page-layout">
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">DS<span>Acoustics</span></a>
-            </div>
-            <div class="pull-right main-menu">
-                <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': $site.options['menu.main'] }"></div>
-            </div>
+<div class="top-bar clearfix">
+    <div class="pull-right ng-cloak">
+        <div class="b-language">
+            <a href="" class="flag flag-gb" data-ng-click="$language.language('en_GB')">En</a>
+            <a href="" class="flag flag-ru" data-ng-click="$language.language('ru_RU')">RU</a>
         </div>
-    </nav>
-
-    <div class="container">
-        <div class="main-container">
-            <div class="slide-reveal" app-view-segment="0"></div>
+        <ul ng-social-buttons
+            data-url="'http://hellv.in/'"
+            data-title="'HellVin - аццкая Винница'"
+            data-description="'Делись, общайся, выражай свое мнение'"
+            data-image="'http://hellv.in/assets/img/logo.png'">
+            <li>{{ 'Делись с друзьями:'|translate }}</li>
+            <li class="ng-social-facebook">Facebook</li>
+            <li class="ng-social-google-plus" data-proxy-url="'/api/social.php'">Google+</li>
+            <li class="ng-social-twitter">Twitter</li>
+            <li class="ng-social-vk">Вконтакте</li>
+            <li class="ng-social-odnoklassniki">Одноклассники</li>
+        </ul>
+    </div>
+    <div class="menu menu-top-right ng-cloak">
+        <div ng-if="!$user.data.id">
+            <a href="/user/registration">{{ 'Регистрация'|translate }}</a>
+            <a href="/user/login">{{ 'Вход'|translate }}</a>
+        </div>
+        <div ng-if="$user.data.id">
+            <a ng-href="/user/{{ $user.data.id }}/profile">{{$user.data.fullname}}</a>
+            <a ng-click="$user.logout()" href="">{{ 'Выйти'|translate }}</a>
         </div>
     </div>
 </div>
 
-<div id="footer" class="ng-cloak">
+
+<div id="wrap">
+
+    <!--div bz-ads></div-->
+
+    <div class="page-layout container">
+        <header>
+            <!--div class="menu menu-left ng-cloak">
+                <a href="/c-fishka">Фишка</a>
+                <a href="/c-mems">Мемы</a>
+                <a href="/c-gorod">Город</a>
+            </div>
+            <canvas bz-monster id="eye"></canvas-->
+            <a href="/" class="logo">HellVin</a>
+            <!--div class="menu menu-right ng-cloak">
+                <a href="/c-feils">Фейлы</a>
+                <a href="/c-idei">Идеи</a>
+                <a href="/c-bezdna">Бездна</a>
+            </div-->
+            <div class="ng-cloak preloader"></div>
+        </header>
+
+    <!-- Fixed navbar -->
+    <!--nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="main-menu">
+                <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 10 }"></div>
+            </div>
+        </div>
+    </nav-->
+
+        <!--div class="ng-cloak" ng-include="'/views/banners/default.html'"></div-->
+        <div class="banners main-menu">
+            <ul class="nav nav-pills menu ng-cloak pull-right">
+                <li><a href="/c-fishka">Фишка</a></li>
+                <li><a href="/c-mems">Мемы</a></li>
+                <li><a href="/c-gorod">Город</a></li>
+                <li><a href="/c-feils">Фейлы</a></li>
+                <li><a href="/c-idei">Идеи</a></li>
+                <li><a href="/c-bezdna">Бездна</a></li>
+            </ul>
+        </div>
+
+        <div class="ng-cloak">
+            <div class="main-content">
+                <div class="slide-reveal" app-view-segment="0"></div>
+            </div>
+            <!--div class="row">
+                <div class="col col-lg-9 content" bz-loading-container="loading">
+                    <div class="main-content">
+                        <div class="slide-reveal" app-view-segment="0"></div>
+                    </div>
+                </div>
+                <div class="col col-lg-3 sidebar" ng-include="'/views/block/sidebar.html'">
+
+                </div>
+                <div class="clearfix"></div>
+            </div-->
+        </div>
+    </div>
+</div>
+
+<a href="#top" class="thing bz-to-top"></a>
+
+<div id="footer" class="ng-cloak container">
+    <div class="hr"></div>
     <div class="container">
+        <div ng-include="'/views/block/footer.html'"></div>
     </div>
 </div>
 

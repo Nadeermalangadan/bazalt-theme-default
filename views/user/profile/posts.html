@@ -1,26 +1,26 @@
-<a href="/user/profile/add-post" class="btn btn-inverse pull-right">
-    <span class="icon-pencil"></span> Написать
+<a href="/user/profile/add-post" class="btn btn-primary pull-right">
+    <span class="icon-pencil"></span> {{'Написать'|translate }}
 </a>
-<h2>
-    Мои публикации
-</h2>
+<h1>
+    {{'Мои публикации'|translate }}
+</h1>
 
 <div bz-loading-container="loading" ng-if="items.length">
-    <table ng-table="tableParams" class="table">
-    <tr ng-repeat="page in items">
-        <td data-title="'Заголовок'">
-            <a href="/user/profile/edit-post/{{ page.id }}">{{ page.title.en }}</a>
-        </td>
-        <td data-title="'Просмотры'" width="80">
-            {{ page.hits }}
-        </td>
-        <td data-title="'Дата публикации'" width="80">
-            {{ page.created_at|date:'dd.MM.yyyy' }}
-        </td>
-    </tr>
+    <table ng-table="tableParams" class="table table-striped table-responsive table-posts">
+        <tr ng-repeat="page in items">
+            <td data-title="'Заголовок'|translate">
+                <a href="/user/profile/edit-post/{{ page.id }}">{{ page.title.en }}</a>
+            </td>
+            <td data-title="'Просмотры'|translate" width="80">
+                {{ page.hits }}
+            </td>
+            <td data-title="'Дата публикации'|translate" width="80">
+                {{ page.created_at|date:'dd.MM.yyyy' }}
+            </td>
+        </tr>
     </table>
 </div>
 
 <div ng-if="!items.length && !loading">
-    Нет публикаций
+    {{'Нет публикаций'|translate }}
 </div>

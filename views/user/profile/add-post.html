@@ -1,23 +1,23 @@
-<h2 ng-if="item.id">Редактирование публикации</h2>
-<h2 ng-if="!item.id">Добавление публикации</h2>
+<h1 ng-if="item.id">{{ 'Редактирование публикации'|translate }}</h1>
+<h1 ng-if="!item.id">{{ 'Добавление публикации'|translate }}</h1>
 
 <form class="add-post" remote-form name="itemEdit" novalidate ng-submit="saveItem(item)">
     <div bz-loading-container="loading.page">
 
         <div class="form-group" ng-class="{'has-error': itemEdit.title.$dirty && itemEdit.title.$invalid}">
-            <label class="control-label">Заголовок</label>
+            <label class="control-label">{{ 'Заголовок'|translate }}</label>
 
             <div class="controls">
                 <input class="form-control" type="text" name="title" required ng-model="item.title.en"/>
-                <span ng-show="itemEdit.title.$dirty && itemEdit.title.$error.required" class="help-block">Напишите оглавление</span>
+                <span ng-show="itemEdit.title.$dirty && itemEdit.title.$error.required" class="help-block">{{ 'Напишите оглавление'|translate }}</span>
             </div>
         </div>
 
         <div class="form-group" ng-class="{'has-error': itemEdit.body.$dirty && itemEdit.body.$invalid}">
-            <label class="control-label">Текст</label>
+            <label class="control-label">{{ 'Текст'|translate }}</label>
 
             <div class="controls">
-                <span ng-show="itemEdit.body.$dirty && itemEdit.body.$error.required" class="help-block">Напишите текст</span>
+                <span ng-show="itemEdit.body.$dirty && itemEdit.body.$error.required" class="help-block">{{ 'Напишите текст'|translate }}</span>
                 <textarea ckeditor name="body" ng-model="item.body.en"></textarea>
             </div>
         </div>
@@ -30,8 +30,8 @@
         </div>
 
         <div class="form-actions">
-            <input type="submit" class="btn btn-primary" value="Сохранить" />
-            <a smooth-scroll data-target="top" href="/user/profile/posts" class="btn btn-default">Отмена</a>
+            <input type="submit" class="btn btn-primary" value="{{ 'Сохранить'|translate }}" />
+            <a smooth-scroll data-target="top" href="/user/profile/posts" class="btn btn-default">{{ 'Отмена'|translate }}</a>
         </div>
     </div>
 </form>

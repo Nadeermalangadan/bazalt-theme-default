@@ -1,40 +1,4 @@
-/*form registration*/
-.registration {
-  .control-group {
-    margin-bottom: 10px;
-    .control-label {
-      display: inline-block;
-      line-height: 30px;
-      margin-top: 0;
-      padding: 0;
-      vertical-align: top;
-      width: 200px;
-    }
-    .controls {
-      display: inline-block;
-      width: 250px;
-      .date {
-        max-width: 250px;
-        .input-group-addon {
-          cursor: pointer;
-          &:not(:first-child):not(:last-child) {
-            border-radius: 0 4px 4px 0;
-          }
-        }
-      }
-      .help-block {
-        color: #999999;
-        display: block;
-        margin-bottom: 0;
-        margin-top: 0;
-      }
-    }
-  }
-}
-/*form registration*/
-
 /*profile*/
-
 .user-profile {
   .profile-sidebar {
     .user-avatar {
@@ -42,8 +6,10 @@
       position: relative;
       overflow: hidden;
       img {
-        width: 100%;
+        display: block;
         height: auto;
+        min-height: 175px;
+        width: 100%;
       }
       .b-edit-avatar {
         -webkit-transition: all 0.5s linear;
@@ -52,7 +18,7 @@
         -o-transition: all 0.5s linear;
         transition: all 0.5s linear;
         opacity: 0;
-        background: rgba( 0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.4);
         position: absolute;
         opacity: 0;
         -webkit-opacity: 0;
@@ -93,7 +59,7 @@
           }
         }
       }
-      &:hover {
+      &:hover, &:focus {
         .b-edit-avatar {
           -webkit-transition-duration: 0.1s;
           -moz-transition-duration: 0.1s;
@@ -119,15 +85,23 @@
           a {
             .header-font();
             font-size: 14px;
-            color: #333;
+            color: #1B0120;
             background: transparent;
             border: 1px solid #DDDDDD;
             border-radius: 0;
+            text-shadow: none;
             margin: 0;
-            &:hover, &:focus {
+            &:hover, &:focus, &.active {
               color: #fff;
-              background: #757575;
+              background: #5F2E68;
               border: 1px solid #DDDDDD;
+            }
+            &.b-gifts {
+              background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+              padding: 5px 15px;
+              &:hover, &:focus {
+                background: #1B0120;
+              }
             }
           }
           &:first-child {
@@ -145,8 +119,296 @@
     }
   }
   .b-profile-content {
+    .profile {
+      position: relative;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    .main_info {
+      ul {
+        li {
+          span {
+            &.col-lg-4 {
+              .header-font();
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+    .table-messages {
+      tr {
+        td {
+          padding: 2px;
+          vertical-align: top;
+          &.fullname {
+            color: #999999;
+            font-size: 11px;
+            line-height: 16px;
+            vertical-align: middle;
+            img {
+              float: left;
+              padding: 0 5px 5px;
+              vertical-align: top;
+              width: 60px;
+            }
+            strong {
+              color: #1B0120;
+              font-size: 11px;
+              line-height: 16px;
+            }
+          }
+          &.message {
+            .one-message {
+              position: relative;
+              .delete-message {
+                position: absolute;
+                right: 5px;
+                top: 0;
+                visibility: hidden;
+                &:hover, &:focus {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+        &:hover, &:focus {
+          td {
+            background: #edf1f5;
+            &.message {
+              .one-message {
+                .delete-message {
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.user-message {
+        tr {
+          td {
+            vertical-align: top;
+            background: transparent;
+            &.date {
+              color: #1B0120;
+              font-size: 10px;
+              line-height: 16px;
+            }
+            &.message {
+              color: #1B0120;
+              font-size: 11px;
+              line-height: 16px;
+              textarea {
+                margin-bottom: 10px;
+                resize: vertical;
+              }
+            }
+          }
+          &:hover, &:focus {
+            td {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+    table {
+      &.table-posts {
+        tr {
+          th {
+            font-size: 11px;
+            line-height: 14px;
+            padding: 2px;
+          }
+          td {
+            font-size: 11px;
+            line-height: 14px;
+            padding: 5px 2px;
+          }
+        }
+      }
+    }
+    .user-gifts {
+      .one-gifts {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        margin: 0 5px 10px 0px;
+        overflow: hidden;
+        img {
 
+        }
+        .b-gifts-from {
+          background: rgba(0, 0, 0, 0.4);
+          font-size: 11px;
+          line-height: 12px;
+          position: absolute;
+          padding: 5px;
+          -webkit-transition: all 0.5s linear;
+          -moz-transition: all 0.5s linear;
+          -ms-transition: all 0.5s linear;
+          -o-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+          opacity: 0;
+          position: absolute;
+          opacity: 0;
+          -webkit-opacity: 0;
+          -moz-opacity: 0;
+          left: 0;
+          right: 0;
+          bottom: -40px;
+
+          a {
+            .header-font();
+            padding: 0;
+            line-height: 20px;
+            .b-avatar {
+              display: inline-block;
+              margin-right: 2px;
+            }
+            &:hover, &:focus {
+              text-decoration: none;
+            }
+          }
+          p {
+            margin: 0;
+          }
+        }
+        &:hover, &:focus {
+          .b-gifts-from {
+            opacity: 1;
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            bottom: 0;
+          }
+        }
+      }
+    }
   }
 }
 
+.b-gifts {
+  .gift-cell {
+    display: inline-block;
+    *display: inline;
+    height: 96px;
+    padding: 4px;
+    position: relative;
+    width: 96px;
+    .gift-img {
+      -webkit-transition: opacity .2s;
+      -moz-transition: opacity .2s;
+      -o-transition: opacity .2s;
+      transition: opacity .2s;
+    }
+    .gift-price {
+      background: none repeat scroll 0 0 rgba(208, 216, 224, 0.8);
+      bottom: -4px;
+      left: 4px;
+      opacity: 0;
+      position: absolute;
+      right: 4px;
+      span {
+        color: #5F2E68;
+      }
+    }
+    &:hover, &:focus {
+      text-decoration: none;
+      .gift-img {
+        opacity: 0.8;
+        -webkit-opacity: 0.8;
+        -moz-opacity: 0.8;
+      }
+      .gift-price {
+        opacity: 1;
+      }
+    }
+  }
+}
 /*profile*/
+
+/*modal-dialog*/
+.modal-dialog {
+  width: 570px;
+  .modal-content {
+    border-radius: 0;
+    .modal-header {
+      background: #5F2E68;
+      padding: 10px 15px;
+      .close {
+        color: #fff;
+        opacity: 0.4;
+        text-shadow: none;
+        &:hover, &:focus {
+          opacity: 1;
+        }
+      }
+      .modal-title {
+        color: #ffffff;
+      }
+    }
+    .modal-body {
+      padding: 15px;
+      .user-money, .send-gift {
+        color: #5F2E68;
+        margin-top: 0px;
+        line-height: 20px;
+      }
+      .head-modal {
+        background: rgba(0, 0, 0, 0.1);
+        border: none;
+        margin: -15px -15px 15px;
+        padding: 10px 15px;
+        width: 548px;
+      }
+      .nav {
+        &.nav-tabs {
+          &.gifts-type {
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            margin: -15px -15px 10px;
+            padding: 0 15px 5px;
+            li {
+              a {
+                border: none;
+                border-radius: 6px;
+                color: #5F2E68;
+                line-height: 20px;
+                margin-bottom: 5px;
+                margin-top: -5px;
+                padding: 5px 10px;
+                &:hover, &:focus {
+                  color: #ffffff;
+                  background: #5F2E68;
+                  text-decoration: none;
+
+                }
+              }
+              &.active {
+                a {
+                  color: #ffffff;
+                  background: #5F2E68;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .b-message {
+        textarea {
+          width: 100%;
+          min-height: 250px;
+        }
+      }
+    }
+    .modal-footer {
+      padding: 10px 15px;
+    }
+  }
+}
+/*modal-dialog*/

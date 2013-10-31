@@ -1,7 +1,13 @@
-<div class="slide-reveal category">
-    <div data-widget="'Components.Pages.Widgets.Page'" data-settings="{ 'id': 11 }"></div>
+<div class="row">
+    <div class="col col-lg-9 content" bz-loading-container="loading">
+        <div class="mainpage" ng-init="banner.categoryId = category.id">
 
-    <h1>{{category.title|language}}</h1>
+            <div class="main-feed" ng-include="'/views/widgets/pages/category.html'"></div>
 
-    <div class="main-feed" ng-include="'/views/widgets/pages/category.html'"></div>
+        </div>
+    </div>
+    <div class="col col-lg-3 sidebar" ng-include="'/views/block/sidebar.html'">
+
+    </div>
+    <div class="clearfix"></div>
 </div>

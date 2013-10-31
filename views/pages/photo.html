@@ -1,14 +1,17 @@
-<div class="slide-reveal photo">
-    <div>
-        <a class="h1" href="/c-photo">Фото</a>
+<h1 class="heading">{{page.title|language}}</h1>
+
+<div class="row">
+    <div class="col col-lg-4">
+        <img ng-src="{{ page.images.0.url }}" />
     </div>
-
-    <img ng-src="{{ page.images.0.url }}"/>
-
-    <h1 class="heading text-center">{{page.title|language}}</h1>
-
-    <div class="body description description-photo" ng-bind-html="page.body.en"></div>
-
-    <div ng-include="'/views/block/summary.html'"></div>
-    <div ng-include="'/views/block/comments.html'"></div>
+    <div class="col col-lg-8">
+        <div class="body description description-photo" ng-bind-html="page.body.en"></div>
+    </div>
 </div>
+
+<h4>Фото</h4>
+
+<div bz-img="page.images"></div>
+
+<div ng-include="'/views/block/summary.html'"></div>
+<div ng-include="'/views/block/comments.html'"></div>

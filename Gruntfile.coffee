@@ -30,7 +30,7 @@ module.exports = (grunt) ->
             theme:
                 files: [{
                     expand: true
-                    src: ['assets/**', '!assets/less/**']
+                    src: ['assets/**', '!assets/less/**', 'favicon.png']
                     dest: 'build/'
                 }]
 
@@ -38,12 +38,6 @@ module.exports = (grunt) ->
             theme:
                 src: 'assets/less/theme.less'
                 dest: 'assets/css/theme.css'
-        cssmin:
-            theme:
-                src: 'assets/css/theme.css'
-                dest: 'build/assets/css/theme.css'
-            options:
-                keepSpecialComments: 0
 
         requirejs:
             frontend:
@@ -85,8 +79,8 @@ module.exports = (grunt) ->
                 options:
                     livereload: true
             html:
-                files: 'views/**/*.html'
-                tasks: []
+                files: ['views/**/*.html', 'index.html']
+                tasks: ['i18nextract']
                 options:
                     livereload: true
 
@@ -115,7 +109,7 @@ module.exports = (grunt) ->
         ngTemplateCache:
             views:
                 files:
-                    './build/views.js': ['./views/**/*.html', './bazalt/modules/**/*.html', './bazalt/components/**/*.html']
+                    './build/views.js': ['./views/**/*.html', './bazalt/components/**/*.html', './bazalt/modules/**/*.html']
                 options:
                     trim: '.'
                     module: 'app'
@@ -135,6 +129,14 @@ module.exports = (grunt) ->
                     to: ''
                 }]
 
+        i18nextract:
+            backend:
+                lang: ['en_GB', 'ru_RU']
+                src: ['views/**/*.html', 'index.html']
+                dest: 'locale'
+                prefix: 'theme-'
+                safeMode: false
+
     grunt.loadNpmTasks 'grunt-contrib-htmlmin'
     grunt.loadNpmTasks 'grunt-contrib-copy'
     grunt.loadNpmTasks 'grunt-contrib-uglify'
@@ -144,7 +146,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-text-replace'
     grunt.loadNpmTasks 'grunt-hustler'
-    grunt.loadNpmTasks 'grunt-contrib-cssmin'
+    grunt.loadNpmTasks 'grunt-angular-translate'
 
     grunt.registerTask 'dev', [
         'copy:theme'
@@ -159,6 +161,5 @@ module.exports = (grunt) ->
         'requirejs'
         'uglify'
         'htmlmin'
-        'cssmin'
         'replace'
     ]

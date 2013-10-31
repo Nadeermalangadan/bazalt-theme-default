@@ -1,0 +1,19 @@
+
+<div bz-slider total="page.images.length + 2" class="slider widget">
+    <div class="slider expand" ng-show="index == n" data-ng-repeat="(n, image) in page.images">
+        <img ng-src="{{ image.url }}" />
+    </div>
+    <div class="slider expand" ng-show="index == page.images.length" style="color: red">
+        Hello
+    </div>
+    <div class="slider expand" ng-show="index == page.images.length + 1" style="color: red">
+        Hello asda sdasd ad a
+    </div>
+    <div class="slider-nav">
+        <a class="{{index == n}}" data-ng-repeat="(n, image) in page.images" data-ng-click="setIndex({{n}})">{{n}}</a>
+        <div class="b-add">
+            <a class="{{index == page.images.length}}" data-ng-click="setIndex({{page.images.length}})">{{page.images.length}}</a>
+            <a class="{{index == page.images.length + 1}}" data-ng-click="setIndex({{page.images.length + 1}})">{{page.images.length+1}}</a>
+        </div>
+    </div>
+</div>

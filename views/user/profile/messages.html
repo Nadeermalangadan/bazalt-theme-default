@@ -1,0 +1,27 @@
+<div app-view-segment="2">
+
+    <h1 class="type-message">
+        <a ng-class="{'active': $routeSegment.startsWith('profile.messages.inbox')}" href="/user/profile/messages">{{'Входящие'|translate }}</a>
+        <a ng-class="{'active': $routeSegment.startsWith('profile.messages.outbox')}" class="pull-right" href="/user/profile/messages/outbox">{{'Отправленные'|translate }}</a>
+    </h1>
+
+    <table ng-table="tableParams" class="table table-striped ng-table-responsive table-messages">
+        <tr ng-repeat="message in $data">
+            <td width="170" class="fullname">
+                <img src="http://placehold.it/50x50" class="avatar" />
+                <strong ng-if="isOutbox">{{message.to.fullname}}</strong>
+                <strong ng-if="!isOutbox">{{message.from.fullname}}</strong>
+                {{message.created_at | date:'dd.MM.yyyy HH:mm:ss'}}
+            </td>
+            <td class="message">
+                <div class="one-message">
+                    <a ng-href="/user/profile/messages/{{message.id}}">{{message.message}}</a>
+                    <!--a href="#" class="delete-message">
+                        <i class="icon-remove"></i>
+                    </a-->
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>

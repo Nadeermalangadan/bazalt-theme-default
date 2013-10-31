@@ -4,8 +4,8 @@ define('routes', [
 ], function (angular, app) {
     'use strict';
 
-    app.config(['$routeProvider', '$routeSegmentProvider', '$locationProvider', '$sceProvider', 'bzConfigProvider', '$httpProvider',
-            function ($routeProvider, $routeSegmentProvider, $locationProvider, $sceProvider, bzConfigProvider, $httpProvider) {
+    app.config(['$routeProvider', '$routeSegmentProvider', '$locationProvider', '$sceProvider', 'bzConfigProvider', '$httpProvider', 'bzLanguageProvider',
+            function ($routeProvider, $routeSegmentProvider, $locationProvider, $sceProvider, bzConfigProvider, $httpProvider, bzLanguageProvider) {
                 $locationProvider
                     .html5Mode(true)
                     .hashPrefix('!');
@@ -20,10 +20,17 @@ define('routes', [
                     return data;
                 };
                 $httpProvider.defaults.transformRequest.push(spinnerFunction);
+
+                bzLanguageProvider.language('ru_RU');
             }])
 
         .run(['$routeSegment', '$rootScope', function($routeSegment, $rootScope) {
             $rootScope.$routeSegment = $routeSegment;
+
+            // for site
+            $rootScope.banner = {
+                categoryId: null
+            };
         }])
 
         //register the interceptor as a service, intercepts ALL angular ajax http calls

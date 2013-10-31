@@ -1,5 +1,11 @@
 <div class="loginForm">
-    <h1>Активация</h1>
+    <h1>{{'Активация'|translate }}</h1>
 
-    Пожайлуйста, подождите минутку!
+    <div ng-if="loading">
+        {{'Пожайлуйста, подождите минутку'|translate }}!
+    </div>
+    <div ng-if="error" class="alert alert-danger">
+        {{'Во время активации пользователя произошла ошибка, обратитесь к администратору'|translate }}.
+    </div>
+    <div ng-if="errors" class="alert alert-danger" translate>Пользователь уже активирован или ключ активации устарел.</div>
 </div>

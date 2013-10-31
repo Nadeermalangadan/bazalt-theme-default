@@ -1886,8 +1886,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #5f2e68;
+  border-color: #1b0120;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1895,8 +1895,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  background-color: #45214c;
+  border-color: #000000;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -1918,8 +1918,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #5f2e68;
+  border-color: #1b0120;
 }
 .btn-warning {
   color: #ffffff;
@@ -5956,18 +5956,18 @@ td.visible-print {
   border-color: #e0e0e0;
 }
 .btn-primary {
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#428bca), to(#3071a9));
-  background-image: -webkit-linear-gradient(top, #428bca, 0%, #3071a9, 100%);
-  background-image: -moz-linear-gradient(top, #428bca 0%, #3071a9 100%);
-  background-image: linear-gradient(to bottom, #428bca 0%, #3071a9 100%);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#5f2e68), to(#3f1e45));
+  background-image: -webkit-linear-gradient(top, #5f2e68, 0%, #3f1e45, 100%);
+  background-image: -moz-linear-gradient(top, #5f2e68 0%, #3f1e45 100%);
+  background-image: linear-gradient(to bottom, #5f2e68 0%, #3f1e45 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3071a9', GradientType=0);
-  border-color: #2d6ca2;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5f2e68', endColorstr='#ff3f1e45', GradientType=0);
+  border-color: #381b3e;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #3071a9;
-  border-color: #2d6ca2;
+  background-color: #3f1e45;
+  border-color: #381b3e;
 }
 .btn-success {
   background-image: -webkit-gradient(linear, left 0%, left 100%, from(#5cb85c), to(#449d44));
@@ -6262,6 +6262,7 @@ td.visible-print {
 }
 .slide-reveal {
   position: relative;
+  padding: 0 15px;
 }
 .slide-reveal.ng-enter,
 .slide-reveal.ng-leave {
@@ -6279,9 +6280,11 @@ td.visible-print {
   opacity: 1;
 }
 .slide-reveal.ng-leave {
-  top: 0;
-  position: absolute;
+  left: 0;
   opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .slide-reveal.ng-leave-active {
   opacity: 0;
@@ -6350,6 +6353,162 @@ td.visible-print {
   margin-left: 0;
   opacity: 1;
 }
+.animation-switch-slide {
+  position: relative;
+  overflow: hidden;
+}
+.animation-switch-slide .ng-enter,
+.animation-switch-slide .ng-leave {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.animation-switch-slide .ng-enter {
+  top: -200px;
+}
+.animation-switch-slide .ng-enter.ng-enter-active {
+  top: 0;
+}
+.animation-switch-slide .ng-leave {
+  top: 0;
+}
+.animation-switch-slide .ng-leave.ng-leave-active {
+  top: 200px;
+}
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-400px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-400px);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px);
+  }
+  80% {
+    -moz-transform: translateX(-10px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-400px);
+  }
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px);
+  }
+  80% {
+    -o-transform: translateX(-10px);
+  }
+  100% {
+    -o-transform: translateX(0);
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(400px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(400px);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px);
+  }
+  80% {
+    -moz-transform: translateX(10px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(400px);
+  }
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px);
+  }
+  80% {
+    -o-transform: translateX(10px);
+  }
+  100% {
+    -o-transform: translateX(0);
+  }
+}
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .loading-container {
   position: relative;
 }
@@ -6379,6 +6538,435 @@ td.visible-print {
   top: 50%;
   margin-left: 30px;
   margin-top: -5px;
+}
+/*profile*/
+.user-profile .profile-sidebar .user-avatar {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.user-profile .profile-sidebar .user-avatar img {
+  display: block;
+  height: auto;
+  min-height: 175px;
+  width: 100%;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  padding: 10px;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar a {
+  color: #f2f2f2;
+  text-shadow: none;
+  margin-top: 0;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item {
+  background: transparent;
+  border: medium none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item input {
+  font-size: 36px;
+  height: 35px !important;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 98%;
+  z-index: 1;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item input:hover {
+  cursor: pointer;
+}
+.user-profile .profile-sidebar .user-avatar:hover .b-edit-avatar,
+.user-profile .profile-sidebar .user-avatar:focus .b-edit-avatar {
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  bottom: 0;
+}
+.user-profile .profile-sidebar .menu {
+  padding-top: 0px;
+}
+.user-profile .profile-sidebar .menu .nav {
+  border-bottom: 1px solid #dddddd;
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+.user-profile .profile-sidebar .menu .nav > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.user-profile .profile-sidebar .menu .nav > li > a {
+  margin-right: 2px;
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.user-profile .profile-sidebar .menu .nav > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+.user-profile .profile-sidebar .menu .nav > li.active > a,
+.user-profile .profile-sidebar .menu .nav > li.active > a:hover,
+.user-profile .profile-sidebar .menu .nav > li.active > a:focus {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > li {
+  float: none;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > li > a {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .user-profile .profile-sidebar .menu .nav.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > li > a {
+  border-bottom: 1px solid #dddddd;
+  margin-right: 0;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > .active > a {
+  border-bottom-color: #ffffff;
+}
+.user-profile .profile-sidebar .menu .nav [class^="icon-"],
+.user-profile .profile-sidebar .menu .nav [class*=" icon-"],
+.user-profile .profile-sidebar .menu .nav [class^="icon-"].icon-large,
+.user-profile .profile-sidebar .menu .nav [class*=" icon-"].icon-large {
+  line-height: .9em;
+}
+.user-profile .profile-sidebar .menu .nav > li {
+  float: none;
+}
+.user-profile .profile-sidebar .menu .nav > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.user-profile .profile-sidebar .menu .nav li {
+  margin-bottom: -3px;
+}
+.user-profile .profile-sidebar .menu .nav li a {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #1B0120;
+  background: transparent;
+  border: 1px solid #DDDDDD;
+  border-radius: 0;
+  text-shadow: none;
+  margin: 0;
+}
+.user-profile .profile-sidebar .menu .nav li a:hover,
+.user-profile .profile-sidebar .menu .nav li a:focus,
+.user-profile .profile-sidebar .menu .nav li a.active {
+  color: #fff;
+  background: #5F2E68;
+  border: 1px solid #DDDDDD;
+}
+.user-profile .profile-sidebar .menu .nav li a.b-gifts {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+}
+.user-profile .profile-sidebar .menu .nav li a.b-gifts:hover,
+.user-profile .profile-sidebar .menu .nav li a.b-gifts:focus {
+  background: #1B0120;
+}
+.user-profile .profile-sidebar .menu .nav li:first-child a {
+  border-radius: 0;
+}
+.user-profile .profile-sidebar .menu .nav li:last-child a {
+  border-radius: 0 0 4px 4px;
+}
+.user-profile .b-profile-content .profile {
+  position: relative;
+}
+.user-profile .b-profile-content h2 {
+  margin-bottom: 15px;
+}
+.user-profile .b-profile-content .main_info ul li span.col-lg-4 {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+.user-profile .b-profile-content .table-messages tr td {
+  padding: 2px;
+  vertical-align: top;
+}
+.user-profile .b-profile-content .table-messages tr td.fullname {
+  color: #999999;
+  font-size: 11px;
+  line-height: 16px;
+  vertical-align: middle;
+}
+.user-profile .b-profile-content .table-messages tr td.fullname img {
+  float: left;
+  padding: 0 5px 5px;
+  vertical-align: top;
+  width: 60px;
+}
+.user-profile .b-profile-content .table-messages tr td.fullname strong {
+  color: #1B0120;
+  font-size: 11px;
+  line-height: 16px;
+}
+.user-profile .b-profile-content .table-messages tr td.message .one-message {
+  position: relative;
+}
+.user-profile .b-profile-content .table-messages tr td.message .one-message .delete-message {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  visibility: hidden;
+}
+.user-profile .b-profile-content .table-messages tr td.message .one-message .delete-message:hover,
+.user-profile .b-profile-content .table-messages tr td.message .one-message .delete-message:focus {
+  text-decoration: none;
+}
+.user-profile .b-profile-content .table-messages tr:hover td,
+.user-profile .b-profile-content .table-messages tr:focus td {
+  background: #edf1f5;
+}
+.user-profile .b-profile-content .table-messages tr:hover td.message .one-message .delete-message,
+.user-profile .b-profile-content .table-messages tr:focus td.message .one-message .delete-message {
+  visibility: visible;
+}
+.user-profile .b-profile-content .table-messages.user-message tr td {
+  vertical-align: top;
+  background: transparent;
+}
+.user-profile .b-profile-content .table-messages.user-message tr td.date {
+  color: #1B0120;
+  font-size: 10px;
+  line-height: 16px;
+}
+.user-profile .b-profile-content .table-messages.user-message tr td.message {
+  color: #1B0120;
+  font-size: 11px;
+  line-height: 16px;
+}
+.user-profile .b-profile-content .table-messages.user-message tr td.message textarea {
+  margin-bottom: 10px;
+  resize: vertical;
+}
+.user-profile .b-profile-content .table-messages.user-message tr:hover td,
+.user-profile .b-profile-content .table-messages.user-message tr:focus td {
+  background: transparent;
+}
+.user-profile .b-profile-content table.table-posts tr th {
+  font-size: 11px;
+  line-height: 14px;
+  padding: 2px;
+}
+.user-profile .b-profile-content table.table-posts tr td {
+  font-size: 11px;
+  line-height: 14px;
+  padding: 5px 2px;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 0 5px 10px 0px;
+  overflow: hidden;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from {
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 11px;
+  line-height: 12px;
+  padding: 5px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  position: absolute;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  padding: 0;
+  line-height: 20px;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a .b-avatar {
+  display: inline-block;
+  margin-right: 2px;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a:hover,
+.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a:focus {
+  text-decoration: none;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from p {
+  margin: 0;
+}
+.user-profile .b-profile-content .user-gifts .one-gifts:hover .b-gifts-from,
+.user-profile .b-profile-content .user-gifts .one-gifts:focus .b-gifts-from {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  bottom: 0;
+}
+.b-gifts .gift-cell {
+  display: inline-block;
+  *display: inline;
+  height: 96px;
+  padding: 4px;
+  position: relative;
+  width: 96px;
+}
+.b-gifts .gift-cell .gift-img {
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+}
+.b-gifts .gift-cell .gift-price {
+  background: none repeat scroll 0 0 rgba(208, 216, 224, 0.8);
+  bottom: -4px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  right: 4px;
+}
+.b-gifts .gift-cell .gift-price span {
+  color: #5F2E68;
+}
+.b-gifts .gift-cell:hover,
+.b-gifts .gift-cell:focus {
+  text-decoration: none;
+}
+.b-gifts .gift-cell:hover .gift-img,
+.b-gifts .gift-cell:focus .gift-img {
+  opacity: 0.8;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+}
+.b-gifts .gift-cell:hover .gift-price,
+.b-gifts .gift-cell:focus .gift-price {
+  opacity: 1;
+}
+/*profile*/
+/*modal-dialog*/
+.modal-dialog {
+  width: 570px;
+}
+.modal-dialog .modal-content {
+  border-radius: 0;
+}
+.modal-dialog .modal-content .modal-header {
+  background: #5F2E68;
+  padding: 10px 15px;
+}
+.modal-dialog .modal-content .modal-header .close {
+  color: #fff;
+  opacity: 0.4;
+  text-shadow: none;
+}
+.modal-dialog .modal-content .modal-header .close:hover,
+.modal-dialog .modal-content .modal-header .close:focus {
+  opacity: 1;
+}
+.modal-dialog .modal-content .modal-header .modal-title {
+  color: #ffffff;
+}
+.modal-dialog .modal-content .modal-body {
+  padding: 15px;
+}
+.modal-dialog .modal-content .modal-body .user-money,
+.modal-dialog .modal-content .modal-body .send-gift {
+  color: #5F2E68;
+  margin-top: 0px;
+  line-height: 20px;
+}
+.modal-dialog .modal-content .modal-body .head-modal {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  margin: -15px -15px 15px;
+  padding: 10px 15px;
+  width: 548px;
+}
+.modal-dialog .modal-content .modal-body .nav.nav-tabs.gifts-type {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  margin: -15px -15px 10px;
+  padding: 0 15px 5px;
+}
+.modal-dialog .modal-content .modal-body .nav.nav-tabs.gifts-type li a {
+  border: none;
+  border-radius: 6px;
+  color: #5F2E68;
+  line-height: 20px;
+  margin-bottom: 5px;
+  margin-top: -5px;
+  padding: 5px 10px;
+}
+.modal-dialog .modal-content .modal-body .nav.nav-tabs.gifts-type li a:hover,
+.modal-dialog .modal-content .modal-body .nav.nav-tabs.gifts-type li a:focus {
+  color: #ffffff;
+  background: #5F2E68;
+  text-decoration: none;
+}
+.modal-dialog .modal-content .modal-body .nav.nav-tabs.gifts-type li.active a {
+  color: #ffffff;
+  background: #5F2E68;
+  text-decoration: none;
+}
+.modal-dialog .modal-content .modal-body .b-message textarea {
+  width: 100%;
+  min-height: 250px;
+}
+.modal-dialog .modal-content .modal-footer {
+  padding: 10px 15px;
+}
+/*modal-dialog*/.sidebar {
+  margin: 0;
+  padding: 20px 25px 20px 0;
+}
+.sidebar .block h1 {
+  font-size: 20px;
+  line-height: 22px;
+  margin: 5px 0;
+}
+.sidebar .block h1:after {
+  border: none;
+  margin: 0;
 }
 .add-comment {
   margin-top: 20px;
@@ -6471,197 +7059,444 @@ td.visible-print {
 .comments .comment .comment-body:hover > .panel-heading .b-rating {
   opacity: 1;
 }
-/*form registration*/
-.registration .control-group {
-  margin-bottom: 10px;
-}
-.registration .control-group .control-label {
+.ng-social,
+.ng-social-_widget {
   display: inline-block;
-  line-height: 30px;
-  margin-top: 0;
+  vertical-align: middle;
+  text-indent: 0;
   padding: 0;
-  vertical-align: top;
-  width: 200px;
+  border: 0;
+  word-spacing: 0;
+  font-size: 14px;
+  *zoom: 1;
+  *display: inline;
 }
-.registration .control-group .controls {
+.ng-social {
+  margin: -2px 0;
+  list-style: none;
+}
+.ng-social .ng-social-text {
+  display: none;
+}
+.ng-social .ng-social-icon {
+  margin: -1px;
+  width: 16px;
+  height: 16px;
+}
+.ng-social .ng-social-counter {
+  display: none;
+}
+.ng-social li {
   display: inline-block;
-  width: 250px;
+  margin: 0 1px;
+  *zoom: 1;
+  *display: inline;
 }
-.registration .control-group .controls .date {
-  max-width: 250px;
-}
-.registration .control-group .controls .date .input-group-addon {
-  cursor: pointer;
-}
-.registration .control-group .controls .date .input-group-addon:not(:first-child):not(:last-child) {
-  border-radius: 0 4px 4px 0;
-}
-.registration .control-group .controls .help-block {
-  color: #999999;
+.ng-social_vertical li {
   display: block;
-  margin-bottom: 0;
-  margin-top: 0;
 }
-/*form registration*/
-/*profile*/
-.user-profile .profile-sidebar .user-avatar {
-  text-align: center;
+.ng-social__widget {
+  display: inline-block;
   position: relative;
-  overflow: hidden;
+  margin: 3px;
+  white-space: nowrap;
 }
-.user-profile .profile-sidebar .user-avatar img {
-  width: 100%;
-  height: auto;
+.ng-social__widget:before {
+  display: none;
 }
-.user-profile .profile-sidebar .user-avatar .b-edit-avatar {
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  opacity: 0;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  left: 0;
-  right: 0;
-  bottom: -40px;
-  padding: 10px;
+.ng-social-button,
+.ng-social-counter,
+.ng-social-balloon,
+.ng-social-balloon__code {
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
 }
-.user-profile .profile-sidebar .user-avatar .b-edit-avatar a {
-  color: #f2f2f2;
-  text-shadow: none;
-  margin-top: 0;
+.ng-social-button,
+.ng-social-counter {
+  display: inline-block;
+  *display: inline;
+  *float: left;
+  margin: 0;
+  line-height: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  outline: 0;
 }
-.user-profile .profile-sidebar .user-avatar .b-edit-avatar a:hover {
-  color: #ffffff;
+.ng-social-button {
+  position: relative;
+  width: 16px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.ng-social-button:before {
+  content: "";
+  display: inline-block;
+}
+.ng-social-button:hover {
   text-decoration: none;
-  cursor: pointer;
 }
-.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item {
-  background: transparent;
-  border: medium none;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-}
-.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item input {
-  font-size: 36px;
-  height: 35px !important;
-  left: 0;
-  opacity: 0;
+.ng-social-icon {
   position: absolute;
-  right: 0;
-  top: -1px;
-  width: 98%;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
 }
-.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item input:hover {
-  cursor: pointer;
-}
-.user-profile .profile-sidebar .user-avatar:hover .b-edit-avatar {
-  -webkit-transition-duration: 0.1s;
-  -moz-transition-duration: 0.1s;
-  -ms-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  opacity: 1;
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  bottom: 0;
-}
-.user-profile .profile-sidebar .menu {
-  padding-top: 0px;
-}
-.user-profile .profile-sidebar .menu .nav {
-  border-bottom: 1px solid #dddddd;
-  border-bottom: none;
-  margin-bottom: 20px;
-}
-.user-profile .profile-sidebar .menu .nav > li {
-  float: left;
-  margin-bottom: -1px;
-}
-.user-profile .profile-sidebar .menu .nav > li > a {
-  margin-right: 2px;
-  line-height: 1.428571429;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-}
-.user-profile .profile-sidebar .menu .nav > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
-}
-.user-profile .profile-sidebar .menu .nav > li.active > a,
-.user-profile .profile-sidebar .menu .nav > li.active > a:hover,
-.user-profile .profile-sidebar .menu .nav > li.active > a:focus {
-  color: #555555;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-bottom-color: transparent;
+.ng-social-counter {
+  position: relative;
+  margin-left: -6px;
+  padding: 1px 6px;
+  font-weight: normal;
+  border-radius: 0 3px 3px 0;
+  color: #666;
   cursor: default;
 }
-.user-profile .profile-sidebar .menu .nav.nav-justified {
-  width: 100%;
-  border-bottom: 0;
+.ng-social-counter:before,
+.ng-social-counter:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
 }
-.user-profile .profile-sidebar .menu .nav.nav-justified > li {
-  float: none;
+.ng-social-counter:before {
+  top: 4px;
+  left: -6px;
+  border: 6px inset transparent;
+  border-left: 0;
+  border-right: 6px solid;
+  border-right-color: inherit;
+  opacity: .7;
 }
-.user-profile .profile-sidebar .menu .nav.nav-justified > li > a {
-  text-align: center;
+.ng-social-counter:after {
+  top: 5px;
+  left: -4px;
+  border: 5px inset transparent;
+  border-left: 0;
+  border-right: 5px solid;
 }
-@media (min-width: 768px) {
-  .user-profile .profile-sidebar .menu .nav.nav-justified > li {
-    display: table-cell;
-    width: 1%;
-  }
+.ng-social-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2px 4px;
+  font: 16px Verdana, Geneva, Tahoma, sans-serif;
+  color: #999;
+  cursor: pointer;
 }
-.user-profile .profile-sidebar .menu .nav.nav-justified > li > a {
-  border-bottom: 1px solid #dddddd;
-  margin-right: 0;
+.ng-social-close:hover {
+  color: #111;
 }
-.user-profile .profile-sidebar .menu .nav.nav-justified > .active > a {
-  border-bottom-color: #ffffff;
+.ng-social-close:before {
+  display: none;
 }
-.user-profile .profile-sidebar .menu .nav [class^="icon-"],
-.user-profile .profile-sidebar .menu .nav [class*=" icon-"],
-.user-profile .profile-sidebar .menu .nav [class^="icon-"].icon-large,
-.user-profile .profile-sidebar .menu .nav [class*=" icon-"].icon-large {
-  line-height: .9em;
+.ng-social_vertical {
+  margin: -6px -4px;
 }
-.user-profile .profile-sidebar .menu .nav > li {
-  float: none;
+.ng-social_vertical .ng-social-widget {
+  display: block;
+  margin: 6px 4px;
 }
-.user-profile .profile-sidebar .menu .nav > li + li {
-  margin-top: 2px;
-  margin-left: 0;
+.ng-social_single-w {
+  position: relative;
+  display: inline-block;
 }
-.user-profile .profile-sidebar .menu .nav li {
-  margin-bottom: -3px;
+.ng-social_single {
+  position: absolute;
+  display: none;
+  top: -6px;
+  left: -6px;
+  padding: 6px 6px 4px;
+  background: #fff;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 99999;
 }
-.user-profile .profile-sidebar .menu .nav li a {
-  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: #333;
+.ng-social_single .ng-social__widget:first-of-type {
+  margin-right: 14px;
+}
+/* Facebook */
+.ng-social-facebook .ng-social-button {
+  border: none;
   background: transparent;
-  border: 1px solid #DDDDDD;
-  border-radius: 0;
-  margin: 0;
 }
-.user-profile .profile-sidebar .menu .nav li a:hover,
-.user-profile .profile-sidebar .menu .nav li a:focus {
+.ng-social-facebook .ng-social-icon {
+  background-image: url('../img/social.png');
+  background-position: -16px -48px;
+}
+.ng-social-facebook:hover .ng-social-icon {
+  background-position: 0px -48px;
+}
+/* Twitter */
+.ng-social-twitter .ng-social-button {
+  border: none;
+  background: transparent;
+}
+.ng-social-twitter .ng-social-icon {
+  background-image: url('../img/social.png');
+  background-position: -16px -16px;
+}
+.ng-social-twitter:hover .ng-social-icon {
+  background-position: 0px -16px;
+}
+/* Google+ */
+.ng-social-google-plus .ng-social-button {
+  border: none;
+  background: transparent;
+}
+.ng-social-google-plus .ng-social-icon {
+  background-image: url('../img/social.png');
+  background-position: -16px -64px;
+}
+.ng-social-google-plus:hover .ng-social-icon {
+  background-position: 0px -64px;
+}
+/* Vkontakte */
+.ng-social-vk .ng-social-button {
+  border: none;
+  background: transparent;
+}
+.ng-social-vk .ng-social-icon {
+  background-image: url('../img/social.png');
+  background-position: -16px 0px;
+}
+.ng-social-vk:hover .ng-social-icon {
+  background-position: 0px 0px;
+}
+/* Odnoklassniki */
+.ng-social-odnoklassniki .ng-social-button {
+  border: none;
+  background: transparent;
+}
+.ng-social-odnoklassniki .ng-social-icon {
+  background-image: url('../img/social.png');
+  background-position: -16px -32px;
+}
+.ng-social-odnoklassniki:hover .ng-social-icon {
+  background-position: 0px -32px;
+}
+/* Galleria Classic Theme 2012-08-07 | https://raw.github.com/aino/galleria/master/LICENSE | (c) Aino */
+#galleria-loader {
+  height: 1px !important;
+}
+.galleria-container {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  margin-left: -15px;
+}
+.galleria-container img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.galleria-stage {
+  position: absolute;
+  top: 10px;
+  bottom: 60px;
+  left: 10px;
+  right: 10px;
+  overflow: hidden;
+}
+.galleria-thumbnails-container {
+  height: 50px;
+  bottom: 0;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  z-index: 2;
+}
+.galleria-carousel .galleria-thumbnails-list {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.galleria-thumbnails .galleria-image {
+  height: 40px;
+  width: 60px;
+  background: #000;
+  margin: 0 5px 0 0;
+  border: 1px solid #000;
+  float: left;
+  cursor: pointer;
+}
+.galleria-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-align: right;
   color: #fff;
-  background: #757575;
-  border: 1px solid #DDDDDD;
+  font: normal 11px/1 arial, sans-serif;
+  z-index: 1;
 }
-.user-profile .profile-sidebar .menu .nav li:first-child a {
-  border-radius: 0;
+.galleria-loader {
+  background: #000;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: none;
+  background: url(classic-loader.gif) no-repeat 2px 2px;
 }
-.user-profile .profile-sidebar .menu .nav li:last-child a {
-  border-radius: 0 0 4px 4px;
+.galleria-info {
+  width: 50%;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  position: absolute;
 }
-/*profile*//*!
+.galleria-info-text {
+  background-color: #000;
+  padding: 12px;
+  display: none;
+  /* IE7 */
+  zoom: 1;
+}
+.galleria-info-title {
+  font: bold 12px/1.1 arial, sans-serif;
+  margin: 0;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.galleria-info-description {
+  font: italic 12px/1.4 georgia, serif;
+  margin: 0;
+  color: #bbb;
+}
+.galleria-info-close {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-position: -753px -11px;
+  opacity: .5;
+  filter: alpha(opacity=50);
+  cursor: pointer;
+  display: none;
+}
+.notouch .galleria-info-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.touch .galleria-info-close:active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.galleria-info-link {
+  background-position: -669px -5px;
+  opacity: .7;
+  filter: alpha(opacity=70);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #000;
+}
+.notouch .galleria-info-link:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.touch .galleria-info-link:active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.galleria-image-nav {
+  position: absolute;
+  top: 50%;
+  margin-top: -62px;
+  width: 100%;
+  height: 62px;
+  left: 0;
+}
+.galleria-image-nav-left,
+.galleria-image-nav-right {
+  opacity: .3;
+  filter: alpha(opacity=30);
+  cursor: pointer;
+  width: 62px;
+  height: 124px;
+  position: absolute;
+  left: 10px;
+  z-index: 2;
+  background-position: 0 46px;
+}
+.galleria-image-nav-right {
+  left: auto;
+  right: 10px;
+  background-position: -254px 46px;
+  z-index: 2;
+}
+.notouch .galleria-image-nav-left:hover,
+.notouch .galleria-image-nav-right:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.touch .galleria-image-nav-left:active,
+.touch .galleria-image-nav-right:active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.galleria-thumb-nav-left,
+.galleria-thumb-nav-right {
+  cursor: pointer;
+  display: none;
+  background-position: -495px 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40px;
+  width: 23px;
+  z-index: 3;
+  opacity: .8;
+  filter: alpha(opacity=80);
+}
+.galleria-thumb-nav-right {
+  background-position: -578px 5px;
+  border-right: none;
+  right: 0;
+  left: auto;
+}
+.galleria-thumbnails-container .disabled {
+  opacity: .2;
+  filter: alpha(opacity=20);
+  cursor: default;
+}
+.notouch .galleria-thumb-nav-left:hover,
+.notouch .galleria-thumb-nav-right:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-color: #111;
+}
+.touch .galleria-thumb-nav-left:active,
+.touch .galleria-thumb-nav-right:active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-color: #111;
+}
+.notouch .galleria-thumbnails-container .disabled:hover {
+  opacity: .2;
+  filter: alpha(opacity=20);
+  background-color: transparent;
+}
+.galleria-carousel .galleria-thumb-nav-left,
+.galleria-carousel .galleria-thumb-nav-right {
+  display: block;
+}
+.galleria-thumb-nav-left,
+.galleria-thumb-nav-right,
+.galleria-info-link,
+.galleria-info-close,
+.galleria-image-nav-left,
+.galleria-image-nav-right {
+  background-image: url(classic-map.png);
+  background-repeat: no-repeat;
+}
+/*!
  *  Font Awesome 3.2.1
  *  the iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -8140,6 +8975,749 @@ a .icon-flip-vertical:before {
 .icon-renren:before {
   content: "\f18b";
 }
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Updated for Bootstrap 3.x by Ian Serlin
+ *
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.datepicker {
+  padding: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  direction: ltr;
+  /*.dow {
+      border-top: 1px solid #ddd !important;
+  }*/
+
+}
+.datepicker-inline {
+  width: 220px;
+}
+.datepicker.datepicker-rtl {
+  direction: rtl;
+}
+.datepicker.datepicker-rtl table tr td span {
+  float: right;
+}
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+}
+.datepicker-dropdown:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 6px;
+}
+.datepicker-dropdown:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #FFF;
+  position: absolute;
+  top: -6px;
+  left: 7px;
+}
+.datepicker > div {
+  display: none;
+}
+.datepicker.days div.datepicker-days {
+  display: block;
+}
+.datepicker.months div.datepicker-months {
+  display: block;
+}
+.datepicker.years div.datepicker-years {
+  display: block;
+}
+.datepicker table {
+  margin: 0;
+}
+.datepicker td,
+.datepicker th {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+}
+.table-striped .datepicker table tr td,
+.table-striped .datepicker table tr th {
+  background-color: transparent;
+}
+.datepicker table tr td.day:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+  color: #999999;
+}
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: default;
+}
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+  color: #fceedb;
+  background-color: #fcf9db;
+  border-color: #cccccc;
+  color: #000 !important;
+}
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today:hover:hover,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled:hover:hover,
+.datepicker table tr td.today:focus,
+.datepicker table tr td.today:hover:focus,
+.datepicker table tr td.today.disabled:focus,
+.datepicker table tr td.today.disabled:hover:focus,
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.today,
+.open .dropdown-toggle.datepicker table tr td.today:hover,
+.open .dropdown-toggle.datepicker table tr td.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
+  color: #fceedb;
+  background-color: #f9f3b5;
+  border-color: #adadad;
+}
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.today,
+.open .dropdown-toggle.datepicker table tr td.today:hover,
+.open .dropdown-toggle.datepicker table tr td.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today:hover.disabled,
+.datepicker table tr td.today.disabled.disabled,
+.datepicker table tr td.today.disabled:hover.disabled,
+.datepicker table tr td.today[disabled],
+.datepicker table tr td.today:hover[disabled],
+.datepicker table tr td.today.disabled[disabled],
+.datepicker table tr td.today.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.today,
+fieldset[disabled] .datepicker table tr td.today:hover,
+fieldset[disabled] .datepicker table tr td.today.disabled,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover.disabled:hover,
+.datepicker table tr td.today.disabled.disabled:hover,
+.datepicker table tr td.today.disabled:hover.disabled:hover,
+.datepicker table tr td.today[disabled]:hover,
+.datepicker table tr td.today:hover[disabled]:hover,
+.datepicker table tr td.today.disabled[disabled]:hover,
+.datepicker table tr td.today.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.today:hover,
+fieldset[disabled] .datepicker table tr td.today:hover:hover,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover:hover,
+.datepicker table tr td.today.disabled:focus,
+.datepicker table tr td.today:hover.disabled:focus,
+.datepicker table tr td.today.disabled.disabled:focus,
+.datepicker table tr td.today.disabled:hover.disabled:focus,
+.datepicker table tr td.today[disabled]:focus,
+.datepicker table tr td.today:hover[disabled]:focus,
+.datepicker table tr td.today.disabled[disabled]:focus,
+.datepicker table tr td.today.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.today:focus,
+fieldset[disabled] .datepicker table tr td.today:hover:focus,
+fieldset[disabled] .datepicker table tr td.today.disabled:focus,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover:focus,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today:hover.disabled:active,
+.datepicker table tr td.today.disabled.disabled:active,
+.datepicker table tr td.today.disabled:hover.disabled:active,
+.datepicker table tr td.today[disabled]:active,
+.datepicker table tr td.today:hover[disabled]:active,
+.datepicker table tr td.today.disabled[disabled]:active,
+.datepicker table tr td.today.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.today:active,
+fieldset[disabled] .datepicker table tr td.today:hover:active,
+fieldset[disabled] .datepicker table tr td.today.disabled:active,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today:hover.disabled.active,
+.datepicker table tr td.today.disabled.disabled.active,
+.datepicker table tr td.today.disabled:hover.disabled.active,
+.datepicker table tr td.today[disabled].active,
+.datepicker table tr td.today:hover[disabled].active,
+.datepicker table tr td.today.disabled[disabled].active,
+.datepicker table tr td.today.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.today.active,
+fieldset[disabled] .datepicker table tr td.today:hover.active,
+fieldset[disabled] .datepicker table tr td.today.disabled.active,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
+  background-color: #fcf9db;
+  border-color: #cccccc;
+}
+.datepicker table tr td.range,
+.datepicker table tr td.range:hover,
+.datepicker table tr td.range.disabled,
+.datepicker table tr td.range.disabled:hover {
+  background: #eeeeee;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.datepicker table tr td.range.today,
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled:hover {
+  color: #efce9e;
+  background-color: #efe99e;
+  border-color: #cccccc;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today:hover:hover,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover:hover,
+.datepicker table tr td.range.today:focus,
+.datepicker table tr td.range.today:hover:focus,
+.datepicker table tr td.range.today.disabled:focus,
+.datepicker table tr td.range.today.disabled:hover:focus,
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.range.today,
+.open .dropdown-toggle.datepicker table tr td.range.today:hover,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
+  color: #efce9e;
+  background-color: #e9e17b;
+  border-color: #adadad;
+}
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.range.today,
+.open .dropdown-toggle.datepicker table tr td.range.today:hover,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today:hover.disabled,
+.datepicker table tr td.range.today.disabled.disabled,
+.datepicker table tr td.range.today.disabled:hover.disabled,
+.datepicker table tr td.range.today[disabled],
+.datepicker table tr td.range.today:hover[disabled],
+.datepicker table tr td.range.today.disabled[disabled],
+.datepicker table tr td.range.today.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.range.today,
+fieldset[disabled] .datepicker table tr td.range.today:hover,
+fieldset[disabled] .datepicker table tr td.range.today.disabled,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today:hover.disabled:hover,
+.datepicker table tr td.range.today.disabled.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover.disabled:hover,
+.datepicker table tr td.range.today[disabled]:hover,
+.datepicker table tr td.range.today:hover[disabled]:hover,
+.datepicker table tr td.range.today.disabled[disabled]:hover,
+.datepicker table tr td.range.today.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.range.today:hover,
+fieldset[disabled] .datepicker table tr td.range.today:hover:hover,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:hover,
+.datepicker table tr td.range.today.disabled:focus,
+.datepicker table tr td.range.today:hover.disabled:focus,
+.datepicker table tr td.range.today.disabled.disabled:focus,
+.datepicker table tr td.range.today.disabled:hover.disabled:focus,
+.datepicker table tr td.range.today[disabled]:focus,
+.datepicker table tr td.range.today:hover[disabled]:focus,
+.datepicker table tr td.range.today.disabled[disabled]:focus,
+.datepicker table tr td.range.today.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.range.today:focus,
+fieldset[disabled] .datepicker table tr td.range.today:hover:focus,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:focus,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:focus,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today:hover.disabled:active,
+.datepicker table tr td.range.today.disabled.disabled:active,
+.datepicker table tr td.range.today.disabled:hover.disabled:active,
+.datepicker table tr td.range.today[disabled]:active,
+.datepicker table tr td.range.today:hover[disabled]:active,
+.datepicker table tr td.range.today.disabled[disabled]:active,
+.datepicker table tr td.range.today.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.range.today:active,
+fieldset[disabled] .datepicker table tr td.range.today:hover:active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today:hover.disabled.active,
+.datepicker table tr td.range.today.disabled.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.disabled.active,
+.datepicker table tr td.range.today[disabled].active,
+.datepicker table tr td.range.today:hover[disabled].active,
+.datepicker table tr td.range.today.disabled[disabled].active,
+.datepicker table tr td.range.today.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.range.today.active,
+fieldset[disabled] .datepicker table tr td.range.today:hover.active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled.active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
+  background-color: #efe99e;
+  border-color: #cccccc;
+}
+.datepicker table tr td.selected,
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected.disabled:hover {
+  color: #b3b3b3;
+  background-color: #808080;
+  border-color: #cccccc;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected:hover:hover,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.disabled:hover:hover,
+.datepicker table tr td.selected:focus,
+.datepicker table tr td.selected:hover:focus,
+.datepicker table tr td.selected.disabled:focus,
+.datepicker table tr td.selected.disabled:hover:focus,
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.selected,
+.open .dropdown-toggle.datepicker table tr td.selected:hover,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
+  color: #b3b3b3;
+  background-color: #6b6b6b;
+  border-color: #adadad;
+}
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.selected,
+.open .dropdown-toggle.datepicker table tr td.selected:hover,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected:hover.disabled,
+.datepicker table tr td.selected.disabled.disabled,
+.datepicker table tr td.selected.disabled:hover.disabled,
+.datepicker table tr td.selected[disabled],
+.datepicker table tr td.selected:hover[disabled],
+.datepicker table tr td.selected.disabled[disabled],
+.datepicker table tr td.selected.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.selected,
+fieldset[disabled] .datepicker table tr td.selected:hover,
+fieldset[disabled] .datepicker table tr td.selected.disabled,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected:hover.disabled:hover,
+.datepicker table tr td.selected.disabled.disabled:hover,
+.datepicker table tr td.selected.disabled:hover.disabled:hover,
+.datepicker table tr td.selected[disabled]:hover,
+.datepicker table tr td.selected:hover[disabled]:hover,
+.datepicker table tr td.selected.disabled[disabled]:hover,
+.datepicker table tr td.selected.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.selected:hover,
+fieldset[disabled] .datepicker table tr td.selected:hover:hover,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover:hover,
+.datepicker table tr td.selected.disabled:focus,
+.datepicker table tr td.selected:hover.disabled:focus,
+.datepicker table tr td.selected.disabled.disabled:focus,
+.datepicker table tr td.selected.disabled:hover.disabled:focus,
+.datepicker table tr td.selected[disabled]:focus,
+.datepicker table tr td.selected:hover[disabled]:focus,
+.datepicker table tr td.selected.disabled[disabled]:focus,
+.datepicker table tr td.selected.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.selected:focus,
+fieldset[disabled] .datepicker table tr td.selected:hover:focus,
+fieldset[disabled] .datepicker table tr td.selected.disabled:focus,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover:focus,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected:hover.disabled:active,
+.datepicker table tr td.selected.disabled.disabled:active,
+.datepicker table tr td.selected.disabled:hover.disabled:active,
+.datepicker table tr td.selected[disabled]:active,
+.datepicker table tr td.selected:hover[disabled]:active,
+.datepicker table tr td.selected.disabled[disabled]:active,
+.datepicker table tr td.selected.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.selected:active,
+fieldset[disabled] .datepicker table tr td.selected:hover:active,
+fieldset[disabled] .datepicker table tr td.selected.disabled:active,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected:hover.disabled.active,
+.datepicker table tr td.selected.disabled.disabled.active,
+.datepicker table tr td.selected.disabled:hover.disabled.active,
+.datepicker table tr td.selected[disabled].active,
+.datepicker table tr td.selected:hover[disabled].active,
+.datepicker table tr td.selected.disabled[disabled].active,
+.datepicker table tr td.selected.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.selected.active,
+fieldset[disabled] .datepicker table tr td.selected:hover.active,
+fieldset[disabled] .datepicker table tr td.selected.disabled.active,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
+  background-color: #808080;
+  border-color: #cccccc;
+}
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover {
+  color: #5f2e68;
+  background-color: #5f2e68;
+  border-color: #cccccc;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active:hover:focus,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+  color: #5f2e68;
+  background-color: #45214c;
+  border-color: #adadad;
+}
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active:hover.disabled,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active[disabled],
+.datepicker table tr td.active:hover[disabled],
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.active,
+fieldset[disabled] .datepicker table tr td.active:hover,
+fieldset[disabled] .datepicker table tr td.active.disabled,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover.disabled:hover,
+.datepicker table tr td.active.disabled.disabled:hover,
+.datepicker table tr td.active.disabled:hover.disabled:hover,
+.datepicker table tr td.active[disabled]:hover,
+.datepicker table tr td.active:hover[disabled]:hover,
+.datepicker table tr td.active.disabled[disabled]:hover,
+.datepicker table tr td.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.active:hover,
+fieldset[disabled] .datepicker table tr td.active:hover:hover,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active:hover.disabled:focus,
+.datepicker table tr td.active.disabled.disabled:focus,
+.datepicker table tr td.active.disabled:hover.disabled:focus,
+.datepicker table tr td.active[disabled]:focus,
+.datepicker table tr td.active:hover[disabled]:focus,
+.datepicker table tr td.active.disabled[disabled]:focus,
+.datepicker table tr td.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.active:focus,
+fieldset[disabled] .datepicker table tr td.active:hover:focus,
+fieldset[disabled] .datepicker table tr td.active.disabled:focus,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active:hover.disabled:active,
+.datepicker table tr td.active.disabled.disabled:active,
+.datepicker table tr td.active.disabled:hover.disabled:active,
+.datepicker table tr td.active[disabled]:active,
+.datepicker table tr td.active:hover[disabled]:active,
+.datepicker table tr td.active.disabled[disabled]:active,
+.datepicker table tr td.active.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.active:active,
+fieldset[disabled] .datepicker table tr td.active:hover:active,
+fieldset[disabled] .datepicker table tr td.active.disabled:active,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active:hover.disabled.active,
+.datepicker table tr td.active.disabled.disabled.active,
+.datepicker table tr td.active.disabled:hover.disabled.active,
+.datepicker table tr td.active[disabled].active,
+.datepicker table tr td.active:hover[disabled].active,
+.datepicker table tr td.active.disabled[disabled].active,
+.datepicker table tr td.active.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.active.active,
+fieldset[disabled] .datepicker table tr td.active:hover.active,
+fieldset[disabled] .datepicker table tr td.active.disabled.active,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
+  background-color: #5f2e68;
+  border-color: #cccccc;
+}
+.datepicker table tr td span {
+  display: block;
+  width: 23%;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.datepicker table tr td span:hover {
+  background: #eeeeee;
+}
+.datepicker table tr td span.disabled,
+.datepicker table tr td span.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: default;
+}
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+  color: #5f2e68;
+  background-color: #5f2e68;
+  border-color: #cccccc;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active:focus,
+.datepicker table tr td span.active:hover:focus,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td span.active,
+.open .dropdown-toggle.datepicker table tr td span.active:hover,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+  color: #5f2e68;
+  background-color: #45214c;
+  border-color: #adadad;
+}
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td span.active,
+.open .dropdown-toggle.datepicker table tr td span.active:hover,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active:hover.disabled,
+.datepicker table tr td span.active.disabled.disabled,
+.datepicker table tr td span.active.disabled:hover.disabled,
+.datepicker table tr td span.active[disabled],
+.datepicker table tr td span.active:hover[disabled],
+.datepicker table tr td span.active.disabled[disabled],
+.datepicker table tr td span.active.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td span.active,
+fieldset[disabled] .datepicker table tr td span.active:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover.disabled:hover,
+.datepicker table tr td span.active.disabled.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.disabled:hover,
+.datepicker table tr td span.active[disabled]:hover,
+.datepicker table tr td span.active:hover[disabled]:hover,
+.datepicker table tr td span.active.disabled[disabled]:hover,
+.datepicker table tr td span.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active:hover.disabled:focus,
+.datepicker table tr td span.active.disabled.disabled:focus,
+.datepicker table tr td span.active.disabled:hover.disabled:focus,
+.datepicker table tr td span.active[disabled]:focus,
+.datepicker table tr td span.active:hover[disabled]:focus,
+.datepicker table tr td span.active.disabled[disabled]:focus,
+.datepicker table tr td span.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td span.active:focus,
+fieldset[disabled] .datepicker table tr td span.active:hover:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active:hover.disabled:active,
+.datepicker table tr td span.active.disabled.disabled:active,
+.datepicker table tr td span.active.disabled:hover.disabled:active,
+.datepicker table tr td span.active[disabled]:active,
+.datepicker table tr td span.active:hover[disabled]:active,
+.datepicker table tr td span.active.disabled[disabled]:active,
+.datepicker table tr td span.active.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td span.active:active,
+fieldset[disabled] .datepicker table tr td span.active:hover:active,
+fieldset[disabled] .datepicker table tr td span.active.disabled:active,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active:hover.disabled.active,
+.datepicker table tr td span.active.disabled.disabled.active,
+.datepicker table tr td span.active.disabled:hover.disabled.active,
+.datepicker table tr td span.active[disabled].active,
+.datepicker table tr td span.active:hover[disabled].active,
+.datepicker table tr td span.active.disabled[disabled].active,
+.datepicker table tr td span.active.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td span.active.active,
+fieldset[disabled] .datepicker table tr td span.active:hover.active,
+fieldset[disabled] .datepicker table tr td span.active.disabled.active,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
+  background-color: #5f2e68;
+  border-color: #cccccc;
+}
+.datepicker table tr td span.old {
+  color: #999999;
+}
+.datepicker th.datepicker-switch {
+  width: 145px;
+}
+.datepicker thead tr:first-child th,
+.datepicker tfoot tr:first-child th {
+  cursor: pointer;
+}
+.datepicker thead tr:first-child th:hover,
+.datepicker tfoot tr:first-child th:hover {
+  background: #eeeeee;
+}
+.datepicker .cw {
+  font-size: 10px;
+  width: 12px;
+  padding: 0 2px 0 5px;
+  vertical-align: middle;
+}
+.datepicker thead tr:first-child th.cw {
+  cursor: default;
+  background-color: transparent;
+}
+.input-group.date .input-group-addon i {
+  display: block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+.input-daterange input {
+  text-align: center;
+}
+.input-daterange input:first-child {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+.input-daterange input:last-child {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+.input-daterange .input-group-addon {
+  display: inline-block;
+  width: auto;
+  min-width: 16px;
+  height: 1.428571429;
+  padding: 4px 5px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  text-shadow: 0 1px 0 #FFF;
+  vertical-align: middle;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  margin-left: -5px;
+  margin-right: -5px;
+}
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
 .fancybox-wrap,
 .fancybox-skin,
@@ -8289,7 +9867,11 @@ a .icon-flip-vertical:before {
 }
 /* Overlay helper */
 .fancybox-lock {
+  overflow: hidden !important;
   width: auto;
+}
+.fancybox-lock body {
+  overflow: hidden !important;
 }
 .fancybox-lock-test {
   overflow-y: hidden !important;
@@ -8309,7 +9891,8 @@ a .icon-flip-vertical:before {
   right: 0;
 }
 .fancybox-lock .fancybox-overlay {
-  overflow: hidden;
+  overflow: auto;
+  overflow-y: scroll;
 }
 /* Title helper */
 .fancybox-title {
@@ -8382,223 +9965,728 @@ a .icon-flip-vertical:before {
   
   }
 }
-/* Galleria Classic Theme 2012-08-07 | https://raw.github.com/aino/galleria/master/LICENSE | (c) Aino */
-#galleria-loader {
-  height: 1px !important;
+.flag {
+  width: 25px;
+  height: 15px;
+  display: inline-block;
+  background: url(../img/flags.png) no-repeat;
 }
-.galleria-container {
-  position: relative;
-  overflow: hidden;
-  background: #000;
+.flag.flag-ad {
+  background-position: -25px 0;
 }
-.galleria-container img {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
+.flag.flag-ae {
+  background-position: -50px 0;
 }
-.galleria-stage {
-  position: absolute;
-  top: 10px;
-  bottom: 60px;
-  left: 10px;
-  right: 10px;
-  overflow: hidden;
+.flag.flag-af {
+  background-position: -75px 0;
 }
-.galleria-thumbnails-container {
-  height: 50px;
-  bottom: 0;
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  z-index: 2;
+.flag.flag-ag {
+  background-position: -100px 0;
 }
-.galleria-carousel .galleria-thumbnails-list {
-  margin-left: 30px;
-  margin-right: 30px;
+.flag.flag-ai {
+  background-position: -125px 0;
 }
-.galleria-thumbnails .galleria-image {
-  height: 40px;
-  width: 60px;
-  background: #000;
-  margin: 0 5px 0 0;
-  border: 1px solid #000;
-  float: left;
-  cursor: pointer;
+.flag.flag-al {
+  background-position: -150px 0;
 }
-.galleria-counter {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  text-align: right;
-  color: #fff;
-  font: normal 11px/1 arial, sans-serif;
-  z-index: 1;
+.flag.flag-am {
+  background-position: -175px 0;
 }
-.galleria-loader {
-  background: #000;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
-  display: none;
-  background: url('../img/classic-loader.gif') no-repeat 2px 2px;
+.flag.flag-an {
+  background-position: -200px 0;
 }
-.galleria-info {
-  width: 50%;
-  top: 15px;
-  left: 15px;
-  z-index: 2;
-  position: absolute;
+.flag.flag-ao {
+  background-position: -225px 0;
 }
-.galleria-info-text {
-  background-color: #000;
-  padding: 12px;
-  display: none;
-  opacity: .7;
-  /* IE7 */
-  zoom: 1;
+.flag.flag-ar {
+  background-position: -250px 0;
 }
-.galleria-info-title {
-  font: bold 12px/1.1 arial, sans-serif;
-  margin: 0;
-  color: #fff;
-  margin-bottom: 7px;
+.flag.flag-as {
+  background-position: -275px 0;
 }
-.galleria-info-description {
-  font: italic 12px/1.4 georgia, serif;
-  margin: 0;
-  color: #bbb;
+.flag.flag-at {
+  background-position: -300px 0;
 }
-.galleria-info-close {
-  width: 9px;
-  height: 9px;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background-position: -753px -11px;
-  opacity: .5;
-  filter: alpha(opacity=50);
-  cursor: pointer;
-  display: none;
+.flag.flag-au {
+  background-position: -325px 0;
 }
-.notouch .galleria-info-close:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.flag.flag-aw {
+  background-position: -350px 0;
 }
-.touch .galleria-info-close:active {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.flag.flag-az {
+  background-position: -375px 0;
 }
-.galleria-info-link {
-  background-position: -669px -5px;
-  opacity: .7;
-  filter: alpha(opacity=70);
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  background-color: #000;
+.flag.flag-ba {
+  background-position: 0 -15px;
 }
-.notouch .galleria-info-link:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.flag.flag-bb {
+  background-position: -25px -15px;
 }
-.touch .galleria-info-link:active {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.flag.flag-bd {
+  background-position: -50px -15px;
 }
-.galleria-image-nav {
-  position: absolute;
-  top: 50%;
-  margin-top: -62px;
-  width: 100%;
-  height: 62px;
-  left: 0;
+.flag.flag-be {
+  background-position: -75px -15px;
 }
-.galleria-image-nav-left,
-.galleria-image-nav-right {
-  opacity: .3;
-  filter: alpha(opacity=30);
-  cursor: pointer;
-  width: 62px;
-  height: 124px;
-  position: absolute;
-  left: 10px;
-  z-index: 2;
-  background-position: 0 46px;
+.flag.flag-bf {
+  background-position: -100px -15px;
 }
-.galleria-image-nav-right {
-  left: auto;
-  right: 10px;
-  background-position: -254px 46px;
-  z-index: 2;
+.flag.flag-bg {
+  background-position: -125px -15px;
 }
-.notouch .galleria-image-nav-left:hover,
-.notouch .galleria-image-nav-right:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.flag.flag-bh {
+  background-position: -150px -15px;
 }
-.touch .galleria-image-nav-left:active,
-.touch .galleria-image-nav-right:active {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.flag.flag-bi {
+  background-position: -175px -15px;
 }
-.galleria-thumb-nav-left,
-.galleria-thumb-nav-right {
-  cursor: pointer;
-  display: none;
-  background-position: -495px 5px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 40px;
-  width: 23px;
-  z-index: 3;
-  opacity: .8;
-  filter: alpha(opacity=80);
+.flag.flag-bj {
+  background-position: -200px -15px;
 }
-.galleria-thumb-nav-right {
-  background-position: -578px 5px;
-  border-right: none;
-  right: 0;
-  left: auto;
+.flag.flag-bm {
+  background-position: -225px -15px;
 }
-.galleria-thumbnails-container .disabled {
-  opacity: .2;
-  filter: alpha(opacity=20);
-  cursor: default;
+.flag.flag-bn {
+  background-position: -250px -15px;
 }
-.notouch .galleria-thumb-nav-left:hover,
-.notouch .galleria-thumb-nav-right:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  background-color: #111;
+.flag.flag-bo {
+  background-position: -275px -15px;
 }
-.touch .galleria-thumb-nav-left:active,
-.touch .galleria-thumb-nav-right:active {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  background-color: #111;
+.flag.flag-br {
+  background-position: -300px -15px;
 }
-.notouch .galleria-thumbnails-container .disabled:hover {
-  opacity: .2;
-  filter: alpha(opacity=20);
-  background-color: transparent;
+.flag.flag-bs {
+  background-position: -325px -15px;
 }
-.galleria-carousel .galleria-thumb-nav-left,
-.galleria-carousel .galleria-thumb-nav-right {
-  display: block;
+.flag.flag-bt {
+  background-position: -350px -15px;
 }
-.galleria-thumb-nav-left,
-.galleria-thumb-nav-right,
-.galleria-info-link,
-.galleria-info-close,
-.galleria-image-nav-left,
-.galleria-image-nav-right {
-  background-image: url('../img/classic-map.png');
-  background-repeat: no-repeat;
+.flag.flag-bv {
+  background-position: -375px -15px;
+}
+.flag.flag-bw {
+  background-position: 0 -30px;
+}
+.flag.flag-by {
+  background-position: -25px -30px;
+}
+.flag.flag-bz {
+  background-position: -50px -30px;
+}
+.flag.flag-ca {
+  background-position: -75px -30px;
+}
+.flag.flag-cd {
+  background-position: -100px -30px;
+}
+.flag.flag-cf {
+  background-position: -125px -30px;
+}
+.flag.flag-cg {
+  background-position: -150px -30px;
+}
+.flag.flag-ch {
+  background-position: -175px -30px;
+}
+.flag.flag-ci {
+  background-position: -200px -30px;
+}
+.flag.flag-ck {
+  background-position: -225px -30px;
+}
+.flag.flag-cl {
+  background-position: -250px -30px;
+}
+.flag.flag-cm {
+  background-position: -275px -30px;
+}
+.flag.flag-cn {
+  background-position: -300px -30px;
+}
+.flag.flag-co {
+  background-position: -325px -30px;
+}
+.flag.flag-cr {
+  background-position: -350px -30px;
+}
+.flag.flag-cu {
+  background-position: -375px -30px;
+}
+.flag.flag-cv {
+  background-position: 0 -45px;
+}
+.flag.flag-cy {
+  background-position: -25px -45px;
+}
+.flag.flag-cz {
+  background-position: -50px -45px;
+}
+.flag.flag-de {
+  background-position: -75px -45px;
+}
+.flag.flag-dj {
+  background-position: -100px -45px;
+}
+.flag.flag-dk {
+  background-position: -125px -45px;
+}
+.flag.flag-dm {
+  background-position: -150px -45px;
+}
+.flag.flag-do {
+  background-position: -175px -45px;
+}
+.flag.flag-dz {
+  background-position: -200px -45px;
+}
+.flag.flag-ec {
+  background-position: -225px -45px;
+}
+.flag.flag-ee {
+  background-position: -250px -45px;
+}
+.flag.flag-eg {
+  background-position: -275px -45px;
+}
+.flag.flag-eh {
+  background-position: -300px -45px;
+}
+.flag.flag-er {
+  background-position: -325px -45px;
+}
+.flag.flag-es {
+  background-position: -350px -45px;
+}
+.flag.flag-et {
+  background-position: -375px -45px;
+}
+.flag.flag-eu {
+  background-position: 0 -60px;
+}
+.flag.flag-fi {
+  background-position: -25px -60px;
+}
+.flag.flag-fj {
+  background-position: -50px -60px;
+}
+.flag.flag-fk {
+  background-position: -75px -60px;
+}
+.flag.flag-fm {
+  background-position: -100px -60px;
+}
+.flag.flag-fo {
+  background-position: -125px -60px;
+}
+.flag.flag-fr {
+  background-position: -150px -60px;
+}
+.flag.flag-ga {
+  background-position: -175px -60px;
+}
+.flag.flag-gb {
+  background-position: -200px -60px;
+}
+.flag.flag-gd {
+  background-position: -225px -60px;
+}
+.flag.flag-ge {
+  background-position: -250px -60px;
+}
+.flag.flag-gf {
+  background-position: -275px -60px;
+}
+.flag.flag-gg {
+  background-position: -300px -60px;
+}
+.flag.flag-gh {
+  background-position: -325px -60px;
+}
+.flag.flag-gi {
+  background-position: -350px -60px;
+}
+.flag.flag-gl {
+  background-position: -375px -60px;
+}
+.flag.flag-gm {
+  background-position: 0 -75px;
+}
+.flag.flag-gn {
+  background-position: -25px -75px;
+}
+.flag.flag-gp {
+  background-position: -50px -75px;
+}
+.flag.flag-gq {
+  background-position: -75px -75px;
+}
+.flag.flag-gr {
+  background-position: -100px -75px;
+}
+.flag.flag-gs {
+  background-position: -125px -75px;
+}
+.flag.flag-gt {
+  background-position: -150px -75px;
+}
+.flag.flag-gu {
+  background-position: -175px -75px;
+}
+.flag.flag-gw {
+  background-position: -200px -75px;
+}
+.flag.flag-gy {
+  background-position: -225px -75px;
+}
+.flag.flag-hk {
+  background-position: -250px -75px;
+}
+.flag.flag-hm {
+  background-position: -275px -75px;
+}
+.flag.flag-hn {
+  background-position: -300px -75px;
+}
+.flag.flag-hr {
+  background-position: -325px -75px;
+}
+.flag.flag-ht {
+  background-position: -350px -75px;
+}
+.flag.flag-hu {
+  background-position: -375px -75px;
+}
+.flag.flag-id {
+  background-position: 0 -90px;
+}
+.flag.flag-ie {
+  background-position: -25px -90px;
+}
+.flag.flag-il {
+  background-position: -50px -90px;
+}
+.flag.flag-in {
+  background-position: -75px -90px;
+}
+.flag.flag-io {
+  background-position: -100px -90px;
+}
+.flag.flag-iq {
+  background-position: -125px -90px;
+}
+.flag.flag-ir {
+  background-position: -150px -90px;
+}
+.flag.flag-is {
+  background-position: -175px -90px;
+}
+.flag.flag-it {
+  background-position: -200px -90px;
+}
+.flag.flag-je {
+  background-position: -225px -90px;
+}
+.flag.flag-jm {
+  background-position: -250px -90px;
+}
+.flag.flag-jo {
+  background-position: -275px -90px;
+}
+.flag.flag-jp {
+  background-position: -300px -90px;
+}
+.flag.flag-ke {
+  background-position: -325px -90px;
+}
+.flag.flag-kg {
+  background-position: -350px -90px;
+}
+.flag.flag-kh {
+  background-position: -375px -90px;
+}
+.flag.flag-ki {
+  background-position: 0 -105px;
+}
+.flag.flag-km {
+  background-position: -25px -105px;
+}
+.flag.flag-kn {
+  background-position: -50px -105px;
+}
+.flag.flag-kp {
+  background-position: -75px -105px;
+}
+.flag.flag-kr {
+  background-position: -100px -105px;
+}
+.flag.flag-kw {
+  background-position: -125px -105px;
+}
+.flag.flag-ky {
+  background-position: -150px -105px;
+}
+.flag.flag-kz {
+  background-position: -175px -105px;
+}
+.flag.flag-la {
+  background-position: -200px -105px;
+}
+.flag.flag-lb {
+  background-position: -225px -105px;
+}
+.flag.flag-lc {
+  background-position: -250px -105px;
+}
+.flag.flag-li {
+  background-position: -275px -105px;
+}
+.flag.flag-lk {
+  background-position: -300px -105px;
+}
+.flag.flag-lr {
+  background-position: -325px -105px;
+}
+.flag.flag-ls {
+  background-position: -350px -105px;
+}
+.flag.flag-lt {
+  background-position: -375px -105px;
+}
+.flag.flag-lu {
+  background-position: 0 -120px;
+}
+.flag.flag-lv {
+  background-position: -25px -120px;
+}
+.flag.flag-ly {
+  background-position: -50px -120px;
+}
+.flag.flag-ma {
+  background-position: -75px -120px;
+}
+.flag.flag-mc {
+  background-position: -100px -120px;
+}
+.flag.flag-md {
+  background-position: -125px -120px;
+}
+.flag.flag-me {
+  background-position: -150px -120px;
+}
+.flag.flag-mg {
+  background-position: -175px -120px;
+}
+.flag.flag-mh {
+  background-position: -200px -120px;
+}
+.flag.flag-mk {
+  background-position: -225px -120px;
+}
+.flag.flag-ml {
+  background-position: -250px -120px;
+}
+.flag.flag-mm {
+  background-position: -275px -120px;
+}
+.flag.flag-mn {
+  background-position: -300px -120px;
+}
+.flag.flag-mo {
+  background-position: -325px -120px;
+}
+.flag.flag-mp {
+  background-position: -350px -120px;
+}
+.flag.flag-mq {
+  background-position: -375px -120px;
+}
+.flag.flag-mr {
+  background-position: 0 -135px;
+}
+.flag.flag-ms {
+  background-position: -25px -135px;
+}
+.flag.flag-mt {
+  background-position: -50px -135px;
+}
+.flag.flag-mu {
+  background-position: -75px -135px;
+}
+.flag.flag-mv {
+  background-position: -100px -135px;
+}
+.flag.flag-mw {
+  background-position: -125px -135px;
+}
+.flag.flag-mx {
+  background-position: -150px -135px;
+}
+.flag.flag-my {
+  background-position: -175px -135px;
+}
+.flag.flag-mz {
+  background-position: -200px -135px;
+}
+.flag.flag-na {
+  background-position: -225px -135px;
+}
+.flag.flag-nc {
+  background-position: -250px -135px;
+}
+.flag.flag-ne {
+  background-position: -275px -135px;
+}
+.flag.flag-nf {
+  background-position: -300px -135px;
+}
+.flag.flag-ng {
+  background-position: -325px -135px;
+}
+.flag.flag-ni {
+  background-position: -350px -135px;
+}
+.flag.flag-nl {
+  background-position: -375px -135px;
+}
+.flag.flag-no {
+  background-position: 0 -150px;
+}
+.flag.flag-np {
+  background-position: -25px -150px;
+}
+.flag.flag-nr {
+  background-position: -50px -150px;
+}
+.flag.flag-nu {
+  background-position: -75px -150px;
+}
+.flag.flag-nz {
+  background-position: -100px -150px;
+}
+.flag.flag-om {
+  background-position: -125px -150px;
+}
+.flag.flag-pa {
+  background-position: -150px -150px;
+}
+.flag.flag-pe {
+  background-position: -175px -150px;
+}
+.flag.flag-pf {
+  background-position: -200px -150px;
+}
+.flag.flag-pg {
+  background-position: -225px -150px;
+}
+.flag.flag-ph {
+  background-position: -250px -150px;
+}
+.flag.flag-pk {
+  background-position: -275px -150px;
+}
+.flag.flag-pl {
+  background-position: -300px -150px;
+}
+.flag.flag-pm {
+  background-position: -325px -150px;
+}
+.flag.flag-pn {
+  background-position: -350px -150px;
+}
+.flag.flag-pr {
+  background-position: -375px -150px;
+}
+.flag.flag-ps {
+  background-position: 0 -165px;
+}
+.flag.flag-pt {
+  background-position: -25px -165px;
+}
+.flag.flag-pw {
+  background-position: -50px -165px;
+}
+.flag.flag-py {
+  background-position: -75px -165px;
+}
+.flag.flag-qa {
+  background-position: -100px -165px;
+}
+.flag.flag-re {
+  background-position: -125px -165px;
+}
+.flag.flag-ro {
+  background-position: -150px -165px;
+}
+.flag.flag-rs {
+  background-position: -175px -165px;
+}
+.flag.flag-ru {
+  background-position: -200px -165px;
+}
+.flag.flag-rw {
+  background-position: -225px -165px;
+}
+.flag.flag-sa {
+  background-position: -250px -165px;
+}
+.flag.flag-sb {
+  background-position: -275px -165px;
+}
+.flag.flag-sc {
+  background-position: -300px -165px;
+}
+.flag.flag-sd {
+  background-position: -325px -165px;
+}
+.flag.flag-se {
+  background-position: -350px -165px;
+}
+.flag.flag-sg {
+  background-position: -375px -165px;
+}
+.flag.flag-sh {
+  background-position: 0 -180px;
+}
+.flag.flag-si {
+  background-position: -25px -180px;
+}
+.flag.flag-sk {
+  background-position: -50px -180px;
+}
+.flag.flag-sl {
+  background-position: -75px -180px;
+}
+.flag.flag-sm {
+  background-position: -100px -180px;
+}
+.flag.flag-sn {
+  background-position: -125px -180px;
+}
+.flag.flag-so {
+  background-position: -150px -180px;
+}
+.flag.flag-sr {
+  background-position: -175px -180px;
+}
+.flag.flag-st {
+  background-position: -200px -180px;
+}
+.flag.flag-sv {
+  background-position: -225px -180px;
+}
+.flag.flag-sy {
+  background-position: -250px -180px;
+}
+.flag.flag-sz {
+  background-position: -275px -180px;
+}
+.flag.flag-tc {
+  background-position: -300px -180px;
+}
+.flag.flag-td {
+  background-position: -325px -180px;
+}
+.flag.flag-tf {
+  background-position: -350px -180px;
+}
+.flag.flag-tg {
+  background-position: -375px -180px;
+}
+.flag.flag-th {
+  background-position: 0 -195px;
+}
+.flag.flag-tj {
+  background-position: -25px -195px;
+}
+.flag.flag-tk {
+  background-position: -50px -195px;
+}
+.flag.flag-tl {
+  background-position: -75px -195px;
+}
+.flag.flag-tm {
+  background-position: -100px -195px;
+}
+.flag.flag-tn {
+  background-position: -125px -195px;
+}
+.flag.flag-to {
+  background-position: -150px -195px;
+}
+.flag.flag-tr {
+  background-position: -175px -195px;
+}
+.flag.flag-tt {
+  background-position: -200px -195px;
+}
+.flag.flag-tv {
+  background-position: -225px -195px;
+}
+.flag.flag-tw {
+  background-position: -250px -195px;
+}
+.flag.flag-tz {
+  background-position: -275px -195px;
+}
+.flag.flag-ua {
+  background-position: -300px -195px;
+}
+.flag.flag-ug {
+  background-position: -325px -195px;
+}
+.flag.flag-um {
+  background-position: -350px -195px;
+}
+.flag.flag-us {
+  background-position: -375px -195px;
+}
+.flag.flag-uy {
+  background-position: 0 -210px;
+}
+.flag.flag-uz {
+  background-position: -25px -210px;
+}
+.flag.flag-va {
+  background-position: -50px -210px;
+}
+.flag.flag-vc {
+  background-position: -75px -210px;
+}
+.flag.flag-ve {
+  background-position: -100px -210px;
+}
+.flag.flag-vg {
+  background-position: -125px -210px;
+}
+.flag.flag-vi {
+  background-position: -150px -210px;
+}
+.flag.flag-vn {
+  background-position: -175px -210px;
+}
+.flag.flag-vu {
+  background-position: -200px -210px;
+}
+.flag.flag-wf {
+  background-position: -225px -210px;
+}
+.flag.flag-ws {
+  background-position: -250px -210px;
+}
+.flag.flag-ye {
+  background-position: -275px -210px;
+}
+.flag.flag-yt {
+  background-position: -300px -210px;
+}
+.flag.flag-za {
+  background-position: -325px -210px;
+}
+.flag.flag-zm {
+  background-position: -350px -210px;
+}
+.flag.flag-zw {
+  background-position: -375px -210px;
 }
 [ng\:cloak],
 [ng-cloak],
@@ -8615,9 +10703,57 @@ a .icon-flip-vertical:before {
   font-weight: normal;
   font-style: normal;
 }
+.img-uploader .list-group-item {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+.img-uploader .list-group-item input {
+  font-size: 36px;
+  height: 35px !important;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 98%;
+  z-index: 1;
+}
+.img-uploader .list-group-item input:hover,
+.img-uploader .list-group-item input:focus {
+  cursor: pointer;
+}
+.preloader.ng-cloak {
+  /*background-image: url('../img/preload.gif');
+  display: block !important;
+  width: 600px;
+  height: 100px;
+  margin-left: -300px;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  position: absolute;
+  background-position: center center;*/
+
+  background-image: url("../img/preload.gif");
+  background-position: center center;
+  display: block !important;
+  height: 103px;
+  left: 50%;
+  margin-left: -50px;
+  position: absolute;
+  top: 26px;
+  width: 100px;
+  z-index: 1;
+}
 html,
 body {
   height: 100%;
+}
+body {
+  background: url("../img/bg.png") repeat top left transparent;
+  margin: 0;
+  padding: 0;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -8625,15 +10761,19 @@ body {
   margin: 0 auto -30px;
   min-height: 100%;
   padding-bottom: 40px;
-  background: url(../img/bg.png) no-repeat scroll center;
-  background-size: auto 100%;
+  width: 960px;
 }
 #footer {
-  background: none repeat scroll 0 0 #F2F2F2;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  width: 960px;
   height: 40px;
   padding: 10px 0;
+  border-top: solid 1px rgba(250, 250, 250, 0.3);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.menu-footer .nav li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 12px;
 }
 /* Wrapper for page content to push down footer */
 /*outline*/
@@ -8648,8 +10788,299 @@ a:focus,
 a {
   outline: 0;
 }
-.navbar-inverse .navbar-brand {
-  color: white !important;
+.page-layout {
+  border-radius: 2px;
+  background-color: #fff;
+  max-width: 960px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(0, 0, 0, 0), 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+.page-layout .content {
+  padding: 0 15px;
+}
+.main-content {
+  position: relative;
+  overflow: hidden;
+}
+.main-content h4 {
+  margin-bottom: 0;
+}
+.top-bar {
+  height: 50px;
+  padding: 15px 5px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+.top-bar li {
+  color: white;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  font-size: 11px;
+}
+.top-bar .menu a {
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+}
+/*index-menu-large*/
+.index-menu-large {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -18px;
+}
+.index-menu-large ul li {
+  background-color: transparent;
+  background-image: url("../img/menu_model.png");
+  background-repeat: no-repeat;
+  height: 617px;
+  width: 239px;
+  margin-right: 1px;
+}
+.index-menu-large ul li a {
+  background: url("../img/menu_model_bg.png") repeat-x scroll left top transparent;
+  border-radius: 0 0 0 0;
+  bottom: 0;
+  color: #F5D8FC;
+  display: block;
+  padding: 20px 10px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.index-menu-large ul li a:hover,
+.index-menu-large ul li a.active {
+  text-decoration: underline;
+}
+.index-menu-large ul li:nth-child(2) {
+  background-position: -258px top;
+}
+.index-menu-large ul li:nth-child(3) {
+  background-position: -518px top;
+}
+.index-menu-large ul li:nth-child(4) {
+  background-position: right top;
+  margin-right: 0;
+  width: 240px;
+}
+/*index-menu-large*/
+header {
+  background: url("../img/logo-bg.png") no-repeat scroll center top #1b0120;
+  position: relative;
+  padding: 50px 0;
+  border-radius: 2px 2px 0 0;
+}
+header div.menu {
+  position: absolute;
+  top: 0;
+}
+header div.menu.menu-left {
+  left: 0;
+}
+header div.menu.menu-right {
+  right: 0;
+}
+header div.menu.menu-top-right {
+  right: 0;
+  top: 0;
+}
+header div.menu a {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 22px;
+  margin: 35px 20px;
+  display: inline-block;
+}
+a.logo {
+  background-image: url("../img/logo.png");
+  display: block;
+  height: 64px;
+  margin: 0px auto;
+  overflow: hidden;
+  position: relative;
+  text-indent: -100%;
+  width: 263px;
+}
+#eye {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 10;
+  margin-left: -30px;
+  width: 150px;
+  height: 80px;
+}
+div.banners.main-menu {
+  display: block;
+  height: 39px;
+  background: url("../img/border-top.png") repeat-x scroll right -13px #1b0120;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -ms-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  /*
+  &.category-mainpage {
+    display: block;
+    background-color: #fdb4b6;
+    .banner {
+      background: url('../img/banner.png');
+    }
+  }*/
+
+}
+div.banners.main-menu.category-9 {
+  background-color: #fdb4b6;
+}
+div.banners.main-menu.category-10 {
+  background-color: #563d7c;
+}
+div.banners.main-menu.category-11 {
+  background-color: #563d7c;
+}
+div.banners.main-menu.category-13 {
+  background-color: #563d7c;
+}
+div.banners.main-menu.category-14 {
+  background-color: #3592dd;
+}
+div.banners.main-menu.category-15 {
+  background-color: #000;
+}
+div.banners.main-menu.category-15 .back {
+  text-shadow: 0 0 15px #999;
+}
+div.banners.main-menu.category-15 .title {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+div.banners.main-menu ul li {
+  float: left;
+  list-style: none outside none;
+  margin: 1px 0 0;
+  padding: 9px 15px;
+}
+div.banners.main-menu ul li.active,
+div.banners.main-menu ul li:hover,
+div.banners.main-menu ul li:focus {
+  background: #fdfbfc;
+}
+div.banners.main-menu ul li.active a,
+div.banners.main-menu ul li:hover a,
+div.banners.main-menu ul li:focus a {
+  color: #1B0120;
+  text-decoration: none;
+  background: transparent;
+}
+div.banners.main-menu ul li a {
+  text-transform: uppercase;
+  color: #fdfbfc;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+}
+div.banner {
+  position: relative;
+  height: 130px;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+}
+div.banner .back {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  display: inline-block;
+  line-height: 133px;
+  font-size: 186px;
+  opacity: .2;
+  color: transparent;
+  text-shadow: 0 0 20px #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+}
+div.banner .title {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  display: block;
+  line-height: 100%;
+  padding: 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.carousel.widget {
+  background: #FFFFFF;
+  border: 1px solid #d3d3d3;
+  display: block;
+  min-height: 140px;
+}
+.carousel.widget .carousel .carousel-inner .item img {
+  width: 100%;
+}
+.carousel.widget .carousel .carousel-control {
+  padding: 0;
+  text-indent: -1000px;
+}
+.slider.widget {
+  background: transparent;
+  border: 1px solid #d3d3d3;
+  position: relative;
+  width: 224px;
+  height: 300px;
+  overflow: hidden;
+  display: block;
+  margin: 10px 0;
+}
+.slider.widget .slider {
+  width: 224px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slider.widget .slider img {
+  width: 240px;
+  height: 300px;
+}
+.slider .slider-nav {
+  position: absolute;
+  z-index: 1999;
+  bottom: 0;
+  right: 5px;
+}
+.slider .slider-nav a {
+  background: #DF0914;
+  border-radius: 10px 10px 10px 10px;
+  display: inline-block;
+  height: 8px;
+  line-height: 10px;
+  text-indent: -10000px;
+  width: 8px;
+  margin: 0 2px;
+}
+.slider .slider-nav a.true {
+  background: darkblue;
+}
+.slider .slider-nav a.true:hover,
+.slider .slider-nav a.true:focus {
+  background: darkblue;
+}
+.slider .slider-nav a:hover,
+.slider .slider-nav a:focus {
+  background: #808080;
+}
+.slider .slider-nav .b-add {
+  display: inline-block;
+  margin: 0 2px 0 -2px;
+}
+.slider .slider-nav .b-add a {
+  margin: 0 -1px;
+}
+hr {
+  margin-left: -23px;
+  border-top: 3px solid #df0914;
 }
 body {
   margin: 0;
@@ -8657,106 +11088,44 @@ body {
   font-size: 13px;
   line-height: 20px;
   color: #333333;
-  background: url("../img/main-bg.gif") repeat top left transparent;
-  padding-top: 60px;
-  /*height top navigation*/
-
+}
+body .btn-link {
+  color: #5F2E68;
+}
+body .btn-link:hover,
+body .btn-link:focus {
+  color: #5F2E68;
+  text-decoration: underline;
 }
 body a {
+  color: #5F2E68;
   cursor: pointer;
 }
 body a:hover,
 body a:focus {
+  color: #5F2E68;
   text-decoration: underline;
 }
 body a.navbar-brand {
+  color: #333333;
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: normal;
   text-transform: uppercase;
-  padding: 10px 15px;
-}
-body a.navbar-brand span {
-  font-size: 20px;
-}
-body .navbar {
-  min-height: 40px;
-}
-body .navbar .nav {
-  margin: 7.5px -15px;
-}
-body .navbar .nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
-}
-@media (max-width: 767px) {
-  body .navbar .nav .open .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-  body .navbar .nav .open .dropdown-menu > li > a,
-  body .navbar .nav .open .dropdown-menu .dropdown-header {
-    padding: 5px 15px 5px 25px;
-  }
-  body .navbar .nav .open .dropdown-menu > li > a {
-    line-height: 20px;
-  }
-  body .navbar .nav .open .dropdown-menu > li > a:hover,
-  body .navbar .nav .open .dropdown-menu > li > a:focus {
-    background-image: none;
-  }
-}
-@media (min-width: 768px) {
-  body .navbar .nav {
-    float: left;
-    margin: 0;
-  }
-  body .navbar .nav > li {
-    float: left;
-  }
-  body .navbar .nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
 }
 body .navbar .nav li a {
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
   font-size: 17px;
-  padding: 10px 15px;
-  color: #ddd;
 }
 body .navbar .nav li a.dropdown-toggle .caret {
-  border-bottom-color: #333;
-  border-top-color: #333;
+  border-bottom-color: #777777;
+  border-top-color: #777777;
   margin-top: 6px;
 }
 body .navbar .nav li a.dropdown-toggle:hover .caret,
 body .navbar .nav li a.dropdown-toggle:focus .caret {
-  border-bottom-color: #000;
-  border-top-color: #000;
-}
-body .navbar .nav li a:hover,
-body .navbar .nav li a:focus {
-  background-color: #333;
-  color: #fff;
-  text-shadow: none;
-}
-body .navbar .nav li.open a {
-  background-color: #333;
-  color: #fff;
-  text-shadow: none;
-}
-body .navbar .nav li.open a:hover,
-body .navbar .nav li.open a:focus {
-  background-color: #333;
-  color: #fff;
-  text-shadow: none;
+  border-bottom-color: #333;
+  border-top-color: #333;
 }
 body .nav-tabs .open .dropdown-toggle,
 body .nav-pills .open .dropdown-toggle,
@@ -8797,20 +11166,41 @@ h3 {
   margin: 0;
   padding: 0;
 }
-h2,
-.h2 {
-  font-size: 28px;
-}
 h1 {
-  border-bottom: 1px solid #DDDDDD;
   padding: 0 0 5px 0;
   font-size: 30px;
   line-height: 40px;
   display: block;
-  color: #333;
+  color: #1B0120;
   margin: 10px 0;
   font-weight: bold;
   text-transform: uppercase;
+}
+h1 p {
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 12px;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  text-transform: none;
+  top: -8px;
+}
+h1 p .help-block {
+  text-align: right;
+  text-transform: none;
+}
+h1:after {
+  display: block;
+  margin-top: 5px;
+  border-bottom: 3px solid #1B0120;
+  width: 400px;
+  margin-left: -15px;
+  content: " ";
+}
+h1 a {
+  color: #5F2E68;
 }
 h3 {
   color: #0088CC;
@@ -8822,7 +11212,7 @@ h3 {
 }
 h3 a:hover,
 h3 a:focus {
-  color: #005580;
+  color: #1b0120;
   text-decoration: underline;
 }
 .label.label-info {
@@ -8835,25 +11225,31 @@ h3 a:focus {
 .table tbody > tr > td,
 .table tfoot > tr > td {
   border: medium none;
+  padding: 0;
+}
+.page-images,
+.images {
+  margin: 0;
+  padding: 0;
 }
 .page-images li,
 .images li {
   display: inline-block;
   *display: inline;
   float: none;
-  margin: 0 10px 20px;
+  margin: 10px 5px 10px 0px;
   vertical-align: top;
 }
 .page-images li a.thumbnail,
 .images li a.thumbnail {
   border-radius: 0 0 0 0;
   display: block;
-  padding: 10px;
+  padding: 0px;
   position: relative;
 }
 .page-images li + li,
 .images li + li {
-  margin-left: 10px;
+  margin-left: 0;
 }
 .summary {
   margin-top: 10px;
@@ -8861,149 +11257,195 @@ h3 a:focus {
 .feed-item {
   margin-bottom: 20px;
 }
-.feed-item .body {
+.bz-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  margin: -30px auto;
+  display: block;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 50px;
+  z-index: 2;
+  font-size: 5pt;
+  display: none;
+  color: white;
+  background-color: #5F2E68;
+  border: solid 5px #f0f0f0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+.bz-to-top:before {
+  content: '\25b2';
+}
+.bz-to-top:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #1b0120;
+}
+.ads-container {
+  background: transparent;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+.ads-container-left {
+  margin-left: -100%;
+}
+.ads-container-right {
+  margin-left: 960px;
+  width: 180px;
+}
+.ads-container .ads .ad {
+  background: #fff;
+  display: block;
+  width: 180px;
+  font-size: 10px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  opacity: .5;
+}
+.ads-container .ads .ad:hover {
+  opacity: 1;
+}
+.ads-container.ads-container-left .ad {
+  float: right;
+  clear: both;
+  -webkit-animation: bounceInRight 800ms ease-out;
+  -moz-animation: bounceInRight 800ms ease-out;
+  -o-animation: bounceInRight 800ms ease-out;
+  animation: bounceInRight 800ms ease-out;
+}
+.ads-container.ads-container-right .ad {
+  -webkit-animation: bounceInLeft 800ms ease-out;
+  -moz-animation: bounceInLeft 800ms ease-out;
+  -o-animation: bounceInLeft 800ms ease-out;
+  animation: bounceInLeft 800ms ease-out;
+}
+.profile-sidebar {
+  margin-top: 0;
+  padding-right: 0;
+}
+h1.type-message a {
+  color: #5F2E68;
+}
+h1.type-message a.active {
+  color: #1b0120;
+  text-decoration: underline;
+}
+.galleria-container {
+  margin-left: -7px;
+}
+/*loginForm*/
+.loginForm form .control-group .controls {
   margin-bottom: 10px;
 }
-.sidebar {
-  padding-top: 25px;
+/*loginForm*/
+/*galleria*/
+.galleria-thumb-nav-left,
+.galleria-thumb-nav-right,
+.galleria-info-link,
+.galleria-info-close,
+.galleria-image-nav-left,
+.galleria-image-nav-right {
+  background-image: url("../img/classic-map.png");
 }
-.sidebar .nav {
-  border-bottom: 1px solid #dddddd;
-  border-bottom: none;
-  margin-bottom: 20px;
+/*galleria*/
+img {
+  max-width: 100%;
 }
-.sidebar .nav > li {
-  float: left;
-  margin-bottom: -1px;
+/*main page*/
+.main-feed {
+  display: block;
 }
-.sidebar .nav > li > a {
-  margin-right: 2px;
-  line-height: 1.428571429;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
+.main-feed .table {
+  display: block;
 }
-.sidebar .nav > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
+.main-feed .table tbody {
+  display: block;
 }
-.sidebar .nav > li.active > a,
-.sidebar .nav > li.active > a:hover,
-.sidebar .nav > li.active > a:focus {
-  color: #555555;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-bottom-color: transparent;
-  cursor: default;
+.main-feed .table tbody tr {
+  display: block;
 }
-.sidebar .nav.nav-justified {
+.main-feed .table tbody tr td {
+  display: block;
+}
+.main-feed .table tbody tr td .feed-item {
+  display: block;
+}
+/*main page*/
+.btn-primary {
+  background-color: #5F2E68;
+  border-color: #1B0120;
+  color: #FFFFFF;
+}
+.btn-link {
+  color: #5F2E68;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: #5F2E68;
+}
+/*LoginPage*/
+.loginForm {
+  background: url("../img/main-img.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+  height: 471px;
+  margin: 0px auto 40px;
+  padding-bottom: 0;
   width: 100%;
-  border-bottom: 0;
 }
-.sidebar .nav.nav-justified > li {
-  float: none;
+.loginForm form {
+  padding-left: 155px;
+  padding-top: 254px;
+  width: 680px;
 }
-.sidebar .nav.nav-justified > li > a {
-  text-align: center;
+/*LoginPage*/
+/*main-page index*/
+.main-page.index {
+  padding-bottom: 20px;
 }
-@media (min-width: 768px) {
-  .sidebar .nav.nav-justified > li {
-    display: table-cell;
-    width: 1%;
-  }
+.main-page.index h1:after {
+  border: none;
+  margin: 0;
 }
-.sidebar .nav.nav-justified > li > a {
-  border-bottom: 1px solid #dddddd;
-  margin-right: 0;
+/*main-page index*/
+/*all-user*/
+.all-user table tr td {
+  padding: 10px;
 }
-.sidebar .nav.nav-justified > .active > a {
-  border-bottom-color: #ffffff;
-}
-.sidebar .nav [class^="icon-"],
-.sidebar .nav [class*=" icon-"],
-.sidebar .nav [class^="icon-"].icon-large,
-.sidebar .nav [class*=" icon-"].icon-large {
-  line-height: .9em;
-}
-.sidebar .nav > li {
-  float: none;
-}
-.sidebar .nav > li + li {
-  margin-top: 2px;
-  margin-left: 0;
-}
-.sidebar .nav li {
-  margin-bottom: -3px;
-}
-.sidebar .nav li a {
-  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: #333;
-  background: transparent;
-  border: 1px solid #DDDDDD;
-  border-radius: 0;
-}
-.sidebar .nav li a:hover,
-.sidebar .nav li a:focus {
-  color: #fff;
-  background: #757575;
-  border: 1px solid #DDDDDD;
-}
-.sidebar .nav li:first-child a {
-  border-radius: 4px 4px 0 0;
-}
-.sidebar .nav li:last-child a {
-  border-radius: 0 0 4px 4px;
-}
-.main-container {
+.all-user table tr td .one-user {
   position: relative;
 }
-/*b-news*/
-.b-news h2 {
-  margin-bottom: 20px;
+.all-user table tr td .one-user h3 {
+  margin-bottom: 10px;
+  color: #563d7c;
 }
-.b-news .one-news {
-  border-bottom: 1px solid #DDDDDD;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
+.all-user table tr td .one-user h3 span {
+  color: #1B0120;
 }
-.b-news .one-news article {
-  margin-bottom: 5px;
+.all-user table tr td .one-user .send-message {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
-.b-news .one-news .read-more {
-  text-align: right;
+.all-user table tr td .one-user .user-photo {
+  bottom: 5px;
+  color: #FF6600;
+  left: 157px;
+  position: absolute;
 }
-/*b-news*/
-/*pagination */
-.pagination .btn-group {
-  border: 1px solid #DDDDDD;
-  border-radius: 4px 4px 4px 4px;
-  margin: 0;
-  padding: 0;
+/*all-user*/
+.b-language {
+  margin-left: -60px;
+  position: absolute;
+  top: 22px;
 }
-.pagination .btn-group .btn {
-  border: medium none;
-  color: #999999;
-  margin: 0;
-  outline: medium none;
+.b-language a.flag {
+  text-indent: -10000px;
 }
-.pagination .btn-group .btn.active {
-  color: #333333;
-}
-.pagination .btn-group .btn.active:hover,
-.pagination .btn-group .btn.active:focus {
-  color: #333;
-}
-.pagination .btn-group .btn:hover,
-.pagination .btn-group .btn:focus {
-  color: #777;
-}
-/*pagination */
-/*breadcrumb*/
-.breadcrumb {
-  background: #f2f2f2;
-}
-/*breadcrumb*/
-/*page*/
-.default .body h3 {
-  margin: 15px 0 5px;
-}
-/*page*/

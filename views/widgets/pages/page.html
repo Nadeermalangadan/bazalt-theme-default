@@ -1,6 +1,10 @@
-<div bz-loading-container="widget.$loading" class="widget page default">
+<div bz-loading-container="widget.$loading">
 
-    <h1>{{ page.title.en }}</h1>
+    <h1>
+        <a href="{{page.url}}" class="ntn btn-link">
+            {{ page.title.en }}
+        </a>
+    </h1>
 
     <div ng-bind-html="page.body.en"></div>
 

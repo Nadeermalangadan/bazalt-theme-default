@@ -1,30 +1,177 @@
 <div class="main_info">
-    <h2>{{ user.firstname }} {{ user.secondname }} <a href="/user/profile/edit"><span class="icon-pencil"></span></a></h2>
-
-    <form class="registration form-horizontal">
-        <div ng-show="user.firstname" class="control-group">
-            <label class="control-label">Имя</label>
-            <div class="controls">
-                <input type="text" disabled value="{{ user.firstname }}">
-            </div>
-        </div>
-        <div ng-show="user.secondname" class="control-group">
-            <label class="control-label">Фамилия</label>
-            <div class="controls">
-                <input type="text" disabled value="{{ user.secondname }}">
-            </div>
-        </div>
-        <div ng-show="user.birth_date" class="control-group">
-            <label class="control-label">Дата рождения</label>
-            <div class="controls">
-                <input type="text" disabled value="{{ user.birth_date }}">
-            </div>
-        </div>
-        <div ng-show="user.email" class="control-group">
-            <label class="control-label">E-mail</label>
-            <div class="controls">
-                <input type="text" disabled value="{{ user.email }}">
-            </div>
-        </div>
-    </form>
+    <h1>
+        {{ user.fullname }}
+        <p>
+            <span class="help-block" ng-show="user.is_moderated">{{'Анкета прошла модерацию'|translate }}</span>
+            <span class="help-block" ng-hide="user.is_moderated">{{'Анкета не прошла модерацию'|translate }}</span>
+        </p>
+    </h1>
+    <ul class="list-unstyled">
+        <li class="row" ng-show="user.firstname">
+            <span class="col-lg-4">{{'Имя'|translate }}:</span>
+            <span class="col-lg-8">{{ user.firstname }}</span>
+        </li>
+        <li class="row" ng-show="user.secondname">
+            <span class="col-lg-4">{{'Фамилия'|translate }}:</span>
+            <span class="col-lg-8">{{ user.secondname }}</span>
+        </li>
+        <li class="row" ng-show="user.birth_date">
+            <span class="col-lg-4">{{'Дата рождения'|translate }}:</span>
+            <span class="col-lg-8">{{ user.birth_date }}</span>
+        </li>
+        <li class="row" ng-show="user.height">
+            <span class="col-lg-4">{{'Рост'|translate }}:</span>
+            <span class="col-lg-8">{{ user.height }}</span>
+        </li>
+        <li class="row" ng-show="user.weight">
+            <span class="col-lg-4">{{'Вес'|translate }}:</span>
+            <span class="col-lg-8">{{ user.weight }}</span>
+        </li>
+        <li class="row" ng-show="user.hair">
+            <span class="col-lg-4">{{'Цвет волос'|translate }}:</span>
+            <span class="col-lg-8">{{ user.hair }}</span>
+        </li>
+        <li class="row" ng-show="user.eyes">
+            <span class="col-lg-4">{{'Цвет глаз'|translate }}:</span>
+            <span class="col-lg-8">{{ user.eyes }}</span>
+        </li>
+        <li class="row" ng-show="user.bodytype">
+            <span class="col-lg-4">{{'Тип телосложения'|translate }}:</span>
+            <span class="col-lg-8">{{ user.bodytype }}</span>
+        </li>
+        <li class="row" ng-show="user.education">
+            <span class="col-lg-4">{{'Образование'|translate }}:</span>
+            <span class="col-lg-8">{{ user.education }}</span>
+        </li>
+        <li class="row" ng-show="user.institution">
+            <span class="col-lg-4">{{'Название учебного заведения'|translate }}:</span>
+            <span class="col-lg-8">{{ user.institution }}</span>
+        </li>
+        <li class="row" ng-show="user.educationyear">
+            <span class="col-lg-4">{{'Год окончания учебного заведения'|translate }}:</span>
+            <span class="col-lg-8">{{ user.educationyear }}</span>
+        </li>
+        <li class="row" ng-show="user.profession">
+            <span class="col-lg-4">{{'Професия'|translate }}:</span>
+            <span class="col-lg-8">{{ user.profession }}</span>
+        </li>
+        <li class="row" ng-show="user.professionnow">
+            <span class="col-lg-4">{{'Кем и где вы работаете в настоящее время'|translate }}:</span>
+            <span class="col-lg-8">{{ user.professionnow }}</span>
+        </li>
+        <li class="row" ng-show="user.maritalstatus">
+            <span class="col-lg-4">{{'Семейное положение'|translate }}:</span>
+            <span class="col-lg-8">{{ user.maritalstatus }}</span>
+        </li>
+        <li class="row" ng-show="user.children">
+            <span class="col-lg-4">{{'Дети'|translate }}:</span>
+            <span class="col-lg-8">{{ user.children }}</span>
+        </li>
+        <li class="row" ng-show="user.childrenmore">
+            <span class="col-lg-4">{{'Планируете ли детей в будущем'|translate }}:</span>
+            <span class="col-lg-8">{{ user.childrenmore }}</span>
+        </li>
+        <li class="row" ng-show="user.religion">
+            <span class="col-lg-4">{{'Вероисповедание'|translate }}:</span>
+            <span class="col-lg-8">{{ user.religion }}</span>
+        </li>
+        <li class="row" ng-show="user.smoke">
+            <span class="col-lg-4">{{'Курение'|translate }}:</span>
+            <span class="col-lg-8">{{ user.smoke }}</span>
+        </li>
+        <li class="row" ng-show="user.alcohol">
+            <span class="col-lg-4">{{'Спиртные напитки'|translate }}:</span>
+            <span class="col-lg-8">{{ user.alcohol }}</span>
+        </li>
+        <li class="row" ng-show="user.languages">
+            <span class="col-lg-4">{{'Знания иностранных языков'|translate }}:</span>
+            <span class="col-lg-8">{{ user.languages }}</span>
+        </li>
+        <li class="row" ng-show="user.personality">
+            <span class="col-lg-4">{{'Личность'|translate }}:</span>
+            <span class="col-lg-8">{{ user.personality }}</span>
+        </li>
+        <li class="row" ng-show="user.hobby">
+            <span class="col-lg-4">{{'Хобби, интересы'|translate }}:</span>
+            <span class="col-lg-8">{{ user.hobby }}</span>
+        </li>
+        <li class="row" ng-show="user.character">
+            <span class="col-lg-4">{{'Основные черты Вашего характера'|translate }}:</span>
+            <span class="col-lg-8">{{ user.character }}</span>
+        </li>
+        <li class="row" ng-show="user.partner">
+            <span class="col-lg-4">{{'Описание Вашего идеально партнера (рост, вес, возраст,
+            религия, черты характера и т.д.)'|translate }}:</span>
+            <span class="col-lg-8">{{ user.partner }}</span>
+        </li>
+        <li class="row" ng-show="user.relations">
+            <span class="col-lg-4">{{'Какими Вы представляете идеальные взаимоотношения'|translate }}:</span>
+            <span class="col-lg-8">{{ user.relations }}</span>
+        </li>
+        <li class="row" ng-show="user.music">
+            <span class="col-lg-4">{{'Какую музыку вы предпочитаете слушать'|translate }}:</span>
+            <span class="col-lg-8">{{ user.music }}</span>
+        </li>
+        <li class="row" ng-show="user.film">
+            <span class="col-lg-4">{{'Какие фильмы Вам нравится смотреть?'|translate }}:</span>
+            <span class="col-lg-8">{{ user.film }}</span>
+        </li>
+        <li class="row" ng-show="user.sport">
+            <span class="col-lg-4">{{'Любимые виды спорта'|translate }}:</span>
+            <span class="col-lg-8">{{ user.sport }}</span>
+        </li>
+        <li class="row" ng-show="user.yousport">
+            <span class="col-lg-4">{{'Каким спортом Вы занимаетесь?'|translate }}:</span>
+            <span class="col-lg-8">{{ user.yousport }}</span>
+        </li>
+        <li class="row" ng-show="user.food">
+            <span class="col-lg-4">{{'Любимая еда'|translate }}:</span>
+            <span class="col-lg-8">{{ user.food }}</span>
+        </li>
+        <li class="row" ng-show="user.season">
+            <span class="col-lg-4">{{'Любимая пора года'|translate }}:</span>
+            <span class="col-lg-8">{{ user.season }}</span>
+        </li>
+        <li class="row" ng-show="user.flowers">
+            <span class="col-lg-4">{{'Любимые цветы'|translate }}:</span>
+            <span class="col-lg-8">{{ user.flowers }}</span>
+        </li>
+        <li class="row" ng-show="user.color">
+            <span class="col-lg-4">{{'Любимый цвет'|translate }}:</span>
+            <span class="col-lg-8">{{ user.color }}</span>
+        </li>
+        <li class="row" ng-show="user.dtel">
+            <span class="col-lg-4">{{'Домашний телефон'|translate }}:</span>
+            <span class="col-lg-8">{{ user.dtel }}</span>
+        </li>
+        <li class="row" ng-show="user.mtel">
+            <span class="col-lg-4">{{'Мобильный телефон'|translate }}:</span>
+            <span class="col-lg-8">{{ user.mtel }}</span>
+        </li>
+        <li class="row" ng-show="user.email">
+            <span class="col-lg-4">{{'E-mail'|translate }}:</span>
+            <span class="col-lg-8">{{ user.email }}</span>
+        </li>
+        <li class="row" ng-show="user.address">
+            <span class="col-lg-4">{{'Домашний адрес'|translate }}:</span>
+            <span class="col-lg-8">{{ user.address }}</span>
+        </li>
+        <li class="row" ng-show="user.myinteresting">
+            <span class="col-lg-4">{{'В свободное время я люблю'|translate }}:</span>
+            <span class="col-lg-8">{{ user.myinteresting }}</span>
+        </li>
+        <li class="row" ng-show="user.mydream">
+            <span class="col-lg-4">{{'В детстве я мечтал стать'|translate }}:</span>
+            <span class="col-lg-8">{{ user.mydream }}</span>
+        </li>
+        <li class="row" ng-show="user.mydream10">
+            <span class="col-lg-4">{{'На протяжении 10 лет я хотел'|translate }}:</span>
+            <span class="col-lg-8">{{ user.mydream10 }}</span>
+        </li>
+        <li class="row" ng-show="user.letter">
+            <span class="col-lg-4">{{'Первое письмо, которое будет отправляться от Вашего имени
+            мужчине'|translate }}:</span>
+            <span class="col-lg-8">{{ user.letter }}</span>
+        </li>
+    </ul>
 </div>

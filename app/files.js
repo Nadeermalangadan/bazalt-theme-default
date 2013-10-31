@@ -3,7 +3,13 @@ define('files', [
     'views',
 
     'directives/bzScript',
-    'directives/vkGroup'
+    'directives/vkGroup',
+    'directives/bzToTop',
+    'directives/bzAds',
+    'directives/bzMonster',
+
+    'controllers/MemCtrl',
+    'controllers/BannerCtrl',
 
    /* 'controllers/Main',
     'controllers/SidebarMenu',

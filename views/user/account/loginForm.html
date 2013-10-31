@@ -1,44 +1,44 @@
+
 <div class="loginForm">
-    <h1>Вход</h1>
+    <h1>{{'Вход'|translate }}</h1>
 
     <div class="alert alert-success" ng-if="user_activated">
-        Пользователь был активирован, можете зайти под Вашим логином/паролем
+        {{'Пользователь был активирован, можете зайти под Вашим логином/паролем'|translate }}
     </div>
 
     <form bz-loading-container="loading" class="registration form-horizontal" name="login" ng-submit="loginUser(user)" novalidate>
-        <div ng-show="error" class="alert alert-error">
+        <div ng-if="error" class="alert alert-error">
             <a data-dismiss="alert" class="close">×</a>
             <div ng-bind-html-unsafe="error"></div>
         </div>
 
-        <div class="control-group" ng-class="{ 'error': errors.email }">
-            <label for="email" class="control-label">E-mail<span class="star">*</span></label>
-            <div class="controls">
-                <input id="email" ng-model="user.email" type="text" name="email" required="required" class="form-control"/>
-                <span ng-if="errors.email.required" class="help-block"><small>Заполните поле</small></span>
-                <span ng-if="errors.email.exist_user" class="help-block"><small>Пользователя с таким логином и паролем не существует</small></span>
+        <div class="form-group" ng-class="{ 'has-error': errors.email }">
+            <label for="email" class="control-label col-lg-3">{{'E-mail'|translate }}<span class="star">*</span></label>
+            <div class="controls col-lg-9">
+                <input id="email" ng-model="user.email" type="text" name="email" required class="form-control"/>
+                <span ng-if="errors.email.required" class="help-block"><small>{{'Заполните поле'|translate }}</small></span>
+                <span ng-if="errors.email.exist_user" class="help-block"><small>{{'Пользователя с таким логином и паролем не существует'|translate }}</small></span>
             </div>
         </div>
-        <div class="control-group" ng-class="{ 'error': errors.password }">
-            <label for="password" class="control-label">Пароль<span class="star">*</span></label>
-            <div class="controls">
-                <input id="password" ng-model="user.password" type="password" name="password" required="required" class="form-control"/>
-                <a href="/user/recovery" id="forgot-password"><small>Забыли пароль?</small></a>
+        <div class="form-group" ng-class="{ 'has-error': errors.password }">
+            <label for="password" class="control-label col-lg-3">{{'Пароль'|translate }}<span class="star">*</span></label>
+            <div class="controls col-lg-9">
+                <input id="password" ng-model="user.password" type="password" name="password" required class="form-control"/>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
+        <div class="form-group">
+            <div class="controls  col-lg-offset-3 col-lg-9">
                 <label class="checkbox">
-                    <small>Запомнить меня</small>
+                    <small>{{'Запомнить меня'|translate }}</small>
                     <input id="remember_me" ng-model="user.remember_me" type="checkbox" name="remember_me" checked="true" class="optional"/>
                 </label>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
-                <button id="btn-login" type="submit" class="btn btn-primary"><i class="icon-lock icon-white"></i>&nbsp; Войти</button>
+        <div class="form-group">
+            <div class="controls col-lg-offset-3 col-lg-9">
+                <button id="btn-login" type="submit" class="btn btn-primary"><i class="icon-key icon-white"></i> {{'Войти'|translate }}</button>
+
+                <a class="btn btn-link" href="/user/recovery"><i class="icon-warning-sign"></i> {{'Забыли пароль?'|translate }}</a>
             </div>
         </div>
     </form>

@@ -1,0 +1,52 @@
+<!-- Modal -->
+<div class="modal fade" data-ng-controller="bcUsers.Controllers.Profile.ModalGifts" id="giftsModal" tabindex="-1" role="dialog" aria-labelledby="myGiftsModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{'Выберите подарок для '|translate }}{{ user.fullname }}</h4>
+            </div>
+            <div class="modal-body" ng-init="currentTab = 'tab1'">
+                <div class="head-modal">
+                    <a class="pull-right btn-link user-money" data-toggle="modal" href="" ng-click="payGift()">
+                        {{'Ваш баланс'|translate }}:
+                        <b>10 {{'грн'|translate }}</b>
+                    </a>
+                    <!--ul class="nav nav-tabs gifts-type">
+                        <li data-ng-class="{'active': currentTab == 'tab1'}"><a ng-click="currentTab = 'tab1'" href="">Дружба</a></li>
+                        <li data-ng-class="{'active': currentTab == 'tab2'}"><a ng-click="currentTab = 'tab2'" href="">Романтика</a></li>
+                        <li data-ng-class="{'active': currentTab == 'tab3'}"><a ng-click="currentTab = 'tab3'" href="">Любовь</a></li>
+                    </ul-->
+                    <div class="clearfix"></div>
+                </div>
+                <div ng-if="!needPay" class="tab-content" bz-loading-container="loading">
+                    <div class="tab-pane active" data-ng-class="{'active': currentTab == 'tab1'}" id="friends">
+                        <div class="b-gifts">
+                            <a class="gift-cell" href="" ng-click="prepareGift(gift)" data-ng-repeat="gift in gifts">
+                                <img class="gift-img" ng-src="{{ gift.thumbnails.preview }}"/>
+
+                                <div class="gift-price badge"><span>{{ gift.price }}</span></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane" data-ng-class="{'active': currentTab == 'tab2'}" id="romantic"></div>
+                    <div class="tab-pane" data-ng-class="{'active': currentTab == 'tab3'}" id="love"></div>
+                </div>
+                <div ng-if="needPay" bz-loading-container="paymentLoading">
+                    {{'У Вас недостаточно средств на счету. Пополните, пожалуйста, счет.'|translate }}
+
+                    <form ng-submit="doPay(needToPay.diff)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="needToPay.diff" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="{{'Пополнить'|translate }}" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->

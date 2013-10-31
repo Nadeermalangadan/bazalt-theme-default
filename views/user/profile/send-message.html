@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="myGiftsModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{'Ваше сообщение для'|translate }} {{ user.fullname }}</h4>
+            </div>
+            <div class="modal-body" ng-init="currentTab = 'tab1'">
+                <div class="head-modal">
+                    <a class="pull-right btn-link user-money" data-toggle="modal" href="" ng-click="payGift()">
+                        {{'Ваш баланс'|translate }}: <b>10 грн</b>
+                    </a>
+                    <a class="pull-left btn-link send-gift" data-toggle="modal" href="" ng-click="sendGift()">
+                        {{'Отправить подарок'|translate }}
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="b-message">
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">{{'Отправить'|translate }}</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -16,7 +16,6 @@
   "private": true,
   "dependencies": {
     "bootstrap": "~3.0.0",
-    "bootstrap-datepicker": "~1.1.3",
     "angular-animate": "~1.2.0-rc.2",
     "angular-route": "~1.2.0-rc.2",
     "ng-editable-tree": "*",
@@ -25,13 +24,15 @@
     "ng-ckeditor": "*",
     "angular-smoothscroll": "*",
     "requirejs": "~2.1.8",
-    "angular-social": "~0.1.0",
+    "angular-social": "master",
     "angular-resource": "~1.0.8",
-    "ng-table": "~0.2.2",
+    "ng-table": "master",
     "jquery-ui": "~1.10.3",
     "angular-cookies": "~1.0.8",
     "fancybox": "~2.1.5",
     "font-awesome": "~3.2.1",
+    "bootstrap-datepicker": "~1.2.0",
+    "angular-locale-bundles": "~0.1.4",
     "jquery-galleria": "~1.2.9"
   }
 }

@@ -1,46 +1,70 @@
-<h1>Профиль</h1>
-
-<div class="row user-profile">
-    <div class="col col-lg-3 profile-sidebar">
-        <div class="user-avatar">
-            <!--img ng-if="!user.avatar" src="http://placehold.it/200x200" />
-            <img ng-if="user.avatar" ng-src="{{ user.avatar }}" /-->
-            <img src="http://placehold.it/200x200" />
-            <div class="b-edit-avatar">
+<div class="user-profile">
+    <div class="row">
+        <div class="col col-lg-4 profile-sidebar">
+            <div class="user-avatar">
+                <img ng-if="!user.avatar" src="http://placehold.it/200x200" />
+                <img ng-if="user.avatar" ng-src="{{ user.avatar }}" />
+                <!--img src="http://placehold.it/200x200" /-->
+                <div class="b-edit-avatar">
                 <span class="list-group-item btn btn-default">
-                    <a class="btn btn-link" href="">Сменить аватарку</a>
+                    <a class="btn btn-link" href="">{{ 'Сменить аватарку'|translate }}</a>
                     <input class="btn-file-uploader" ng-file-select type="file" />
                 </span>
+                </div>
+            </div>
+
+            <div ng-include="'/views/user/profile/send-message.html'"></div>
+            <div ng-include="'/views/user/profile/modal-gifts.html'"></div>
+            <div ng-include="'/views/user/profile/modal-pay.html'"></div>
+
+            <div class="menu">
+                <ul class="nav nav-tabs nav-stacked">
+                    <li ng-if="!isOwnProfile">
+                        <a data-toggle="modal" href="" ng-click="sendGift()" class="b-gifts">{{ 'Подарить подарок:'|translate }}</a>
+                    </li>
+                    <li>
+                        <a href="/user/{{ user.id }}/view" data-ng-class="{'active': $routeSegment.startsWith('profile.view')}" class="list-group-item">
+                            {{ 'Профиль'|translate }}
+                        </a>
+                    </li>
+                    <li ng-if="isOwnProfile">
+                        <a href="/user/{{ user.id }}/edit" data-ng-class="{'active': $routeSegment.startsWith('profile.edit')}" class="list-group-item">
+                            {{ 'Редактировать профиль'|translate }}
+                        </a>
+                    </li>
+                    <li ng-if="isOwnProfile">
+                        <a href="/user/{{ user.id }}/password" data-ng-class="{'active': $routeSegment.startsWith('profile.password')}" class="list-group-item">
+                            {{ 'Сменить пароль'|translate }}
+                        </a>
+                    </li>
+                    <li ng-if="isOwnProfile">
+                        <a href="/user/{{ user.id }}/messages" data-ng-class="{'active': $routeSegment.startsWith('profile.messages')}" class="list-group-item">
+                            {{ 'Сообщения'|translate }}
+                        </a>
+                    </li>
+                    <li ng-if="isOwnProfile">
+                        <a href="/user/{{ user.id }}/posts" data-ng-class="{'active': $routeSegment.startsWith('profile.posts')}" class="list-group-item">
+                            {{ 'Мои публикации'|translate }}
+                        </a>
+                    </li>
+                    <li ng-if="isOwnProfile">
+                        <a href="/user/{{ user.id }}/gifts" data-ng-class="{'active': $routeSegment.startsWith('profile.gifts')}" class="list-group-item">
+                            {{ 'Мои подарки'|translate }}
+                        </a>
+                    </li>
+                    <li ng-if="!isOwnProfile">
+                        <a data-toggle="modal" href="" ng-click="sendMessage()" class="b-send-message">
+                            {{ 'Написать сообщение'|translate }}
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="menu">
-            <ul class="nav nav-tabs nav-stacked">
-                <li>
-                    <a href="/user/profile/view" data-ng-class="{'active': $routeSegment.startsWith('profile.view')}" class="list-group-item">
-                        Профиль
-                    </a>
-                </li>
-                <li>
-                    <a href="/user/profile/edit" data-ng-class="{'active': $routeSegment.startsWith('profile.edit')}" class="list-group-item">
-                        Редактировать профиль
-                    </a>
-                </li>
-                <li>
-                    <a href="/user/profile/password" data-ng-class="{'active': $routeSegment.startsWith('profile.password')}" class="list-group-item">
-                        Сменить пароль
-                    </a>
-                </li>
-                <li>
-                    <a href="/user/profile/posts" data-ng-class="{'active': $routeSegment.startsWith('profile.post')}" class="list-group-item">
-                        Мои публикации
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="col col-lg-9 b-profile-content">
-        <div class="info profile">
-            <div app-view-segment="1"></div>
+        <div class="col col-lg-8 b-profile-content">
+            <div class="info profile">
+                <div class="slide-reveal" app-view-segment="1">
+                </div>
+            </div>
         </div>
     </div>
 </div>

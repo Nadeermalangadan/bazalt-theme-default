@@ -1,0 +1,49 @@
+<h1>{{ 'Пользователи'|translate }}</h1>
+
+<div class="all-user">
+    <table ng-table="tableParams" class="table table-striped ng-table-responsive">
+        <tr ng-repeat="item in $data">
+            <td>
+                <div class="one-user">
+                    <div class="row">
+                        <div class="col col-lg-2">
+                            <img src="http://placehold.it/130x150" class="avatar" />
+                        </div>
+                        <div class="col col-lg-10">
+                            <h3><a class="user-profile" ng-href="/user/{{ item.id }}/profile">
+                                {{item.fullname}}<span ng-show="item.age">, {{ item.age }}</span>
+                            </a></h3>
+                            <p>Украина, Винница</p>
+                            <p>Мега-личность и еще что-то типа того по какой-то интересной теме</p>
+                            <p>{{ item.city }}</p>
+                        </div>
+                    </div>
+                    <!--a class="send-message btn btn-primary btn-sm" href="#">
+                        <i class="icon-envelope-alt icon-white"></i>
+                        Написать
+                    </a-->
+                    <a class="user-photo" href="#">
+                        2 фото
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--table ng-table="tableParams" class="table table-striped ng-table-responsive">
+    <tr ng-repeat="item in $data">
+        <td width="170" class="fullname">
+            <img src="http://placehold.it/50x50" class="avatar" />
+            <a ng-href="/user/{{ item.id }}/profile">{{item.fullname}}</a>
+        </td>
+        <td class="message">
+            <div class="one-message">
+                <a ng-href="/user/profile/messages/{{message.id}}">{{message.message}}</a>
+
+                <a href="#" class="delete-message">
+                    <i class="icon-remove"></i>
+                </a>
+            </div>
+        </tr>
+    </tr>
+</table-->

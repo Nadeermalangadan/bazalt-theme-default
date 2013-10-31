@@ -1,0 +1,38 @@
+<div bz-loading-container="loading">
+    <h1>{{'Просмотр'|translate }}</h1>
+
+    <table ng-table="tableParams" class="table table-striped ng-table-responsive table-messages user-message">
+        <tr>
+            <td width="60" class="fullname">
+                <img src="http://placehold.it/50x50" class="avatar" />
+            </td>
+            <td class="message">
+                <strong>{{message.from.fullname}}</strong>
+                <div class="one-message">
+                    {{message.message}}
+                </div>
+            </td>
+            <td width="50" class="date">
+                {{message.created_at | date:'dd.MM.yy'}}
+            </td>
+        </tr>
+        <tr class="reply">
+            <td width="60" class="fullname">
+                <img src="http://placehold.it/50x50" class="avatar" />
+            </td>
+            <td class="message">
+
+                <div bz-loading-container="sending">
+                    <form ng-submit="sendMessage(newMessage)" name="mess">
+                        <textarea placeholder="{{'Ваше сообщение'|translate }}" class="bz-comment-area form-control" required ng-model="newMessage.message"></textarea>
+                        <button class="btn btn-primary" ng-disabled="mess.$invalid">{{'Отправить'|translate }}</button>
+                    </form>
+                </div>
+
+            </td>
+            <td width="50" class="date">
+                <img src="http://placehold.it/50x50" class="avatar" />
+            </td>
+        </tr>
+    </table>
+</div>

@@ -19,7 +19,7 @@ requirejs.config({
         'jquery-ui': '../bower_components/jquery-ui/ui',
 
         //jquery-galleria
-        'jquery-galleria': '../bower_components/jquery-galleria/src/galleria',
+        'jquery-galleria': '../bazalt/bower_components/jquery-galleria/src/galleria',
 
         'bootstrap': '../bower_components/bootstrap/js',
 
@@ -32,8 +32,7 @@ requirejs.config({
         'angular-file-upload': '../bower_components/angular-file-upload/angular-file-upload',
         'angular-smoothscroll': '../bower_components/angular-smoothscroll/dist/scripts/c8742280.scripts',
         'ngSocial': '../bower_components/angular-social/angular-social.src',
-        'bootstrap-datepicker': '../bower_components/bootstrap-datepicker/js/bootstrap-datepicker',
-        'bootstrap-datepicker-locale': '../bower_components/bootstrap-datepicker/js/locales',
+        'angular-locale-bundles': '../bower_components/angular-locale-bundles/dist/angular-locale-bundles',
 
         'speakingurl': '../bower_components/speakingurl/speakingurl.min',
         'fancybox': '../bower_components/fancybox/source/jquery.fancybox',
@@ -48,7 +47,11 @@ requirejs.config({
 
         // etc
         'ckeditor': '../bower_components/ckeditor/ckeditor',
-        'select2': '../bower_components/select2/select2'
+        'select2': '../bower_components/select2/select2',
+
+
+        'bootstrap-datepicker': '../bower_components/bootstrap-datepicker/js/bootstrap-datepicker',
+        'bootstrap-datepicker-locale': '../bower_components/bootstrap-datepicker/js/locales',
     },
     shim: {
         'angular': { exports: 'angular', deps: ['jquery'] },
@@ -60,6 +63,7 @@ requirejs.config({
         'angular-route-segment': { deps: ['angular'] },
         'angular-smoothscroll': { deps: ['angular'] },
         'angular-file-upload': { deps: ['angular'] },
+        'angular-locale-bundles': { deps: ['angular'] },
         'angular-ui-select2': { deps: ['angular', 'select2'] },
 
         'ng-ckeditor': { deps: ['ckeditor'] },
