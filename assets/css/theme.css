@@ -6902,8 +6902,14 @@ td.visible-print {
 }
 .user-profile .b-profile-content .main_info ul li span.col-lg-4 {
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 22px;
+}
+.user-profile .b-profile-content .main_info ul li.divider {
+  background-color: #E5E5E5;
+  border-bottom: 1px solid #F2F2F2;
+  height: 1px;
+  margin: 9px 1px;
 }
 .user-profile .b-profile-content .table-messages tr td {
   padding: 2px;
@@ -11636,11 +11642,11 @@ h1.type-message a.active {
 form .form-group.b-tel .controls .form-control {
   margin-right: 5px;
 }
-form .form-group.b-tel .controls .form-control.col-lg-1 {
-  width: 8.333%;
+form .form-group.b-tel .controls .form-control.col-lg-2 {
+  width: 16.6667%;
 }
-form .form-group.b-tel .controls .form-control.col-lg-3 {
-  width: 25%;
+form .form-group.b-tel .controls .form-control.col-lg-4 {
+  width: 33.3333%;
 }
 /*form registration*/
 /*galleria*/
