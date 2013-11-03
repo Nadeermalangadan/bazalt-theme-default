@@ -66,6 +66,13 @@
         <!--div class="ng-cloak" ng-include="'/views/banners/default.html'"></div-->
         <div class="banners main-menu">
             <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 60 }"></div>
+            <ul ng-if="$user.data.gender == 'male'" class="ng-cloak nav navbar-nav">
+                <li>
+                    <a smooth-scroll="" data-target="top" data-toggle="dropdown" href="/users/">
+                        {{'Анкеты'|translate}}
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <div class="ng-cloak">

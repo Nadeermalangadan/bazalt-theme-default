@@ -518,17 +518,20 @@
     <div class="controls col-lg-9">
 
         <div bz-uploader="$config.resource('/users/images')" ng-model="user.images" autoupload="true">
-            <div class="clearfix bz-uploaded-files">
-                <div ng-repeat="file in files" class="bz-uploaded-file">
+            <div class="clearfix bz-uploaded-files" data-ng-controller="setMain">
+                <div ng-repeat="(n,file) in files" class="bz-uploaded-file">
                     <div class="file-preview">
                         <div class="thumbnail">
                             <img ng-src="{{ file.thumbnailUrl }}"/>
                         </div>
-                        <a class="btn btn-small btn-danger" href="" ng-click="deleteFile(file)">Delete</a>
+                        <a href="" ng-if="!file.is_main" class="btn btn-default" data-ng-click="setMainPhoto(files,n)">{{'Главное'|translate}}</a>
+                        <a href="" ng-if="file.is_main" class="btn btn-primary">{{'Главное'|translate}}</a>
+
+                        <a class="btn btn-small btn-danger" href="" ng-click="deleteFile(file)">{{'Удалить'|translate}}</a>
                     </div>
                 </div>
             </div>
-            <a class="btn btn-danger" ng-href="" ng-click="deleteFiles()">Delete all</a>
+            <!--a class="btn btn-danger" ng-href="" ng-click="deleteFiles()">Delete all</a-->
         </div>
 
     </div>
