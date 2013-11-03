@@ -1,12 +1,6 @@
 
-<div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Отчество:'|translate }}</label>
-    <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.patronymic">
-    </div>
-</div>
 <div class="form-group" ng-class="{'error': errors.firstname}">
-    <label class="control-label col-lg-3">{{ 'Дата рождения'|translate }}</label>
+    <label class="control-label col-lg-3">{{ 'Дата рождения'|translate }}<span class="star">*</span></label>
     <div class="controls col-lg-9">
         <div data-date-start-view="2" data-date-format="dd.mm.yyyy" data-date="01.01.1980" id="dpYears" class="input-group date">
             <input type="text" ng-model="user.birth_date" bz-datepicker size="16" class="form-control">
@@ -15,38 +9,130 @@
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Рост'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Рост'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.height">
+        <select class="form-control" ng-model="user.height">
+            <option>149 см - 4'11"</option>
+            <option>150 см - 4'11"</option>
+            <option>151 см - 4'11"</option>
+            <option>152 см - 5'0"</option>
+            <option>153 см - 5'0"</option>
+            <option>154 см - 5'1"</option>
+            <option>155 см - 5'1"</option>
+            <option>156 см - 5'1"</option>
+            <option>157 см - 5'2"</option>
+            <option>158 см - 5'2"</option>
+            <option>159 см - 5'3"</option>
+            <option>160 см - 5'3"</option>
+            <option>161 см - 5'3"</option>
+            <option>162 см - 5'4"</option>
+            <option>163 см - 5'4"</option>
+            <option>164 см - 5'4"</option>
+            <option>165 см - 5'5"</option>
+            <option>166 см - 5'5"</option>
+            <option>167 см - 5'6"</option>
+            <option>168 см - 5'6"</option>
+            <option>169 см - 5'7"</option>
+            <option>170 см - 5'7"</option>
+            <option>171 см - 5'7"</option>
+            <option>172 см - 5'8"</option>
+            <option>173 см - 5'8"</option>
+            <option>174 см - 5'8"</option>
+            <option>175 см - 5'9"</option>
+            <option>176 см - 5'9"</option>
+            <option>177 см - 5'10"</option>
+            <option>178 см - 5'10"</option>
+            <option>179 см - 5'10"</option>
+            <option>180 см - 5'11"</option>
+            <option>181 см - 5'11"</option>
+            <option>182 см - 6'0"</option>
+            <option>183 см - 6'0"</option>
+            <option>184 см - 6'0"</option>
+            <option>185 см - 6'1"</option>
+            <option>186 см - 6'1"</option>
+            <option>187 см - 6'2"</option>
+            <option>188 см - 6'2"</option>
+            <option>189 см - 6'2"</option>
+            <option>190 см - 6'3"</option>
+            <option>191 см - 6'3"</option>
+            <option>192 см - 6'4"</option>
+            <option>193 см - 6'4"</option>
+            <option>194 см - 6'4"</option>
+            <option>195 см - 6'5"</option>
+            <option>196 см - 6'5"</option>
+            <option>197 см - 6'5"</option>
+            <option>198 см - 6'6"</option>
+            <option>199 см - 6'6"</option>
+            <option>200 см - 6'7"</option>
+            <option>201 см - 6'7"</option>
+            <option>202 см - 6'7" - 6'8"</option>
+            <option>203 см - 6'8"</option>
+            <option>204 см - 6'8"</option>
+            <option>205 см - 6'9"</option>
+            <option>206 см - 6'9"</option>
+            <option>207 см - 6'9"</option>
+            <option>208 см - 6'10"</option>
+            <option>209 см - 6'10"</option>
+            <option>210 см - 6'11"</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Вес'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Вес'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.weight">
-    </div>
-</div><div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Цвет волос'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.hair">
+        <select class="form-control" ng-model="user.weight">
+            <option ng-repeat="i in weights">{{i.kg}} {{ 'кг'|translate }} - {{i.pounds}} {{ 'фунт'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Цвет глаз'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Цвет волос'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.eyes">
+        <select class="form-control" ng-model="user.hair">
+            <option>{{ 'Рыжий'|translate }}</option>
+            <option>{{ 'Черный'|translate }}</option>
+            <option>{{ 'Темно-коричневый'|translate }}</option>
+            <option>{{ 'Коричневый'|translate }}</option>
+            <option>{{ 'Каштановый'|translate }}</option>
+            <option>{{ 'Блонд'|translate }}</option>
+            <option>{{ 'Темный блонд'|translate }}</option>
+            <option>{{ 'Русый'|translate }}</option>
+            <option>{{ 'Красный'|translate }}</option>
+            <option>{{ 'Седой'|translate }}</option>
+            <option>{{ 'Другой'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
+    <label class="control-label col-lg-3">{{ 'Цвет глаз'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9">
+        <select class="form-control" ng-model="user.eyes">
+            <option>{{ 'Черные'|translate }}</option>
+            <option>{{ 'Коричневые'|translate }}</option>
+            <option>{{ 'Голубые'|translate }}</option>
+            <option>{{ 'Зеленые'|translate }}</option>
+            <option>{{ 'Серые'|translate }}</option>
+            <option>{{ 'Карие'|translate }}</option>
+            <option>{{ 'Другой'|translate }}</option>
+        </select>
+    </div>
+</div>
+<!--div class="form-group">
     <label class="control-label col-lg-3">{{ 'Тип телосложения'|translate }}:</label>
     <div class="controls col-lg-9">
         <input class="form-control" type="text" ng-model="user.bodytype">
     </div>
-</div>
+</div-->
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Образование'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Образование'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.education">
+        <select class="form-control" ng-model="user.education">
+            <option>{{ 'Общее среднее образование'|translate }}</option>
+            <option>{{ 'Профессионально-техническое образование'|translate }}</option>
+            <option>{{ 'Высшее образование'|translate }}</option>
+            <option>{{ 'Второе высшее образование'|translate }}</option>
+            <option>{{ 'Аспирантура'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
@@ -62,57 +148,203 @@
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Профессия'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Профессия'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <input class="form-control" type="text" ng-model="user.profession">
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Кем и где вы работаете в настоящее время'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Кем и где вы работаете в настоящее время'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <input class="form-control" type="text" ng-model="user.professionnow">
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Семейное положение'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Семейное положение'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.maritalstatus">
+        <select class="form-control" ng-model="user.maritalstatus">
+            <option>{{ 'Не замужем'|translate }}</option>
+            <option>{{ 'Разведена'|translate }}</option>
+            <option>{{ 'Вдова'|translate }}</option>
+        </select>
+    </div>
+</div>
+
+<div ng-init="user.children=[];">
+
+    <div class="form-group">
+        <label class="control-label col-lg-3">{{ 'Дети'|translate }}<span class="star">*</span>:</label>
+        <div class="controls col-lg-9">
+            <select class="form-control" ng-model="user.have_children">
+                <option value="yes">{{ 'Есть'|translate }}</option>
+                <option value="no">{{ 'Нет'|translate }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div data-ng-show="user.have_children == 'yes'">
+        <div class="form-group">
+            <label class="control-label col-lg-3">{{ 'Количество'|translate }}:</label>
+            <div class="controls col-lg-9">
+                <select ng-click="addChildren(user)" ng-model="user.children_count" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-repeat="child in user.children">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-9" style="border: 1px solid #DDDDDD; border-radius: 4px; padding: 10px 10px 0; margin-bottom: 10px">
+                <div class="form-group">
+                    <label class="control-label col-lg-3">{{ 'Пол'|translate }}:</label>
+                    <div class="controls col-lg-9">
+                        <select class="form-control" ng-model="child.sex">
+                            <option>Мальчик</option>
+                            <option>Девочка</option>
+                        </select>
+                        <!--a href="" class="btn btn-primary" ng-click="user.children.push({name: 'nnnn', age: 2})">add</a>
+
+                        <div ng-repeat="child in user.children">
+                            <label>name</label>
+                            <input ng-model="child.name" type="text" />
+                            <label>age</label>
+                            <input type="text" ng-model="child.age" />
+                        </div-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-lg-3">{{ 'Дата рождения'|translate }}:</label>
+                    <div class="controls col-lg-9">
+                        <div data-date-start-view="2" data-date-format="dd.mm.yyyy" data-date="01.01.1980" class="input-group date">
+                            <input type="text" ng-model="child.birth_date" bz-datepicker size="16" class="form-control">
+                            <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-lg-3">{{ 'Планируете ли детей в будущем'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9">
+        <select class="form-control" ng-model="user.childrenmore">
+            <option>{{ 'Да'|translate }}</option>
+            <option>{{ 'Нет'|translate }}</option>
+            <option>{{ 'Не решила'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Дети'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Вероисповедание'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.children">
+        <select class="form-control" ng-model="user.religion">
+            <option>{{ 'Христианство'|translate }}</option>
+            <option>{{ 'Православие'|translate }}</option>
+            <option>{{ 'Католицизм'|translate }}</option>
+            <option>{{ 'Мусульманство'|translate }}</option>
+            <option>{{ 'Буддизм'|translate }}</option>
+            <option>{{ 'Иудаизм'|translate }}</option>
+            <option>{{ 'Атеизм'|translate }}</option>
+            <option>{{ 'Другое'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Планируете ли детей в будущем'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Курение'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.childrenmore">
+        <select class="form-control" ng-model="user.smoke">
+            <option>{{ 'Да'|translate }}</option>
+            <option>{{ 'Нет'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Вероисповедание'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Спиртные напитки'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.religion">
+        <select class="form-control" ng-model="user.alcohol">
+            <option>{{ 'Часто'|translate }}</option>
+            <option>{{ 'Иногда'|translate }}</option>
+            <option>{{ 'В обществе'|translate }}</option>
+            <option>{{ 'Нет'|translate }}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Курение'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.smoke">
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Спиртные напитки'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.alcohol">
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Знания иностранных языков'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <textarea class="form-control" ng-model="user.languages"></textarea>
+    <label class="control-label col-lg-3">{{ 'Уровень знания иностранных языков'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9" ng-init="user.languages=[{}];">
+
+        <div class="form-group">
+            <label class="checkbox control-label col-lg-3">
+                <input type="checkbox" ng-model="user.language.en" value="en"> {{'английский'|translate }}
+            </label>
+            <div class="controls col-lg-9">
+                <select class="form-control" ng-show="user.language.en" ng-model="user.language_en.level">
+                    <option>{{ 'плохо'|translate }}</option>
+                    <option>{{ 'удовлетворительно'|translate }}</option>
+                    <option>{{ 'хорошо'|translate }}</option>
+                    <option>{{ 'отлично'|translate }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="checkbox control-label col-lg-3">
+                <input type="checkbox" ng-model="user.language.ge" value="ge"> {{'немецкий'|translate }}
+            </label>
+            <div class="controls col-lg-9">
+                <select class="form-control" ng-show="user.language.ge" ng-model="user.language_ge.level">
+                    <option>{{ 'плохо'|translate }}</option>
+                    <option>{{ 'удовлетворительно'|translate }}</option>
+                    <option>{{ 'хорошо'|translate }}</option>
+                    <option>{{ 'отлично'|translate }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="checkbox control-label col-lg-3">
+                <input type="checkbox" ng-model="user.language.fr" value="fr"> {{'фрацузкий'|translate }}
+            </label>
+            <div class="controls col-lg-9">
+                <select class="form-control" ng-show="user.language.fr" ng-model="user.language_fr.level">
+                    <option>{{ 'плохо'|translate }}</option>
+                    <option>{{ 'удовлетворительно'|translate }}</option>
+                    <option>{{ 'хорошо'|translate }}</option>
+                    <option>{{ 'отлично'|translate }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="checkbox control-label col-lg-3">
+                <input type="checkbox" ng-model="user.language.it" value="it"> {{'итальянский'|translate }}
+            </label>
+            <div class="controls col-lg-9">
+                <select class="form-control" ng-show="user.language.it" ng-model="user.language_it.level">
+                    <option>{{ 'плохо'|translate }}</option>
+                    <option>{{ 'удовлетворительно'|translate }}</option>
+                    <option>{{ 'хорошо'|translate }}</option>
+                    <option>{{ 'отлично'|translate }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="checkbox control-label col-lg-3">
+                <input type="checkbox" ng-model="user.language.ru" value="ru"> {{'русский'|translate }}
+            </label>
+            <div class="controls col-lg-9">
+                <select class="form-control" ng-show="user.language.ru" ng-model="user.language_ru.level">
+                    <option>{{ 'плохо'|translate }}</option>
+                    <option>{{ 'удовлетворительно'|translate }}</option>
+                    <option>{{ 'хорошо'|translate }}</option>
+                    <option>{{ 'отлично'|translate }}</option>
+                </select>
+            </div>
+        </div>
     </div>
 </div>
 <div class="form-group" ng-show="user.gender == 'male'">
@@ -122,27 +354,97 @@
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Хобби, интересы'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Хобби, интересы'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <textarea class="form-control" ng-model="user.hobby"></textarea>
     </div>
 </div>
 <div class="form-group" ng-show="user.gender == 'female'">
-    <label class="control-label col-lg-3">{{ 'Основные черты Вашего характера'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Основные черты Вашего характера'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <textarea class="form-control" ng-model="user.character"></textarea>
     </div>
 </div>
+<div class="form-group" ng-show="user.gender == 'female'">
+    <label class="control-label col-lg-3">{{ 'Возраст вашего избранника'|translate }}:</label>
+    <div class="controls col-lg-9">
+        tjty
+    </div>
+</div>
 <div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Описание Вашего идеально партнера (рост, вес, возраст, религия, черты характера и т.д.)'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Описание Вашего идеально партнера (рост, вес, возраст, религия, черты характера и т.д.)'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <textarea class="form-control" ng-model="user.partner"></textarea>
     </div>
 </div>
 <div class="form-group" ng-show="user.gender == 'female'">
-    <label class="control-label col-lg-3">{{ 'Какими Вы представляете идеальные взаимоотношения'|translate }}:</label>
+    <label class="control-label col-lg-3">{{ 'Какими Вы представляете идеальные взаимоотношения'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <textarea class="form-control" ng-model="user.relations"></textarea>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-lg-3">{{ 'Контактный телефон'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9">
+        <input class="col-lg-1" type="text" ng-model="user.mtel.first">
+        <input class="col-lg-1" type="text" ng-model="user.mtel.second">
+        <input class="col-lg-2" type="text" ng-model="user.mtel.third">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-lg-3">{{ 'Контактный телефон'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9">
+        <input class="col-lg-1" type="text" ng-model="user.mtel1.first">
+        <input class="col-lg-1" type="text" ng-model="user.mtel1.second">
+        <input class="col-lg-2" type="text" ng-model="user.mtel1.third">
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-lg-3">{{ 'Домашний адрес'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9">
+        <div class="form-group">
+            <label class="control-label col-lg-3">{{ 'индекс'|translate }}:</label>
+            <div class="controls col-lg-9">
+                <input class="form-control" type="text" ng-model="user.address.index" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-3">{{ 'страна'|translate }}:</label>
+            <div class="controls col-lg-9">
+                <input class="form-control" type="text" ng-model="user.address.country" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-3">{{ 'город'|translate }}:</label>
+            <div class="controls col-lg-9">
+                <input class="form-control" type="text" ng-model="user.address.city" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-3">{{ 'улица'|translate }}:</label>
+            <div class="controls col-lg-9">
+                <input class="form-control" type="text" ng-model="user.address.home" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-3">{{ 'дом, квартира'|translate }}:</label>
+            <div class="controls col-lg-9">
+                <input class="form-control" type="text" ng-model="user.address.address" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group" ng-class="{ 'has-error': (register.email.$dirty && register.email.$invalid) || errors.email}">
+    <label class="control-label col-lg-3">{{'E-mail'|translate }}<span class="star">*</span></label>
+    <div class="controls col-lg-9">
+        <input class="form-control" type="email" ng-model="user.email" ng-unique="checkEmail($value)" name="email" required>
+        <div class="ng-cloak help-block" ng-if="register.email.$dirty && register.email.$error.email">
+            {{'Неверно заполнено поле Е-mail'|translate }}
+        </div>
+        <div class="ng-cloak help-block" ng-if="(register.email.$dirty && register.email.$error.unique) || errors.email.uniqueEmail">
+            {{'Пользователь с таким email уже зарегистрирован'|translate }}
+        </div>
     </div>
 </div>
 <div class="form-group">
@@ -215,18 +517,6 @@
     <label class="control-label col-lg-3">{{ 'Любимая еда'|translate }}:</label>
     <div class="controls col-lg-9">
         <input class="form-control" type="text" ng-model="user.food">
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Мобильный телефон'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.mtel">
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Домашний адрес'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <textarea class="form-control" ng-model="user.address"></textarea>
     </div>
 </div>
 <div class="form-group" ng-show="user.gender == 'female'">
