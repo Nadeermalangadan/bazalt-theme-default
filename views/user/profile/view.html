@@ -66,9 +66,20 @@
             <span class="col-lg-4">{{'Семейное положение'|translate }}:</span>
             <span class="col-lg-8">{{ user.profile.maritalstatus }}</span>
         </li>
-        <li class="row" ng-hide="user.profile.have_children">
+        <li class="row" ng-if="user.profile.have_children == 'no'">
             <span class="col-lg-4">{{'Есть ли у вас дети'|translate }}?</span>
             <span class="col-lg-8">{{ user.profile.have_children }}</span>
+        </li>
+        <li class="row" ng-if="user.profile.have_children == 'yes'">
+            <span class="col-lg-4">{{'Дети'|translate }}:</span>
+            <span class="col-lg-8">
+                <ul class="list-unstyled">
+                    <li class="row" ng-repeat="child in user.profile.children">
+                        <span class="col-lg-4">{{child.sex}}</span>
+                        <span class="col-lg-8">{{child.birth_date}}</span>
+                    </li>
+                </ul>
+            </span>
         </li>
         <li class="row" ng-show="user.profile.childrenmore">
             <span class="col-lg-4">{{'Планируете ли детей в будущем'|translate }}:</span>
@@ -91,7 +102,7 @@
         <li class="row" ng-show="user.profile.languages">
             <span class="col-lg-4">{{'Знания иностранных языков'|translate }}:</span>
             <span class="col-lg-8">
-                <ul class="list-unstyled row">
+                <ul class="list-unstyled">
                     <li class="row">
                         <span class="col-lg-4">{{'Английский'|translate }}: </span>
                         <span class="col-lg-8">{{user.profile.language_en.level}}</span>

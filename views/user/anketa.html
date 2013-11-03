@@ -345,7 +345,7 @@
         <textarea class="form-control" required name="hobby" ng-model="user.hobby"></textarea>
     </div>
 </div>
-<div class="form-group" ng-show="user.gender == 'female'" ng-class="{ 'has-error': register.character.$dirty && register.character.$invalid }">
+<div class="form-group" ng-if="user.gender == 'female'" ng-class="{ 'has-error': register.character.$dirty && register.character.$invalid }">
     <label class="control-label col-lg-3">{{ 'Основные черты Вашего характера'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <textarea class="form-control" required name="character" ng-model="user.character"></textarea>
@@ -365,7 +365,7 @@
         <textarea class="form-control" required name="partner" ng-model="user.partner"></textarea>
     </div>
 </div>
-<div class="form-group" ng-show="user.gender == 'female'" ng-class="{ 'has-error': register.relations.$dirty && register.relations.$invalid }">
+<div class="form-group" ng-if="user.gender == 'female'" ng-class="{ 'has-error': register.relations.$dirty && register.relations.$invalid }">
     <label class="control-label col-lg-3">{{ 'Какими Вы представляете идеальные взаимоотношения'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <textarea class="form-control" required name="relations" ng-model="user.relations"></textarea>
