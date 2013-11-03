@@ -1,21 +1,25 @@
 <div app-view-segment="2">
 
     <h1 class="type-message">
-        <a ng-class="{'active': $routeSegment.startsWith('profile.messages.inbox')}" href="/user/profile/messages">{{'Входящие'|translate }}</a>
-        <a ng-class="{'active': $routeSegment.startsWith('profile.messages.outbox')}" class="pull-right" href="/user/profile/messages/outbox">{{'Отправленные'|translate }}</a>
+        <a ng-class="{'active': $routeSegment.startsWith('profile.messages.inbox')}" href="/user/{{$user.data.id}}/messages">{{'Входящие'|translate }}</a>
+        <a ng-class="{'active': $routeSegment.startsWith('profile.messages.outbox')}" class="pull-right" href="/user/{{$user.data.id}}/messages/outbox">{{'Отправленные'|translate }}</a>
     </h1>
 
     <table ng-table="tableParams" class="table table-striped ng-table-responsive table-messages">
         <tr ng-repeat="message in $data">
-            <td width="170" class="fullname">
-                <img src="http://placehold.it/50x50" class="avatar" />
-                <strong ng-if="isOutbox">{{message.to.fullname}}</strong>
-                <strong ng-if="!isOutbox">{{message.from.fullname}}</strong>
-                {{message.created_at | date:'dd.MM.yyyy HH:mm:ss'}}
-            </td>
-            <td class="message">
+            <td class="fullname">
+                <div class="pull-right">{{message.created_at | date:'dd.MM.yyyy HH:mm:ss'}}</div>
+
+                <a ng-href="/user/{{$user.data.id}}/messages/{{message.id}}">
+                    <img ng-if="isOutbox && message.to.avatar" ng-src="{{message.to.avatar}}" class="avatar" />
+                    <img ng-if="!isOutbox && message.from.avatar" ng-src="{{message.from.avatar}}" class="avatar" />
+                </a>
+
+                <a ng-if="isOutbox" ng-href="/user/{{message.to.id}}/profile"><strong>{{message.to.fullname}}</strong></a>
+                <a ng-if="!isOutbox" ng-href="/user/{{message.from.id}}/profile"><strong>{{message.from.fullname}}</strong></a>
+
                 <div class="one-message">
-                    <a ng-href="/user/profile/messages/{{message.id}}">{{message.message}}</a>
+                    <a ng-href="/user/{{$user.data.id}}/messages/{{message.id}}">{{message.message}}</a>
                     <!--a href="#" class="delete-message">
                         <i class="icon-remove"></i>
                     </a-->

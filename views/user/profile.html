@@ -43,11 +43,6 @@
                         </a>
                     </li>
                     <li ng-if="isOwnProfile">
-                        <a href="/user/{{ user.id }}/posts" data-ng-class="{'active': $routeSegment.startsWith('profile.posts')}" class="list-group-item">
-                            {{ 'Мои публикации'|translate }}
-                        </a>
-                    </li>
-                    <li ng-if="isOwnProfile">
                         <a href="/user/{{ user.id }}/gifts" data-ng-class="{'active': $routeSegment.startsWith('profile.gifts')}" class="list-group-item">
                             {{ 'Мои подарки'|translate }}
                         </a>

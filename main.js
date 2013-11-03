@@ -44,6 +44,7 @@ requirejs.config({
         'ng-editable-tree': '../bower_components/ng-editable-tree/ng-editable-tree',
         'ngTable': '../bower_components/ng-table/ng-table.src',
         'ngFinder': '../bower_components/ng-finder/ng-finder.src',
+        'bzUploader': '../bower_components/bz-uploader/bz-uploader',
 
         // etc
         'ckeditor': '../bower_components/ckeditor/ckeditor',
@@ -60,6 +61,7 @@ requirejs.config({
         'angular-animate': { deps: ['angular'] },
         'angular-cookies': { deps: ['angular'] },
         'ngSocial': { deps: ['angular'] },
+        'bzUploader': { deps: ['angular', 'angular-file-upload'] },
         'angular-route-segment': { deps: ['angular'] },
         'angular-smoothscroll': { deps: ['angular'] },
         'angular-file-upload': { deps: ['angular'] },

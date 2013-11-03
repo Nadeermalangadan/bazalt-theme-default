@@ -20,10 +20,9 @@
             <a href="" class="flag flag-ru" data-ng-click="$language.language('ru_RU')">RU</a>
         </div>
         <ul ng-social-buttons
-            data-url="'http://hellv.in/'"
-            data-title="'HellVin - аццкая Винница'"
-            data-description="'Делись, общайся, выражай свое мнение'"
-            data-image="'http://hellv.in/assets/img/logo.png'">
+            data-url="'http://cherchelafam.com/'"
+            data-title="'Шерше ля фам'"
+            data-description="'Шерше ля фам'">
             <li>{{ 'Делись с друзьями:'|translate }}</li>
             <li class="ng-social-facebook">Facebook</li>
             <li class="ng-social-google-plus" data-proxy-url="'/api/social.php'">Google+</li>
@@ -51,18 +50,7 @@
 
     <div class="page-layout container">
         <header>
-            <!--div class="menu menu-left ng-cloak">
-                <a href="/c-fishka">Фишка</a>
-                <a href="/c-mems">Мемы</a>
-                <a href="/c-gorod">Город</a>
-            </div>
-            <canvas bz-monster id="eye"></canvas-->
-            <a href="/" class="logo">HellVin</a>
-            <!--div class="menu menu-right ng-cloak">
-                <a href="/c-feils">Фейлы</a>
-                <a href="/c-idei">Идеи</a>
-                <a href="/c-bezdna">Бездна</a>
-            </div-->
+            <a href="/" class="logo"></a>
             <div class="ng-cloak preloader"></div>
         </header>
 
@@ -77,14 +65,7 @@
 
         <!--div class="ng-cloak" ng-include="'/views/banners/default.html'"></div-->
         <div class="banners main-menu">
-            <ul class="nav nav-pills menu ng-cloak pull-right">
-                <li><a href="/c-fishka">Фишка</a></li>
-                <li><a href="/c-mems">Мемы</a></li>
-                <li><a href="/c-gorod">Город</a></li>
-                <li><a href="/c-feils">Фейлы</a></li>
-                <li><a href="/c-idei">Идеи</a></li>
-                <li><a href="/c-bezdna">Бездна</a></li>
-            </ul>
+            <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 60 }"></div>
         </div>
 
         <div class="ng-cloak">
@@ -110,7 +91,7 @@
 
 <div id="footer" class="ng-cloak container">
     <div class="hr"></div>
-    <div class="container">
+    <div>
         <div ng-include="'/views/block/footer.html'"></div>
     </div>
 </div>

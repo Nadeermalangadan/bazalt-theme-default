@@ -11,8 +11,7 @@
 @import "datepicker";
 @import "jquery.fancybox.less";
 @import "flags";
-//@import "login";
-
+@import "../../bower_components/bz-uploader/bz-uploader";
 
 @btn-primary-color:   #fff;
 @btn-primary-bg:      #5f2e68;
@@ -20,6 +19,16 @@
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.bz-uploaded-file {
+    width: 100px;
+    display: inline-block;
+    margin-right: 10px;
+    height: 160px;
+}
+.bz-uploaded-files {
+    margin-bottom: 10px;
 }
 
 @font-face {
@@ -31,28 +40,6 @@
 }
 .header-font() {
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-}
-
-.img-uploader {
-  .list-group-item {
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    input {
-      font-size: 36px;
-      height: 35px !important;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      right: 0;
-      top: -1px;
-      width: 98%;
-      z-index: 1;
-      &:hover, &:focus {
-        cursor: pointer;
-      }
-    }
-  }
 }
 
 .preloader.ng-cloak {
@@ -138,7 +125,8 @@ object, embed, a:hover, a:active, a:focus, a {
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(0, 0, 0, 0.0), 0 2px 0 rgba(0, 0, 0, 0.1);
 
   .content {
-    padding: 0 15px;
+    padding: 0 15px 15px;
+    min-height: 200px;
   }
 }
 
@@ -708,8 +696,40 @@ h3 {
 }
 
 .profile-sidebar {
-  margin-top: 0;
+    margin: 0px -15px;
   padding-right: 0;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px 5px 0;
+    float: left;
+}
+
+.gender-choose {
+    width: 400px;
+    margin: 0 auto;
+
+    .title {
+        margin: 5px 0;
+    }
+}
+
+.people {
+    background-image: url('../img/people.png');
+    background-repeat: no-repeat;
+    width: 94px;
+    height: 225px;
+    display: inline-block;
+    padding-top: 230px;
+    margin: 30px 50px 50px;
+
+    &.women {
+        background-position: -94px 0;
+        width: 91px;
+        margin-top: 30px;
+    }
 }
 
 h1.type-message {

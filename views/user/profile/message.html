@@ -1,37 +1,34 @@
 <div bz-loading-container="loading">
     <h1>{{'Просмотр'|translate }}</h1>
 
-    <table ng-table="tableParams" class="table table-striped ng-table-responsive table-messages user-message">
+    <table class="table table-striped ng-table-responsive table-messages">
         <tr>
-            <td width="60" class="fullname">
-                <img src="http://placehold.it/50x50" class="avatar" />
-            </td>
             <td class="message">
-                <strong>{{message.from.fullname}}</strong>
+                <div class="pull-right date">{{message.created_at | date:'dd.MM.yyyy HH:mm:ss'}}</div>
+
+                <img ng-if="isOutbox && message.to.avatar" ng-src="{{message.to.avatar}}" class="avatar" />
+                <img ng-if="!isOutbox && message.from.avatar" ng-src="{{message.from.avatar}}" class="avatar" />
+
+                <a ng-if="isOutbox" ng-href="/user/{{message.to.id}}/profile"><strong>{{message.to.fullname}}</strong></a>
+                <a ng-if="!isOutbox" ng-href="/user/{{message.from.id}}/profile"><strong>{{message.from.fullname}}</strong></a>
+
                 <div class="one-message">
                     {{message.message}}
                 </div>
             </td>
-            <td width="50" class="date">
-                {{message.created_at | date:'dd.MM.yy'}}
-            </td>
         </tr>
         <tr class="reply">
-            <td width="60" class="fullname">
-                <img src="http://placehold.it/50x50" class="avatar" />
-            </td>
             <td class="message">
 
                 <div bz-loading-container="sending">
                     <form ng-submit="sendMessage(newMessage)" name="mess">
+                        <div class="form-group">
                         <textarea placeholder="{{'Ваше сообщение'|translate }}" class="bz-comment-area form-control" required ng-model="newMessage.message"></textarea>
+                        </div>
                         <button class="btn btn-primary" ng-disabled="mess.$invalid">{{'Отправить'|translate }}</button>
                     </form>
                 </div>
 
-            </td>
-            <td width="50" class="date">
-                <img src="http://placehold.it/50x50" class="avatar" />
             </td>
         </tr>
     </table>

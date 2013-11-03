@@ -24,8 +24,10 @@ define('routes', [
                 bzLanguageProvider.language('ru_RU');
             }])
 
-        .run(['$routeSegment', '$rootScope', function($routeSegment, $rootScope) {
+        .run(['$routeSegment', '$rootScope', 'bzConfig', '$filter', function($routeSegment, $rootScope, $config, $filter) {
             $rootScope.$routeSegment = $routeSegment;
+            $rootScope.$config = $config;
+            $rootScope.$filter = $filter;
 
             // for site
             $rootScope.banner = {

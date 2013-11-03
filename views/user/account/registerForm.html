@@ -5,18 +5,17 @@
         {{formError}}
     </div>
 
-    <form class="registration form-horizontal"  name="register" ng-submit="saveUser(user)" novalidate>
-        <div class="form-group">
-            <label class="control-label col-lg-3">{{'Пол'|translate }}<span class="star">*</span></label>
-            <div class="controls col-lg-9">
-                <label class="radio">
-                    <input type="radio" ng-model="user.gender" value="male"> {{'Мужской'|translate }}
-                </label>
-                <label class="radio">
-                    <input type="radio" ng-model="user.gender" value="female"> {{'Женский'|translate }}
-                </label>
-            </div>
-        </div>
+    <div ng-hide="user.gender" class="gender-choose">
+        <div class="title">{{'Зарегистрироваться как:'|translate }}</div>
+        <label class="radio people">
+            <input type="radio" ng-model="user.gender" value="male"> {{'Мужчина'|translate }}
+        </label>
+        <label class="radio people women">
+            <input type="radio" ng-model="user.gender" value="female"> {{'Женщина'|translate }}
+        </label>
+    </div>
+
+    <form ng-show="user.gender" class="registration form-horizontal"  name="register" ng-submit="saveUser(user)" novalidate>
         <div class="form-group" ng-class="{ 'has-error': (register.email.$dirty && register.email.$invalid) || errors.email}">
             <label class="control-label col-lg-3">{{'E-mail'|translate }}<span class="star">*</span></label>
             <div class="controls col-lg-9">

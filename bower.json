@@ -33,6 +33,7 @@
     "font-awesome": "~3.2.1",
     "bootstrap-datepicker": "~1.2.0",
     "angular-locale-bundles": "~0.1.4",
-    "jquery-galleria": "~1.2.9"
+    "jquery-galleria": "~1.2.9",
+    "bz-uploader": "*"
   }
 }

@@ -2,10 +2,10 @@
 
     <h1>
         <a href="{{page.url}}" class="ntn btn-link">
-            {{ page.title.en }}
+            {{ page.title|language }}
         </a>
     </h1>
 
-    <div ng-bind-html="page.body.en"></div>
+    <div ng-bind-html="$filter('language')(page.body)"></div>
 
 </div>
