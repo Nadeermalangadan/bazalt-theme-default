@@ -524,10 +524,10 @@
                         <div class="thumbnail">
                             <img ng-src="{{ file.thumbnailUrl }}"/>
                         </div>
-                        <a href="" ng-if="!file.is_main" class="btn btn-default" data-ng-click="setMainPhoto(files,n)">{{'Главное'|translate}}</a>
-                        <a href="" ng-if="file.is_main" class="btn btn-primary">{{'Главное'|translate}}</a>
+                        <a href="" ng-if="!file.is_main" class="btn btn-sm btn-default" data-ng-click="setMainPhoto(files,n)">{{'Главное'|translate}}</a>
+                        <a href="" ng-if="file.is_main" class="btn btn-sm btn-primary">{{'Главное'|translate}}</a>
 
-                        <a class="btn btn-small btn-danger" href="" ng-click="deleteFile(file)">{{'Удалить'|translate}}</a>
+                        <a class="btn btn-sm btn-danger" href="" ng-click="deleteFile(file)">{{'Удалить'|translate}}</a>
                     </div>
                 </div>
             </div>
