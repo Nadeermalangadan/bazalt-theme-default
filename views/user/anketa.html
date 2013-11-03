@@ -8,6 +8,7 @@
         </div>
     </div>
 </div>
+
 <div class="form-group">
     <label class="control-label col-lg-3">{{ 'Рост'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
@@ -368,7 +369,9 @@
 <div class="form-group" ng-show="user.gender == 'female'">
     <label class="control-label col-lg-3">{{ 'Возраст вашего избранника'|translate }}:</label>
     <div class="controls col-lg-9">
-        tjty
+        <select class="form-control" ng-model="user.choice">
+            <option ng-repeat="i in years">{{i.year}}</option>
+        </select>
     </div>
 </div>
 <div class="form-group">
@@ -528,8 +531,6 @@
 <div class="form-group">
     <label class="control-label col-lg-3">{{ 'Фото'|translate }}:</label>
     <div class="controls col-lg-9">
-
-
 
         <div bz-uploader="$config.resource('/users/images')" ng-model="user.images" autoupload="true">
             <div class="clearfix bz-uploaded-files">

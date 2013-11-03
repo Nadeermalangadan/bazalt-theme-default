@@ -10872,6 +10872,70 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .flag.flag-zw {
   background-position: -375px -210px;
 }
+.bz-uploader {
+  /* Upload button */
+
+  /*Uploader*/
+
+}
+.bz-uploader .btn-upload {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.bz-uploader .btn-upload input {
+  font-size: 36px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+.bz-uploader .btn-upload input:hover {
+  cursor: pointer;
+}
+.bz-uploader .progress {
+  position: relative;
+  height: 30px;
+}
+.bz-uploader .progress .progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+.bz-uploader .progress span {
+  font-size: 14px;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+.bz-uploader .bz-upload-total {
+  margin-bottom: 10px;
+}
+.bz-uploader .bz-upload-total .progress {
+  margin: 0;
+}
+.bz-uploader .btn-danger .badge {
+  background-color: #fff;
+  color: #999;
+}
+.bz-uploader .upload-files ul {
+  margin-bottom: 10px;
+}
+.bz-uploader .upload-files ul li {
+  margin-bottom: 10px;
+  width: 300px;
+}
+.bz-uploader .upload-files ul li .progress.progress-bar-info {
+  margin-bottom: 5px;
+}
+.bz-uploader .upload-files ul {
+  margin-bottom: 0;
+}
+.bz-uploader .upload-files ul li .progress {
+  margin-bottom: 0;
+}
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -10880,32 +10944,21 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .x-ng-cloak {
   display: none !important;
 }
+.bz-uploaded-file {
+  width: 100px;
+  display: inline-block;
+  margin-right: 10px;
+  height: 160px;
+}
+.bz-uploaded-files {
+  margin-bottom: 10px;
+}
 @font-face {
   font-family: 'bebas_neue_cyrillicregular';
   src: url('../font/bebas_neue_cyrillic_2-webfont.eot');
   src: url('../font/bebas_neue_cyrillic_2-webfont.eot?#iefix') format('embedded-opentype'), url('../font/bebas_neue_cyrillic_2-webfont.woff') format('woff'), url('../font/bebas_neue_cyrillic_2-webfont.ttf') format('truetype'), url('../font/bebas_neue_cyrillic_2-webfont.svg#bebas_neue_cyrillicregular') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-.img-uploader .list-group-item {
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-}
-.img-uploader .list-group-item input {
-  font-size: 36px;
-  height: 35px !important;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: -1px;
-  width: 98%;
-  z-index: 1;
-}
-.img-uploader .list-group-item input:hover,
-.img-uploader .list-group-item input:focus {
-  cursor: pointer;
 }
 .preloader.ng-cloak {
   /*background-image: url('../img/preload.gif');
@@ -10983,7 +11036,8 @@ a {
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(0, 0, 0, 0), 0 2px 0 rgba(0, 0, 0, 0.1);
 }
 .page-layout .content {
-  padding: 0 15px;
+  padding: 0 15px 15px;
+  min-height: 200px;
 }
 .main-content {
   position: relative;
@@ -11107,13 +11161,13 @@ div.banners.main-menu {
   -o-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
   /*
-  &.category-mainpage {
-    display: block;
-    background-color: #fdb4b6;
-    .banner {
-      background: url('../img/banner.png');
-    }
-  }*/
+    &.category-mainpage {
+      display: block;
+      background-color: #fdb4b6;
+      .banner {
+        background: url('../img/banner.png');
+      }
+    }*/
 
 }
 div.banners.main-menu.category-9 {
@@ -11163,6 +11217,26 @@ div.banners.main-menu ul li a {
   color: #fdfbfc;
   border-radius: 0;
   padding: 0;
+  background: transparent;
+}
+div.banners.main-menu ul li.open {
+  background: #fdfbfc;
+}
+div.banners.main-menu ul li.open a {
+  color: #1B0120;
+  text-decoration: none;
+  background: transparent;
+}
+div.banners.main-menu ul li.open.active,
+div.banners.main-menu ul li.open:hover,
+div.banners.main-menu ul li.open:focus {
+  background: #fdfbfc;
+}
+div.banners.main-menu ul li.open.active a,
+div.banners.main-menu ul li.open:hover a,
+div.banners.main-menu ul li.open:focus a {
+  color: #1B0120;
+  text-decoration: none;
   background: transparent;
 }
 div.banner {
@@ -11514,8 +11588,34 @@ h3 a:focus {
   animation: bounceInLeft 800ms ease-out;
 }
 .profile-sidebar {
-  margin-top: 0;
   padding-right: 0;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px 5px 0;
+  float: left;
+}
+.gender-choose {
+  width: 400px;
+  margin: 0 auto;
+}
+.gender-choose .title {
+  margin: 5px 0;
+}
+.people {
+  background-image: url('../img/people.png');
+  background-repeat: no-repeat;
+  width: 94px;
+  height: 225px;
+  display: inline-block;
+  padding-top: 230px;
+  margin: 30px 50px 50px;
+}
+.people.women {
+  background-position: -94px 0;
+  width: 91px;
+  margin-top: 30px;
 }
 h1.type-message a {
   color: #5F2E68;
@@ -11645,3 +11745,22 @@ img {
 .b-language a.flag {
   text-indent: -10000px;
 }
+/*btn-upload*/
+.btn-upload {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+.btn-upload input {
+  font-size: 36px;
+  height: 35px !important;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 98%;
+  z-index: 1;
+}
+/*btn-upload*/
