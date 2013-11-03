@@ -13,18 +13,17 @@
                             <h3><a class="user-profile" ng-href="/user/{{ item.id }}/profile">
                                 {{item.fullname}}<span ng-show="item.age">, {{ item.age }}</span>
                             </a></h3>
-                            <p>Украина, Винница</p>
-                            <p>Мега-личность и еще что-то типа того по какой-то интересной теме</p>
-                            <p>{{ item.city }}</p>
+                            <p>{{item.profile.address.country}}, {{item.profile.address.city}}</p>
+                            <p>{{item.profile.hobby}}</p>
                         </div>
                     </div>
                     <!--a class="send-message btn btn-primary btn-sm" href="#">
                         <i class="icon-envelope-alt icon-white"></i>
                         Написать
                     </a-->
-                    <a class="user-photo" href="#">
+                    <!--a class="user-photo" href="#">
                         2 фото
-                    </a>
+                    </a-->
                 </div>
             </td>
         </tr>
