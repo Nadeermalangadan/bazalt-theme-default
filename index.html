@@ -38,11 +38,11 @@
         </div>
         <div ng-if="$user.data.id">
             <a ng-href="/user/{{ $user.data.id }}/profile">{{$user.data.fullname}}</a>
+            <a href="" ng-click="payGift()"><span class="label label-default">{{$user.data.account}} {{ 'грн.'|translate }}</span></a>
             <a ng-click="$user.logout()" href="">{{ 'Выйти'|translate }}</a>
         </div>
     </div>
 </div>
-
 
 <div id="wrap">
 

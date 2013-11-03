@@ -7,11 +7,18 @@
                 <h4 class="modal-title">{{'Пополнение счета'|translate }}</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-info">
-                    {{'Вы собираетесь пополнить Ваш счёт'|translate }}.
-                    {{'Ваш текущий баланс:'|translate }} 10 <span translate>грн</span>.
+                <div bz-loading-container="paymentLoading">
+                    {{'Введите сумму для пополнения:'|translate }}
+
+                    <form ng-submit="doPay(needToPay.diff)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="needToPay.diff" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="{{'Пополнить'|translate }}" class="btn btn-primary" />
+                        </div>
+                    </form>
                 </div>
-                Pay
             </div>
         </div>
     </div>

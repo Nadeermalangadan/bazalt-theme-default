@@ -24,11 +24,24 @@ define('routes', [
                 bzLanguageProvider.language('ru_RU');
             }])
 
-        .run(['$routeSegment', '$rootScope', 'bzConfig', '$filter', function($routeSegment, $rootScope, $config, $filter) {
+        .run(['$routeSegment', '$rootScope', 'bzConfig', '$filter', 'bcPayments.Factories.Transaction',
+            function($routeSegment, $rootScope, $config, $filter, TransactionResource) {
             $rootScope.$routeSegment = $routeSegment;
             $rootScope.$config = $config;
             $rootScope.$filter = $filter;
 
+            $rootScope.payGift = function () {
+                $('#payModal').modal();
+            };
+
+            $rootScope.doPay = function(amount) {
+                $rootScope.paymentLoading = true;
+                TransactionResource.get({'amount': amount}, function(data) {
+                    angular.element(data.form).submit();
+                }, function() {
+                    $rootScope.paymentLoading = false;
+                });
+            };
             // for site
             $rootScope.banner = {
                 categoryId: null

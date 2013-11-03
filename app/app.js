@@ -17,6 +17,7 @@ define('app', [
     'components/bcPages/module',
     'components/bcMenu/module',
     'components/bcUsers/module',
+    'components/bcSites/module',
     'components/bcPayments/module'
 ], function (angular) {
     'use strict';
@@ -37,6 +38,7 @@ define('app', [
     modules.push('bzDatepicker');
 
     // components
+    modules.push('Components.bcSites');
     modules.push('Components.bcUsers');
     modules.push('Components.bcMenu');
     modules.push('Components.bcPages');

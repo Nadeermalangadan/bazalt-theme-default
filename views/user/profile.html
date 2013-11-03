@@ -19,10 +19,7 @@
 
             <div class="menu">
                 <ul class="nav nav-tabs nav-stacked">
-                    <li ng-if="!isOwnProfile">
-                        <a data-toggle="modal" href="" ng-click="sendGift()" class="b-gifts">{{ 'Подарить подарок:'|translate }}</a>
-                    </li>
-                    <li>
+                    <li ng-if="isOwnProfile">
                         <a href="/user/{{ user.id }}/view" data-ng-class="{'active': $routeSegment.startsWith('profile.view')}" class="list-group-item">
                             {{ 'Профиль'|translate }}
                         </a>
@@ -51,6 +48,9 @@
                         <a data-toggle="modal" href="" ng-click="sendMessage()" class="b-send-message">
                             {{ 'Написать сообщение'|translate }}
                         </a>
+                    </li>
+                    <li ng-if="!isOwnProfile">
+                        <a data-toggle="modal" href="" ng-click="sendGift()">{{ 'Подарить подарок:'|translate }}</a>
                     </li>
                 </ul>
             </div>
