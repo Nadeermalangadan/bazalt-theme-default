@@ -66,7 +66,7 @@
             <span class="col-lg-4">{{'Семейное положение'|translate }}:</span>
             <span class="col-lg-8">{{ user.profile.maritalstatus }}</span>
         </li>
-        <li class="row" ng-show="user.profile.have_children">
+        <li class="row" ng-hide="user.profile.have_children">
             <span class="col-lg-4">{{'Есть ли у вас дети'|translate }}?</span>
             <span class="col-lg-8">{{ user.profile.have_children }}</span>
         </li>
@@ -90,7 +90,30 @@
         <li class="divider"></li>
         <li class="row" ng-show="user.profile.languages">
             <span class="col-lg-4">{{'Знания иностранных языков'|translate }}:</span>
-            <span class="col-lg-8">{{ user.profile.languages }}</span>
+            <span class="col-lg-8">
+                <ul class="list-unstyled row">
+                    <li class="row">
+                        <span class="col-lg-4">{{'Английский'|translate }}: </span>
+                        <span class="col-lg-8">{{user.profile.language_en.level}}</span>
+                    </li>
+                    <li class="row">
+                        <span class="col-lg-4">{{'Немецкий'|translate }}: </span>
+                        <span class="col-lg-8">{{user.profile.language_ge.level}}</span>
+                    </li>
+                    <li class="row">
+                        <span class="col-lg-4">{{'Французский'|translate }}: </span>
+                        <span class="col-lg-8">{{user.profile.language_fr.level}}</span>
+                    </li>
+                    <li class="row">
+                        <span class="col-lg-4">{{'Итальянский'|translate }}: </span>
+                        <span class="col-lg-8">{{user.profile.language_it.level}}</span>
+                    </li>
+                    <li class="row">
+                        <span class="col-lg-4">{{'Русский'|translate }}: </span>
+                        <span class="col-lg-8">{{user.profile.language_ru.level}}</span>
+                    </li>
+                </ul>
+            </span>
         </li>
         <li class="row" ng-show="user.profile.personality">
             <span class="col-lg-4">{{'Личность'|translate }}:</span>
@@ -154,7 +177,7 @@
         </li>
         <li class="row" ng-show="user.profile.mtel">
             <span class="col-lg-4">{{'Мобильный телефон'|translate }}:</span>
-            <span class="col-lg-8">{{ user.profile.mtel }}</span>
+            <span class="col-lg-8">{{ user.profile.mtel.first }} {{ user.profile.mtel.second }} {{ user.profile.mtel.third }}, <br />{{ user.profile.mtel1.first }} {{ user.profile.mtel1.second }} {{ user.profile.mtel1.third }}</span>
         </li>
         <li class="row" ng-show="user.profile.email">
             <span class="col-lg-4">{{'E-mail'|translate }}:</span>
@@ -162,7 +185,7 @@
         </li>
         <li class="row" ng-show="user.profile.address">
             <span class="col-lg-4">{{'Домашний адрес'|translate }}:</span>
-            <span class="col-lg-8">{{ user.profile.address }}</span>
+            <span class="col-lg-8">{{user.profile.address.index}}, {{user.profile.address.country}}, {{user.profile.address.city}}, {{user.profile.address.home}}, {{user.profile.address.address}}</span>
         </li>
         <li class="divider"></li>
         <li class="row" ng-show="user.profile.myinteresting">
