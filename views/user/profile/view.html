@@ -66,9 +66,9 @@
             <span class="col-lg-4">{{'Семейное положение'|translate }}:</span>
             <span class="col-lg-8">{{ user.profile.maritalstatus }}</span>
         </li>
-        <li class="row" ng-show="user.profile.children">
-            <span class="col-lg-4">{{'Дети'|translate }}:</span>
-            <span class="col-lg-8">{{ user.profile.children }}</span>
+        <li class="row" ng-show="user.profile.have_children">
+            <span class="col-lg-4">{{'Есть ли у вас дети'|translate }}?</span>
+            <span class="col-lg-8">{{ user.profile.have_children }}</span>
         </li>
         <li class="row" ng-show="user.profile.childrenmore">
             <span class="col-lg-4">{{'Планируете ли детей в будущем'|translate }}:</span>
