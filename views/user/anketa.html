@@ -8,11 +8,10 @@
         </div>
     </div>
 </div>
-
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.height.$dirty && register.height.$invalid }">
     <label class="control-label col-lg-3">{{ 'Рост'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.height">
+        <select class="form-control" required name="height" ng-model="user.height">
             <option>149 см - 4'11"</option>
             <option>150 см - 4'11"</option>
             <option>151 см - 4'11"</option>
@@ -78,18 +77,18 @@
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.weight.$dirty && register.weight.$invalid }">
     <label class="control-label col-lg-3">{{ 'Вес'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.weight">
+        <select class="form-control" required name="weight" ng-model="user.weight">
             <option ng-repeat="i in weights">{{i.kg}} {{ 'кг'|translate }} - {{i.pounds}} {{ 'фунт'|translate }}</option>
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.hair.$dirty && register.hair.$invalid }">
     <label class="control-label col-lg-3">{{ 'Цвет волос'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.hair">
+        <select required name="hair" class="form-control" ng-model="user.hair">
             <option>{{ 'Рыжий'|translate }}</option>
             <option>{{ 'Черный'|translate }}</option>
             <option>{{ 'Темно-коричневый'|translate }}</option>
@@ -104,10 +103,10 @@
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.eyes.$dirty && register.eyes.$invalid }">
     <label class="control-label col-lg-3">{{ 'Цвет глаз'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.eyes">
+        <select class="form-control" required name="eyes" ng-model="user.eyes">
             <option>{{ 'Черные'|translate }}</option>
             <option>{{ 'Коричневые'|translate }}</option>
             <option>{{ 'Голубые'|translate }}</option>
@@ -118,16 +117,10 @@
         </select>
     </div>
 </div>
-<!--div class="form-group">
-    <label class="control-label col-lg-3">{{ 'Тип телосложения'|translate }}:</label>
-    <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.bodytype">
-    </div>
-</div-->
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.education.$dirty && register.education.$invalid }">
     <label class="control-label col-lg-3">{{ 'Образование'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.education">
+        <select class="form-control" required name="education" ng-model="user.education">
             <option>{{ 'Общее среднее образование'|translate }}</option>
             <option>{{ 'Профессионально-техническое образование'|translate }}</option>
             <option>{{ 'Высшее образование'|translate }}</option>
@@ -148,22 +141,22 @@
         <input class="form-control" type="text" ng-model="user.educationyear">
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.profession.$dirty && register.profession.$invalid }">
     <label class="control-label col-lg-3">{{ 'Профессия'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.profession">
+        <input class="form-control" type="text" required name="profession" ng-model="user.profession">
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.professionnow.$dirty && register.professionnow.$invalid }">
     <label class="control-label col-lg-3">{{ 'Кем и где вы работаете в настоящее время'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control" type="text" ng-model="user.professionnow">
+        <input class="form-control" type="text" required name="professionnow" ng-model="user.professionnow">
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.maritalstatus.$dirty && register.maritalstatus.$invalid }">
     <label class="control-label col-lg-3">{{ 'Семейное положение'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.maritalstatus">
+        <select class="form-control" required name="maritalstatus" ng-model="user.maritalstatus">
             <option>{{ 'Не замужем'|translate }}</option>
             <option>{{ 'Разведена'|translate }}</option>
             <option>{{ 'Вдова'|translate }}</option>
@@ -173,10 +166,10 @@
 
 <div ng-init="user.children=[];">
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error': register.have_children.$dirty && register.have_children.$invalid }">
         <label class="control-label col-lg-3">{{ 'Дети'|translate }}<span class="star">*</span>:</label>
         <div class="controls col-lg-9">
-            <select class="form-control" ng-model="user.have_children">
+            <select class="form-control" required name="have_children" ng-model="user.have_children">
                 <option value="yes">{{ 'Есть'|translate }}</option>
                 <option value="no">{{ 'Нет'|translate }}</option>
             </select>
@@ -208,14 +201,6 @@
                             <option>Мальчик</option>
                             <option>Девочка</option>
                         </select>
-                        <!--a href="" class="btn btn-primary" ng-click="user.children.push({name: 'nnnn', age: 2})">add</a>
-
-                        <div ng-repeat="child in user.children">
-                            <label>name</label>
-                            <input ng-model="child.name" type="text" />
-                            <label>age</label>
-                            <input type="text" ng-model="child.age" />
-                        </div-->
                     </div>
                 </div>
                 <div class="form-group">
@@ -232,20 +217,20 @@
     </div>
 </div>
 
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.childrenmore.$dirty && register.childrenmore.$invalid }">
     <label class="control-label col-lg-3">{{ 'Планируете ли детей в будущем'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.childrenmore">
+        <select class="form-control" required name="childrenmore" ng-model="user.childrenmore">
             <option>{{ 'Да'|translate }}</option>
             <option>{{ 'Нет'|translate }}</option>
             <option>{{ 'Не решила'|translate }}</option>
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.religion.$dirty && register.religion.$invalid }">
     <label class="control-label col-lg-3">{{ 'Вероисповедание'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.religion">
+        <select class="form-control" required name="religion" ng-model="user.religion">
             <option>{{ 'Христианство'|translate }}</option>
             <option>{{ 'Православие'|translate }}</option>
             <option>{{ 'Католицизм'|translate }}</option>
@@ -257,19 +242,19 @@
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.smoke.$dirty && register.smoke.$invalid }">
     <label class="control-label col-lg-3">{{ 'Курение'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.smoke">
+        <select class="form-control" required name="smoke" ng-model="user.smoke">
             <option>{{ 'Да'|translate }}</option>
             <option>{{ 'Нет'|translate }}</option>
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.alcohol.$dirty && register.alcohol.$invalid }">
     <label class="control-label col-lg-3">{{ 'Спиртные напитки'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <select class="form-control" ng-model="user.alcohol">
+        <select class="form-control" required name="alcohol" ng-model="user.alcohol">
             <option>{{ 'Часто'|translate }}</option>
             <option>{{ 'Иногда'|translate }}</option>
             <option>{{ 'В обществе'|translate }}</option>
@@ -277,7 +262,7 @@
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.languages.$dirty && register.languages.$invalid }">
     <label class="control-label col-lg-3">{{ 'Уровень знания иностранных языков'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9" ng-init="user.languages=[{}];">
 
@@ -354,16 +339,16 @@
         <textarea class="form-control" ng-model="user.personality"></textarea>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.hobby.$dirty && register.hobby.$invalid }">
     <label class="control-label col-lg-3">{{ 'Хобби, интересы'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <textarea class="form-control" ng-model="user.hobby"></textarea>
+        <textarea class="form-control" required name="hobby" ng-model="user.hobby"></textarea>
     </div>
 </div>
-<div class="form-group" ng-show="user.gender == 'female'">
+<div class="form-group" ng-show="user.gender == 'female'" ng-class="{ 'has-error': register.character.$dirty && register.character.$invalid }">
     <label class="control-label col-lg-3">{{ 'Основные черты Вашего характера'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <textarea class="form-control" ng-model="user.character"></textarea>
+        <textarea class="form-control" required name="character" ng-model="user.character"></textarea>
     </div>
 </div>
 <div class="form-group" ng-show="user.gender == 'female'">
@@ -374,60 +359,60 @@
         </select>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.partner.$dirty && register.partner.$invalid }">
     <label class="control-label col-lg-3">{{ 'Описание Вашего идеально партнера (рост, вес, возраст, религия, черты характера и т.д.)'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <textarea class="form-control" ng-model="user.partner"></textarea>
+        <textarea class="form-control" required name="partner" ng-model="user.partner"></textarea>
     </div>
 </div>
-<div class="form-group" ng-show="user.gender == 'female'">
+<div class="form-group" ng-show="user.gender == 'female'" ng-class="{ 'has-error': register.relations.$dirty && register.relations.$invalid }">
     <label class="control-label col-lg-3">{{ 'Какими Вы представляете идеальные взаимоотношения'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <textarea class="form-control" ng-model="user.relations"></textarea>
+        <textarea class="form-control" required name="relations" ng-model="user.relations"></textarea>
     </div>
 </div>
 
-<div class="form-group b-tel">
+<div class="form-group b-tel" ng-class="{ 'has-error': register.mtel.$dirty && register.mtel.$invalid }">
     <label class="control-label col-lg-3">{{ 'Контактный телефон'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control col-lg-1" type="text" ng-model="user.mtel.first">
-        <input class="form-control col-lg-1" type="text" ng-model="user.mtel.second">
-        <input class="form-control col-lg-3" type="text" ng-model="user.mtel.third">
+        <input class="form-control col-lg-1" type="text" required name="mtel" ng-model="user.mtel.first">
+        <input class="form-control col-lg-1" type="text" required name="mtel" ng-model="user.mtel.second">
+        <input class="form-control col-lg-3" type="text" required name="mtel" ng-model="user.mtel.third">
     </div>
 </div>
-<div class="form-group b-tel">
+<div class="form-group b-tel" ng-class="{ 'has-error': register.mtel1.$dirty && register.mtel1.$invalid }">
     <label class="control-label col-lg-3">{{ 'Контактный телефон'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
-        <input class="form-control col-lg-1" type="text" ng-model="user.mtel1.first">
-        <input class="form-control col-lg-1" type="text" ng-model="user.mtel1.second">
-        <input class="form-control col-lg-3" type="text" ng-model="user.mtel1.third">
+        <input class="form-control col-lg-1" type="text" required name="mtel1" ng-model="user.mtel1.first">
+        <input class="form-control col-lg-1" type="text" required name="mtel1" ng-model="user.mtel1.second">
+        <input class="form-control col-lg-3" type="text" required name="mtel1" ng-model="user.mtel1.third">
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-class="{ 'has-error': register.address.$dirty && register.address.$invalid }">
     <label class="control-label col-lg-3">{{ 'Домашний адрес'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <div class="form-group">
             <label class="control-label col-lg-3">{{ 'индекс'|translate }}:</label>
             <div class="controls col-lg-9">
-                <input class="form-control" type="text" ng-model="user.address.index" />
+                <input class="form-control" type="text" required name="address" ng-model="user.address.index" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-lg-3">{{ 'страна'|translate }}:</label>
             <div class="controls col-lg-9">
-                <input class="form-control" type="text" ng-model="user.address.country" />
+                <input class="form-control" type="text" required name="address" ng-model="user.address.country" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-lg-3">{{ 'город'|translate }}:</label>
             <div class="controls col-lg-9">
-                <input class="form-control" type="text" ng-model="user.address.city" />
+                <input class="form-control" type="text" required name="address" ng-model="user.address.city" />
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-lg-3">{{ 'улица'|translate }}:</label>
             <div class="controls col-lg-9">
-                <input class="form-control" type="text" ng-model="user.address.home" />
+                <input class="form-control" type="text" required name="address" ng-model="user.address.home" />
             </div>
         </div>
         <div class="form-group">
