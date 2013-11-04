@@ -1,10 +1,11 @@
 <div class="main_info">
+
+    <div class="pull-right" ng-if="$user.has('admin.access')">
+        <a href="" ng-if="!user.is_active" class="btn btn-success">Опубликовать</a>
+        <a href="" ng-if="user.is_active" class="btn btn-danger">Отменить публикацию</a>
+    </div>
     <h1>
         {{ user.fullname }}
-        <p>
-            <span class="help-block" ng-show="user.is_moderated">{{'Анкета прошла модерацию'|translate }}</span>
-            <span class="help-block" ng-hide="user.is_moderated">{{'Анкета не прошла модерацию'|translate }}</span>
-        </p>
     </h1>
 
     <div>
