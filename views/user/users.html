@@ -6,8 +6,8 @@
             <td>
                 <div class="one-user">
                     <div class="row">
-                        <div class="col col-lg-2">
-                            <img src="http://placehold.it/130x150" class="avatar" />
+                        <div class="col col-lg-2" ng-if="item.avatar">
+                            <img ng-src="{{ item.avatar }}" />
                         </div>
                         <div class="col col-lg-10">
                             <h3><a class="user-profile" ng-href="/user/{{ item.id }}/profile">

@@ -5,12 +5,12 @@
                 <img ng-if="!user.avatar" src="http://placehold.it/200x200" />
                 <img ng-if="user.avatar" ng-src="{{ user.avatar }}" />
                 <!--img src="http://placehold.it/200x200" /-->
-                <div class="b-edit-avatar">
+                <!--div class="b-edit-avatar">
                 <span class="list-group-item btn btn-default">
                     <a class="btn btn-link" href="">{{ 'Сменить аватарку'|translate }}</a>
                     <input class="btn-file-uploader" ng-file-select type="file" />
                 </span>
-                </div>
+                </div-->
             </div>
 
             <div ng-include="'/views/user/profile/send-message.html'"></div>
@@ -19,7 +19,7 @@
 
             <div class="menu">
                 <ul class="nav nav-tabs nav-stacked">
-                    <li ng-if="isOwnProfile">
+                    <li ng-if="isOwnProfile" >
                         <a href="/user/{{ user.id }}/view" data-ng-class="{'active': $routeSegment.startsWith('profile.view')}" class="list-group-item">
                             {{ 'Профиль'|translate }}
                         </a>
@@ -45,7 +45,7 @@
                         </a>
                     </li>
                     <li ng-if="!isOwnProfile">
-                        <a data-toggle="modal" href="" ng-click="sendMessage()" class="b-send-message">
+                        <a data-toggle="modal" href="" ng-click="message.to_id = user.id; sendMessage()" class="b-send-message">
                             {{ 'Написать сообщение'|translate }}
                         </a>
                     </li>

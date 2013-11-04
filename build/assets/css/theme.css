@@ -10959,6 +10959,12 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bz-uploaded-files {
   margin-bottom: 10px;
 }
+.file-preview .thumbnail {
+  margin-bottom: 15px;
+}
+.file-preview .btn {
+  margin-bottom: 5px;
+}
 @font-face {
   font-family: 'bebas_neue_cyrillicregular';
   src: url('../font/bebas_neue_cyrillic_2-webfont.eot');
@@ -11046,8 +11052,10 @@ a {
   min-height: 200px;
 }
 .main-content {
-  position: relative;
+  height: auto;
   overflow: hidden;
+  padding-bottom: 20px;
+  position: relative;
 }
 .main-content h4 {
   margin-bottom: 0;

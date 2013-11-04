@@ -4,6 +4,20 @@ define('routes', [
 ], function (angular, app) {
     'use strict';
 
+    app.filter('removeFirst', [function() {
+        return function(value) {
+            if (angular.isArray(value)) {
+                value.pop();
+                return value;
+            }
+            return value;
+        }
+    }]);
+    app.filter('int', [function() {
+        return function(value) {
+            return parseInt(value);
+        }
+    }]);
     app.config(['$routeProvider', '$routeSegmentProvider', '$locationProvider', '$sceProvider', 'bzConfigProvider', '$httpProvider', 'bzLanguageProvider',
             function ($routeProvider, $routeSegmentProvider, $locationProvider, $sceProvider, bzConfigProvider, $httpProvider, bzLanguageProvider) {
                 $locationProvider
@@ -25,10 +39,27 @@ define('routes', [
             }])
 
         .run(['$routeSegment', '$rootScope', 'bzConfig', '$filter', 'bcPayments.Factories.Transaction',
-            function($routeSegment, $rootScope, $config, $filter, TransactionResource) {
+            'bcUsers.Factories.Message', '$user',
+            function($routeSegment, $rootScope, $config, $filter, TransactionResource, MessageResource, $user) {
             $rootScope.$routeSegment = $routeSegment;
             $rootScope.$config = $config;
             $rootScope.$filter = $filter;
+            $rootScope.message = {};
+
+            $rootScope.sendMessageToUser = function(mess) {
+                var mes = new MessageResource(mess);
+                mes.user_id = $user.data.id;
+                $rootScope.sending_message = true;
+                mes.$send(function() {
+                    $rootScope.sending_message = false;
+                    $rootScope.sended_message = true;
+                    $user.$get();
+                    //$('#sendMessage').modal('hide')
+                });
+            };
+            $rootScope.$watch('$site.options.message_cost', function(value) {
+                $rootScope.message_cost = parseInt(value);
+            });
 
             $rootScope.payGift = function () {
                 $('#payModal').modal();

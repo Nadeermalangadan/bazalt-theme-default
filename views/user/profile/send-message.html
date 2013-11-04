@@ -1,22 +1,30 @@
 <!-- Modal -->
 <div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="myGiftsModal" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" bz-loading-container="sending_message">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">{{'Ваше сообщение для'|translate }} {{ user.fullname }}</h4>
             </div>
             <div class="modal-body">
-                <div class="b-message" ng-if="$site.options.message_cost <= $user.data.account">
-                    <textarea class="form-control"></textarea>
+                <div ng-if="!sended_message">
+                <div class="b-message" ng-if="message_cost <= $user.data.account">
+                    <textarea ng-model="message.message" class="form-control"></textarea>
+                    <div>{{'С Вашего счета будет снято:'|translate }} {{message_cost}} {{'грн.'|translate }}</div>
                 </div>
-                <div class="b-message" ng-if="$site.options.message_cost > $user.data.account">
+                <div class="b-message" ng-if="message_cost > $user.data.account">
                     <div>{{'У Вас недостаточно средств, пополните счет'|translate }}</div>
                     <a href="" class="btn btn-primary" ng-click="payGift()">Пополнить</a>
                 </div>
+                </div>
+                <div ng-if="sended_message">
+                    <div class="alert alert-success">
+                    {{'Сообщение отправлено'|translate }}
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">{{'Отправить'|translate }}</button>
+            <div class="modal-footer" ng-if="!sended_message">
+                <button type="button" ng-click="sendMessageToUser(message)" class="btn btn-primary">{{'Отправить'|translate }}</button>
             </div>
         </div>
         <!-- /.modal-content -->

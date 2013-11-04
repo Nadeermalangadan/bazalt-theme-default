@@ -6,6 +6,11 @@
             <span class="help-block" ng-hide="user.is_moderated">{{'Анкета не прошла модерацию'|translate }}</span>
         </p>
     </h1>
+
+    <div>
+        <div bz-img="user.images|removeFirst"></div>
+    </div>
+
     <ul class="list-unstyled">
         <li class="row" ng-show="user.firstname">
             <span class="col-lg-4">{{'Имя'|translate }}:</span>
