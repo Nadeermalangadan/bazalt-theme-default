@@ -7,43 +7,47 @@
                 <h4 class="modal-title">{{'Выберите подарок для '|translate }}{{ user.fullname }}</h4>
             </div>
             <div class="modal-body" ng-init="currentTab = 'tab1'">
-                <div class="head-modal">
-                    <a class="pull-right btn-link user-money" data-toggle="modal" href="" ng-click="payGift()">
-                        {{'Ваш баланс'|translate }}:
-                        <b>10 {{'грн'|translate }}</b>
-                    </a>
-                    <!--ul class="nav nav-tabs gifts-type">
-                        <li data-ng-class="{'active': currentTab == 'tab1'}"><a ng-click="currentTab = 'tab1'" href="">Дружба</a></li>
-                        <li data-ng-class="{'active': currentTab == 'tab2'}"><a ng-click="currentTab = 'tab2'" href="">Романтика</a></li>
-                        <li data-ng-class="{'active': currentTab == 'tab3'}"><a ng-click="currentTab = 'tab3'" href="">Любовь</a></li>
-                    </ul-->
-                    <div class="clearfix"></div>
+                <div class="tab-content" bz-loading-container="loading">
+                    <!--div class="tab-pane active" data-ng-class="{'active': currentTab == 'tab1'}" id="friends"-->
+                        <div class="b-gifts" data-ng-repeat="gift in gifts">
+                            <div class="row">
+                                <div class="col col-lg-3">
+                                    <a class="gift-cell" href="" ng-click="prepareGift(gift)">
+                                        <img class="gift-img" ng-src="{{ gift.thumbnails.preview }}"/>
+                                        <div class="gift-price badge"><span>{{ gift.price }}</span></div>
+                                    </a>
+                                </div>
+                                <div class="col col-lg-9">
+                                    <div ng-if="gift.price <= $user.data.account">
+                                        <p class="b-title">Подарок с названием</p>
+                                        <article>
+                                            Описание подарка с названием, большое, длинное и красивое
+                                        </article>
+                                        <p class="text-right">
+                                            <a href="#"  class="btn btn-primary">
+                                                {{'Подарить'|translate }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div ng-if="gift.price > $user.data.account" bz-loading-container="paymentLoading">
+                                        {{'У Вас недостаточно средств на счету. Пополните, пожалуйста, счет.'|translate }}
+                                        <form ng-submit="doPay(needToPay.diff)">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" ng-model="needToPay.diff" />
+                                            </div>
+                                            <div class="text-right form-group">
+                                                <input type="submit" value="{{'Пополнить'|translate }}" class="btn btn-primary" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--/div-->
+                    <!--div class="tab-pane" data-ng-class="{'active': currentTab == 'tab2'}" id="romantic"></div>
+                    <div class="tab-pane" data-ng-class="{'active': currentTab == 'tab3'}" id="love"></div-->
                 </div>
-                <div ng-if="!needPay" class="tab-content" bz-loading-container="loading">
-                    <div class="tab-pane active" data-ng-class="{'active': currentTab == 'tab1'}" id="friends">
-                        <div class="b-gifts">
-                            <a class="gift-cell" href="" ng-click="prepareGift(gift)" data-ng-repeat="gift in gifts">
-                                <img class="gift-img" ng-src="{{ gift.thumbnails.preview }}"/>
 
-                                <div class="gift-price badge"><span>{{ gift.price }}</span></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="tab-pane" data-ng-class="{'active': currentTab == 'tab2'}" id="romantic"></div>
-                    <div class="tab-pane" data-ng-class="{'active': currentTab == 'tab3'}" id="love"></div>
-                </div>
-                <div ng-if="needPay" bz-loading-container="paymentLoading">
-                    {{'У Вас недостаточно средств на счету. Пополните, пожалуйста, счет.'|translate }}
-
-                    <form ng-submit="doPay(needToPay.diff)">
-                        <div class="form-group">
-                            <input type="text" class="form-control" ng-model="needToPay.diff" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="{{'Пополнить'|translate }}" class="btn btn-primary" />
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
         <!-- /.modal-content -->
