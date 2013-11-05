@@ -37,11 +37,17 @@
                     <li ng-if="isOwnProfile">
                         <a href="/user/{{ user.id }}/messages" data-ng-class="{'active': $routeSegment.startsWith('profile.messages')}" class="list-group-item">
                             {{ 'Сообщения'|translate }}
+                            <span class="pull-right">
+                                <i class="icon-envelope"></i> <span class="label label-default">11</span>
+                            </span>
                         </a>
                     </li>
                     <li ng-if="isOwnProfile">
                         <a href="/user/{{ user.id }}/gifts" data-ng-class="{'active': $routeSegment.startsWith('profile.gifts')}" class="list-group-item">
                             {{ 'Мои подарки'|translate }}
+                             <span class="pull-right">
+                                <i class="icon-gift"></i> <span class="label label-default">11</span>
+                            </span>
                         </a>
                     </li>
                     <li ng-if="!isOwnProfile">

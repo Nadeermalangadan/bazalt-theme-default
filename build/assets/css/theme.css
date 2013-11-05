@@ -6986,11 +6986,13 @@ td.visible-print {
   padding: 5px 2px;
 }
 .user-profile .b-profile-content .user-gifts .one-gifts {
-  position: relative;
+  display: inline-block;
   height: 100px;
-  width: 100px;
-  margin: 0 5px 10px 0px;
+  margin: 0 5px 10px 0;
   overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  width: 100px;
 }
 .user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from {
   background: rgba(0, 0, 0, 0.4);
@@ -7032,6 +7034,20 @@ td.visible-print {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   bottom: 0;
+}
+.b-gifts {
+  margin-bottom: 10px;
+}
+.b-gifts .b-title {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+.b-gifts article {
+  color: #333333;
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
 }
 .b-gifts .gift-cell {
   display: inline-block;

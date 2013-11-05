@@ -153,13 +153,23 @@
         <input class="form-control" type="text" required name="professionnow" ng-model="user.professionnow">
     </div>
 </div>
-<div class="form-group" ng-class="{ 'has-error': register.maritalstatus.$dirty && register.maritalstatus.$invalid }">
+<div class="form-group" ng-if="user.gender == 'female'" ng-class="{ 'has-error': register.maritalstatus.$dirty && register.maritalstatus.$invalid }">
     <label class="control-label col-lg-3">{{ 'Семейное положение'|translate }}<span class="star">*</span>:</label>
     <div class="controls col-lg-9">
         <select class="form-control" required name="maritalstatus" ng-model="user.maritalstatus">
             <option>{{ 'Не замужем'|translate }}</option>
             <option>{{ 'Разведена'|translate }}</option>
             <option>{{ 'Вдова'|translate }}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group" ng-if="user.gender == 'male'" ng-class="{ 'has-error': register.maritalstatus.$dirty && register.maritalstatus.$invalid }">
+    <label class="control-label col-lg-3">{{ 'Семейное положение'|translate }}<span class="star">*</span>:</label>
+    <div class="controls col-lg-9">
+        <select class="form-control" required name="maritalstatus" ng-model="user.maritalstatus">
+            <option>{{ 'Не женат'|translate }}</option>
+            <option>{{ 'Разведен'|translate }}</option>
+            <option>{{ 'Вдовец'|translate }}</option>
         </select>
     </div>
 </div>
@@ -198,8 +208,8 @@
                     <label class="control-label col-lg-3">{{ 'Пол'|translate }}:</label>
                     <div class="controls col-lg-9">
                         <select class="form-control" ng-model="child.sex">
-                            <option>Мальчик</option>
-                            <option>Девочка</option>
+                            <option value="boy">{{ 'Мальчик'|translate }}</option>
+                            <option value="girl">{{ 'Девочка'|translate }}</option>
                         </select>
                     </div>
                 </div>

@@ -95,12 +95,26 @@
               color: #fff;
               background: #5F2E68;
               border: 1px solid #DDDDDD;
+              span {
+                i {
+                  color: #fff;
+                }
+              }
             }
             &.b-gifts {
               background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
               padding: 5px 15px;
               &:hover, &:focus {
                 background: #1B0120;
+              }
+            }
+            span {
+              i {
+                color: #5F2E68;
+              }
+              .label {
+                padding-left: 4px;
+                margin-left: 2px;
               }
             }
           }
@@ -164,6 +178,9 @@
               color: #1B0120;
               font-size: 11px;
               line-height: 16px;
+            }
+            &.new {
+              background: rgba(95, 46, 104, 0.2);
             }
           }
           &.message {
@@ -240,11 +257,13 @@
     }
     .user-gifts {
       .one-gifts {
-        position: relative;
+        display: inline-block;
         height: 100px;
-        width: 100px;
-        margin: 0 5px 10px 0px;
+        margin: 0 5px 10px 0;
         overflow: hidden;
+        position: relative;
+        vertical-align: top;
+        width: 100px;
         img {
 
         }
