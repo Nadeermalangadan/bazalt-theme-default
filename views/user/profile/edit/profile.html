@@ -1,6 +1,5 @@
-<h1>{{'Редактировать профиль'|translate }}</h1>
+<h1 xmlns="http://www.w3.org/1999/html">{{'Редактировать профиль'|translate }}</h1>
 
-     
 <form name="register" ng-submit="saveUser(user)" class="registration form-horizontal">
     <div class="form-group" ng-class="{'error': errors.firstname}">
         <label class="control-label col-lg-3">{{'Имя'|translate }}</label>
@@ -14,23 +13,6 @@
             <input class="form-control" type="text" ng-model="user.secondname">
         </div>
     </div>
-    <!--div class="form-group" ng-class="{'error': errors.firstname}">
-        <label class="control-label col-lg-3">Дата рождения</label>
-        <div class="controls col-lg-9">
-            <div data-date-start-view="2" data-date-format="dd.mm.yyyy" data-date="01.01.1980" id="dpYears" class="input-group date">
-                <input type="text" ng-model="user.birth_date" bz-datepicker size="16" class="form-control">
-                <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
-            </div>
-        </div>
-    </div>
-    <div class="form-group" ng-class="{'error': errors.email}">
-        <label class="control col-lg-3">E-mail:</label>
-        <div class="controls col-lg-9">
-            <input class="form-control" type="email" required ng-model="user.email"/>
-            <div class="help-block" ng-if="errors.email.required">Укажите Ваш e-mail</div>
-            <div class="help-block" ng-if="errors.email.email">Вы неверно ввели e-mail</div>
-        </div>
-    </div-->
     <div ng-include="'/views/user/anketa.html'"></div>
     <div class="form-group">
         <label class="control col-lg-3"></label>
