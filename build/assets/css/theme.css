@@ -7000,56 +7000,6 @@ td.visible-print {
   line-height: 14px;
   padding: 5px 2px;
 }
-.user-profile .b-profile-content .user-gifts .one-gifts {
-  display: inline-block;
-  height: 100px;
-  margin: 0 5px 10px 0;
-  overflow: hidden;
-  position: relative;
-  vertical-align: top;
-  width: 100px;
-}
-.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from {
-  background: rgba(0, 0, 0, 0.4);
-  font-size: 11px;
-  line-height: 12px;
-  padding: 5px;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  position: absolute;
-  opacity: 0;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  left: 0;
-  right: 0;
-  bottom: -40px;
-}
-.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a {
-  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  padding: 0;
-  line-height: 20px;
-}
-.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a .b-avatar {
-  display: inline-block;
-  margin-right: 2px;
-}
-.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a:hover,
-.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from a:focus {
-  text-decoration: none;
-}
-.user-profile .b-profile-content .user-gifts .one-gifts .b-gifts-from p {
-  margin: 0;
-}
-.user-profile .b-profile-content .user-gifts .one-gifts:hover .b-gifts-from,
-.user-profile .b-profile-content .user-gifts .one-gifts:focus .b-gifts-from {
-  opacity: 1;
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  bottom: 0;
-}
 .b-gifts {
   margin-bottom: 10px;
 }
@@ -7102,6 +7052,36 @@ td.visible-print {
 .b-gifts .gift-cell:hover .gift-price,
 .b-gifts .gift-cell:focus .gift-price {
   opacity: 1;
+}
+.b-gifts.user-gifts .gift-cell {
+  position: relative;
+}
+.b-gifts.user-gifts .gift-cell label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.b-gifts.user-gifts:hover,
+.b-gifts.user-gifts:focus {
+  text-decoration: none;
+}
+.b-gifts.user-gifts:hover .gift-img,
+.b-gifts.user-gifts:focus .gift-img {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.b-gifts.user-gifts .gift-from {
+  font-size: 14px;
+  line-height: 16px;
+}
+.b-gifts.user-gifts .gift-from a {
+  color: #5F2E68;
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px;
 }
 /*profile*/
 /*modal-dialog*/

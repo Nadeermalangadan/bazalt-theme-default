@@ -7053,6 +7053,15 @@ td.visible-print {
 .b-gifts .gift-cell:focus .gift-price {
   opacity: 1;
 }
+.b-gifts.user-gifts .gift-cell {
+  position: relative;
+}
+.b-gifts.user-gifts .gift-cell .label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .b-gifts.user-gifts:hover,
 .b-gifts.user-gifts:focus {
   text-decoration: none;
