@@ -19,12 +19,12 @@
                                 </div>
                                 <div class="col col-lg-9">
                                     <div ng-if="gift.price <= $user.data.account">
-                                        <p class="b-title">Подарок с названием</p>
+                                        <p class="b-title">{{gift.title|language}}</p>
                                         <article>
-                                            Описание подарка с названием, большое, длинное и красивое
+                                            {{gift.body|language}}
                                         </article>
                                         <p class="text-right">
-                                            <a href="#"  class="btn btn-primary">
+                                            <a href="" ng-click="sendGift(gift)" class="btn btn-primary">
                                                 {{'Подарить'|translate }}
                                             </a>
                                         </p>
