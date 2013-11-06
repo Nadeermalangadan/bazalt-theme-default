@@ -6880,6 +6880,11 @@ td.visible-print {
   background: #5F2E68;
   border: 1px solid #DDDDDD;
 }
+.user-profile .profile-sidebar .menu .nav li a:hover span i,
+.user-profile .profile-sidebar .menu .nav li a:focus span i,
+.user-profile .profile-sidebar .menu .nav li a.active span i {
+  color: #fff;
+}
 .user-profile .profile-sidebar .menu .nav li a.b-gifts {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
   padding: 5px 15px;
@@ -6887,6 +6892,13 @@ td.visible-print {
 .user-profile .profile-sidebar .menu .nav li a.b-gifts:hover,
 .user-profile .profile-sidebar .menu .nav li a.b-gifts:focus {
   background: #1B0120;
+}
+.user-profile .profile-sidebar .menu .nav li a span i {
+  color: #5F2E68;
+}
+.user-profile .profile-sidebar .menu .nav li a span .label {
+  padding-left: 4px;
+  margin-left: 2px;
 }
 .user-profile .profile-sidebar .menu .nav li:first-child a {
   border-radius: 0;
@@ -6931,6 +6943,9 @@ td.visible-print {
   color: #1B0120;
   font-size: 11px;
   line-height: 16px;
+}
+.user-profile .b-profile-content .table-messages tr td.fullname.new {
+  background: rgba(95, 46, 104, 0.2);
 }
 .user-profile .b-profile-content .table-messages tr td.message .one-message {
   position: relative;
@@ -11040,6 +11055,11 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
   line-height: 12px;
+}
+.menu-footer .nav li a:hover,
+.menu-footer .nav li a:focus {
+  background: transparent;
+  text-decoration: underline;
 }
 /* Wrapper for page content to push down footer */
 /*outline*/

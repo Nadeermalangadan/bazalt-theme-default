@@ -1,7 +1,32 @@
 <h1>{{'Мои подарки'|translate }}</h1>
 
 <div bz-loading-container="loading">
-    <div class="user-gifts">
+
+    <div class="b-gifts user-gifts">
+        <div class="row">
+            <div class="col col-lg-3">
+                <a class="gift-cell" href="" ng-click="prepareGift(gift)">
+                    <img class="gift-img" ng-src="/assets/img/gifts/542.jpg"/>
+                </a>
+            </div>
+            <div class="col col-lg-9">
+                <div>
+                    <p class="b-title">Название подарка</p>
+                    <article>
+                        Описание подарка, большое, длинное и красивое
+                    </article>
+                    <p class="gift-from">
+                        Подарок подарил
+                        <a href="#"  class="btn-link">
+                            Username
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--div class="user-gifts">
         <div class="one-gifts">
            <img src="/assets/img/gifts/542.jpg" />
             <div class="b-gifts-from">
@@ -11,5 +36,5 @@
                 <p>With love</p>
             </div>
         </div>
-    </div>
+    </div-->
 </div>
