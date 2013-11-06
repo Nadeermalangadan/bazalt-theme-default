@@ -1,4 +1,4 @@
 window.bazalt = window.bazalt || {
     //mine: 'http://localhost\\:8000'
-    mine: 'http://test.ua2.biz/api'
+    mine: 'http://dsacoustics.ua2.biz/api'
 };
