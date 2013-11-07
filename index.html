@@ -14,32 +14,20 @@
 </div>
 
 <div class="top-bar clearfix">
-    <div class="pull-right ng-cloak">
-        <div class="b-language">
-            <a href="" class="flag flag-gb" data-ng-click="$language.language('en_GB')">En</a>
-            <a href="" class="flag flag-ru" data-ng-click="$language.language('ru_RU')">RU</a>
-        </div>
-        <ul ng-social-buttons
-            data-url="'http://cherchelafam.com/'"
-            data-title="'Шерше ля фам'"
-            data-description="'Шерше ля фам'">
-            <li>{{ 'Делись с друзьями:'|translate }}</li>
-            <li class="ng-social-facebook">Facebook</li>
-            <li class="ng-social-google-plus" data-proxy-url="'/api/social.php'">Google+</li>
-            <li class="ng-social-twitter">Twitter</li>
-            <li class="ng-social-vk">Вконтакте</li>
-            <li class="ng-social-odnoklassniki">Одноклассники</li>
-        </ul>
-    </div>
-    <div class="menu menu-top-right ng-cloak">
+    <div class="menu menu-top-right ng-cloak pull-right">
         <div ng-if="!$user.data.id">
             <a href="/user/registration">{{ 'Регистрация'|translate }}</a>
             <a href="/user/login">{{ 'Вход'|translate }}</a>
         </div>
         <div ng-if="$user.data.id">
-            <a ng-href="/user/{{ $user.data.id }}/profile">{{$user.data.fullname}}</a>
-            <a href="" ng-click="payGift()"><span class="label label-default">{{$user.data.account}} {{ 'грн.'|translate }}</span></a>
             <a ng-click="$user.logout()" href="">{{ 'Выйти'|translate }}</a>
+        </div>
+    </div>
+
+    <div class="menu menu-top-right ng-cloak">
+        <div ng-if="$user.data.id">
+            <a ng-href="/user/{{ $user.data.id }}/profile">{{$user.data.fullname}}</a>
+            <a href="" ng-click="payGift()"><span class="label label-default">{{ 'Баланс:'|translate }} {{$user.data.account}} {{ 'грн.'|translate }}</span></a>
         </div>
     </div>
 </div>
@@ -50,6 +38,16 @@
 
     <div class="page-layout container">
         <header>
+            <ul class="pull-right ng-cloak" ng-social-buttons
+                data-url="'http://cherchelafam.com/'"
+                data-title="'Шерше ля фам'"
+                data-description="'Шерше ля фам'">
+                <li class="ng-social-facebook">Facebook</li>
+                <li class="ng-social-google-plus" data-proxy-url="'/api/social.php'">Google+</li>
+                <li class="ng-social-twitter">Twitter</li>
+                <li class="ng-social-vk">Вконтакте</li>
+                <li class="ng-social-odnoklassniki">Одноклассники</li>
+            </ul>
             <a href="/" class="logo"></a>
             <div class="ng-cloak preloader"></div>
         </header>
@@ -65,6 +63,12 @@
 
         <!--div class="ng-cloak" ng-include="'/views/banners/default.html'"></div-->
         <div class="banners main-menu">
+            <div class="pull-right ng-cloak">
+                <div class="b-language">
+                    <a href="" class="flag flag-gb" data-ng-click="$language.language('en_GB')">En</a>
+                    <a href="" class="flag flag-ru" data-ng-click="$language.language('ru_RU')">RU</a>
+                </div>
+            </div>
             <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 60 }"></div>
             <ul ng-if="$user.data.gender == 'male'" class="ng-cloak nav navbar-nav">
                 <li>

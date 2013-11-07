@@ -4,15 +4,6 @@ define('routes', [
 ], function (angular, app) {
     'use strict';
 
-    app.filter('removeFirst', [function() {
-        return function(value) {
-            if (angular.isArray(value)) {
-                value.pop();
-                return value;
-            }
-            return value;
-        }
-    }]);
     app.filter('int', [function() {
         return function(value) {
             return parseInt(value);

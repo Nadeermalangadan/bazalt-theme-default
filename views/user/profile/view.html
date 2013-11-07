@@ -1,15 +1,15 @@
 <div class="main_info">
 
     <div class="pull-right" ng-if="$user.has('admin.access')">
-        <a href="" ng-if="!user.is_active" class="btn btn-success">Опубликовать</a>
-        <a href="" ng-if="user.is_active" class="btn btn-danger">Отменить публикацию</a>
+        <a href="" ng-if="!user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-success">Разрешить и опубликовать анкету</a>
+        <a href="" ng-if="user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-danger">Заблокировать и убрать анкету</a>
     </div>
     <h1>
         {{ user.fullname }}
     </h1>
 
     <div>
-        <div bz-img="user.images|removeFirst"></div>
+        <div bz-img="user.images"></div>
     </div>
 
     <ul class="list-unstyled">

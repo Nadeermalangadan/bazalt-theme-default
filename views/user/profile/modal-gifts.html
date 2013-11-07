@@ -7,14 +7,13 @@
                 <h4 class="modal-title">{{'Выберите подарок для '|translate }}{{ user.fullname }}</h4>
             </div>
             <div class="modal-body" ng-init="currentTab = 'tab1'">
-                <div class="tab-content" bz-loading-container="loading">
+                <div class="tab-content" bz-loading-container="loading" ng-if="!sended_gift">
                     <!--div class="tab-pane active" data-ng-class="{'active': currentTab == 'tab1'}" id="friends"-->
                         <div class="b-gifts" data-ng-repeat="gift in gifts">
                             <div class="row">
                                 <div class="col col-lg-3">
                                     <a class="gift-cell" href="" ng-click="prepareGift(gift)">
                                         <img class="gift-img" ng-src="{{ gift.thumbnails.preview }}"/>
-                                        <div class="gift-price badge"><span>{{ gift.price }}</span></div>
                                     </a>
                                 </div>
                                 <div class="col col-lg-9">
@@ -24,6 +23,7 @@
                                             {{gift.body|language}}
                                         </article>
                                         <p class="text-right">
+                                            <span>{{'С Вашего счета буде снято'|translate }} {{ gift.price }} {{'грн'|translate }}</span>
                                             <a href="" ng-click="sendGift(gift)" class="btn btn-primary">
                                                 {{'Подарить'|translate }}
                                             </a>
@@ -47,7 +47,11 @@
                     <!--div class="tab-pane" data-ng-class="{'active': currentTab == 'tab2'}" id="romantic"></div>
                     <div class="tab-pane" data-ng-class="{'active': currentTab == 'tab3'}" id="love"></div-->
                 </div>
-
+                <div ng-if="sended_gift">
+                    <div class="alert alert-success">
+                        {{'Подарок был отправлен'|translate }}
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.modal-content -->

@@ -24,7 +24,7 @@
                             {{ 'Профиль'|translate }}
                         </a>
                     </li>
-                    <li ng-if="isOwnProfile">
+                    <li ng-if="$user.has('admin.access')">
                         <a href="/user/{{ user.id }}/edit" data-ng-class="{'active': $routeSegment.startsWith('profile.edit')}" class="list-group-item">
                             {{ 'Редактировать профиль'|translate }}
                         </a>
@@ -37,8 +37,8 @@
                     <li ng-if="isOwnProfile">
                         <a href="/user/{{ user.id }}/messages" data-ng-class="{'active': $routeSegment.startsWith('profile.messages')}" class="list-group-item">
                             {{ 'Сообщения'|translate }}
-                            <span class="pull-right">
-                                <i class="icon-envelope"></i> <span class="label label-default">11</span>
+                            <span ng-if="messages_count.count" class="pull-right">
+                                <i class="icon-envelope"></i> <span class="label label-default">{{messages_count.count}}</span>
                             </span>
                         </a>
                     </li>
