@@ -4,13 +4,6 @@
             <div class="user-avatar">
                 <img ng-if="!user.avatar" src="http://placehold.it/200x200" />
                 <img ng-if="user.avatar" ng-src="{{ user.avatar }}" />
-                <!--img src="http://placehold.it/200x200" /-->
-                <!--div class="b-edit-avatar">
-                <span class="list-group-item btn btn-default">
-                    <a class="btn btn-link" href="">{{ 'Сменить аватарку'|translate }}</a>
-                    <input class="btn-file-uploader" ng-file-select type="file" />
-                </span>
-                </div-->
             </div>
 
             <div ng-include="'/views/user/profile/send-message.html'"></div>

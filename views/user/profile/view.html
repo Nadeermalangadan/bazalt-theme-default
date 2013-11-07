@@ -1,8 +1,8 @@
 <div class="main_info">
 
     <div class="pull-right" ng-if="$user.has('admin.access')">
-        <a href="" ng-if="!user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-success">Разрешить и опубликовать анкету</a>
-        <a href="" ng-if="user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-danger">Заблокировать и убрать анкету</a>
+        <a href="" ng-if="!user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-success">{{'Разрешить и опубликовать анкету'|translate }}</a>
+        <a href="" ng-if="user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-danger">{{'Заблокировать и спрятать анкету'|translate }}</a>
     </div>
     <h1>
         {{ user.fullname }}
