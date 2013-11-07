@@ -11059,11 +11059,18 @@ a {
   padding: 0 15px 15px;
   min-height: 200px;
 }
+.ng-social-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 .main-content {
   height: auto;
+  margin: 0;
   overflow: hidden;
   padding-bottom: 20px;
   position: relative;
+  width: 100%;
 }
 .main-content h4 {
   margin-bottom: 0;
@@ -11183,13 +11190,13 @@ div.banners.main-menu {
   -o-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
   /*
-    &.category-mainpage {
-      display: block;
-      background-color: #fdb4b6;
-      .banner {
-        background: url('../img/banner.png');
-      }
-    }*/
+      &.category-mainpage {
+        display: block;
+        background-color: #fdb4b6;
+        .banner {
+          background: url('../img/banner.png');
+        }
+      }*/
 
 }
 div.banners.main-menu.category-9 {
@@ -11760,9 +11767,7 @@ img {
 }
 /*all-user*/
 .b-language {
-  margin-left: -60px;
-  position: absolute;
-  top: 22px;
+  margin: 12px;
 }
 .b-language a.flag {
   text-indent: -10000px;
