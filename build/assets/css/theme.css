@@ -11007,9 +11007,9 @@ body {
   min-width: 960px;
 }
 .container {
-  min-width: 970px !important;
-  width: 970px !important;
-  max-width: 970px !important;
+  min-width: 970px;
+  width: 970px;
+  max-width: 970px;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -11017,7 +11017,6 @@ body {
   margin: 0 auto -30px;
   min-height: 100%;
   padding-bottom: 40px;
-  width: 960px;
 }
 #footer {
   height: 40px;
@@ -11060,8 +11059,14 @@ a {
   padding: 0 15px 15px;
   min-height: 200px;
 }
+.ng-social-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 .main-content {
   height: auto;
+  margin: 0;
   overflow: hidden;
   padding-bottom: 20px;
   position: relative;
@@ -11097,7 +11102,7 @@ a {
   background-image: url("../img/menu_model.png");
   background-repeat: no-repeat;
   height: 617px;
-  width: 239px;
+  width: 242px;
   margin-right: 1px;
 }
 .index-menu-large ul li a {
@@ -11125,7 +11130,7 @@ a {
 .index-menu-large ul li:nth-child(4) {
   background-position: right top;
   margin-right: 0;
-  width: 240px;
+  width: 241px;
 }
 /*index-menu-large*/
 header {
@@ -11184,13 +11189,13 @@ div.banners.main-menu {
   -o-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
   /*
-    &.category-mainpage {
-      display: block;
-      background-color: #fdb4b6;
-      .banner {
-        background: url('../img/banner.png');
-      }
-    }*/
+      &.category-mainpage {
+        display: block;
+        background-color: #fdb4b6;
+        .banner {
+          background: url('../img/banner.png');
+        }
+      }*/
 
 }
 div.banners.main-menu.category-9 {
@@ -11761,9 +11766,7 @@ img {
 }
 /*all-user*/
 .b-language {
-  margin-left: -60px;
-  position: absolute;
-  top: 22px;
+  margin: 12px;
 }
 .b-language a.flag {
   text-indent: -10000px;
@@ -11787,3 +11790,54 @@ img {
   z-index: 1;
 }
 /*btn-upload*/
+/*col-lg*/
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11 {
+  float: left;
+}
+.col-lg-12 {
+  width: 100%;
+}
+.col-lg-11 {
+  width: 91.6667%;
+}
+.col-lg-10 {
+  width: 83.3333%;
+}
+.col-lg-9 {
+  width: 75%;
+}
+.col-lg-8 {
+  width: 66.6667%;
+}
+.col-lg-7 {
+  width: 58.3333%;
+}
+.col-lg-6 {
+  width: 50%;
+}
+.col-lg-5 {
+  width: 41.6667%;
+}
+.col-lg-4 {
+  width: 33.3333%;
+}
+.col-lg-3 {
+  width: 25%;
+}
+.col-lg-2 {
+  width: 16.6667%;
+}
+.col-lg-1 {
+  width: 8.33333%;
+}
+/*col-lg*/
