@@ -11096,7 +11096,7 @@ a {
 .index-menu-large {
   margin-left: -15px;
   margin-right: -15px;
-  margin-top: -18px;
+  margin-top: 0px;
 }
 .index-menu-large ul li {
   background-color: transparent;
@@ -11767,7 +11767,7 @@ img {
 }
 /*all-user*/
 .b-language {
-  margin: 12px;
+  margin: 12px 12px 5px;
 }
 .b-language a.flag {
   text-indent: -10000px;
