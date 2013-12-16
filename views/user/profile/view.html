@@ -5,7 +5,7 @@
         <a href="" ng-if="user.is_active" ng-click="user.is_active = !user.is_active; user.$save()" class="btn btn-danger">{{'Заблокировать и спрятать анкету'|translate }}</a>
     </div>
     <h1>
-        {{ user.fullname }}
+        {{ user.getName() }}
     </h1>
 
     <div>
@@ -13,13 +13,9 @@
     </div>
 
     <ul class="list-unstyled">
-        <li class="row" ng-show="user.firstname">
-            <span class="col-lg-4">{{'Имя'|translate }}:</span>
-            <span class="col-lg-8">{{ user.profile.firstname }}</span>
-        </li>
-        <li class="row" ng-show="user.secondname">
-            <span class="col-lg-4">{{'Фамилия'|translate }}:</span>
-            <span class="col-lg-8">{{ user.profile.secondname }}</span>
+        <li class="row">
+            <span class="col-lg-4">{{'LadyID'|translate }}:</span>
+            <span class="col-lg-8">{{ user.id }}</span>
         </li>
         <li class="row" ng-show="user.birth_date">
             <span class="col-lg-4">{{'Дата рождения'|translate }}:</span>
